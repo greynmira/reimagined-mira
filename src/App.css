@@ -397,17 +397,6 @@
   display: block;
 }
 
-.award-card__blur {
-  position: absolute;
-  /* Covers "Makan" — approximately right half of the name line */
-  top: 44%;
-  left: 52%;
-  width: 28%;
-  height: 7%;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  background: rgba(255,255,255,0.2);
-}
 
 .award-card__caption {
   font-size: 0.97rem;
@@ -478,7 +467,11 @@
 @media (max-width: 900px) {
   .about__inner {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
+  }
+
+  .about__left {
+    display: none;
   }
 }
 
@@ -487,23 +480,62 @@
     --section-padding: 48px 20px;
   }
 
+  .nav {
+    padding: 0 16px;
+  }
+
+  .nav__inner {
+    height: 56px;
+  }
+
+  .nav__logo {
+    font-size: 0.9rem;
+  }
+
+  .btn-outline {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+  }
+
   .hero {
-    padding: 80px 20px 64px;
+    padding: 56px 20px 48px;
+  }
+
+  .hero__headline {
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
+  }
+
+  .hero__subtext {
+    font-size: 1rem;
+  }
+
+  .hero__cta {
+    margin-bottom: 28px;
+  }
+
+  .btn-primary--large {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    width: 100%;
+    display: block;
+    text-align: center;
   }
 
   .services__grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
 
   .hero__trust {
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
+    gap: 6px;
   }
 
   .hero__trust-sep {
     display: none;
+  }
+
+  .hero__trust-item {
+    display: block;
   }
 
   .why-me__outcomes {
@@ -513,17 +545,35 @@
 
   .why-me__outcome {
     margin-right: 0;
+    margin-bottom: 8px;
   }
 
-  .btn-primary,
-  .btn-outline,
+  .award-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .award-card__img-wrap {
+    width: 100%;
+  }
+
+  .award-card__caption {
+    font-size: 0.92rem;
+  }
+
+  .final-cta {
+    padding: 56px 20px;
+  }
+
   .btn-outline-light {
-    padding: 12px 24px;
-    font-size: 0.9rem;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 14px 28px;
   }
 
-  .btn-primary--large {
-    padding: 14px 32px;
-    font-size: 0.95rem;
+  .section-headline {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
   }
 }

@@ -180,10 +180,9 @@ function Awards() {
           <div className="award-card__img-wrap">
             <img
               src={`${import.meta.env.BASE_URL}Chitchat.jpg`}
-              alt="Official Certificate – Chitchat Champion awarded to Mira M."
+              alt="Official Certificate – Chitchat Champion awarded to Mira Makan."
               className="award-card__img"
             />
-            <div className="award-card__blur" aria-hidden="true" />
           </div>
           <p className="award-card__caption">
             Chitchat Champion — awarded by colleagues for mastering random conversations, morning desk pop-ins, ninja exits, and making coworkers smile even without coffee.
