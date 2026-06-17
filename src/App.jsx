@@ -44,7 +44,7 @@ function Nav() {
       <div className="nav__inner">
         <div className="nav__logo">Reimagined by Mira</div>
         <a href={CALENDLY_URL} className="btn-outline" target="_blank" rel="noopener noreferrer">
-          Book a Discovery Call
+          Book a Free 20-Minute Discovery Call
         </a>
       </div>
     </nav>
@@ -68,8 +68,9 @@ function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Book a Discovery Call
+            Book a Free 20-Minute Discovery Call
           </a>
+          <p className="hero__cta-note">Free 20-minute conversation to explore your goals and determine whether we&apos;re a good fit.</p>
         </div>
         <hr className="hero__divider" />
         <div className="hero__trust">
@@ -107,6 +108,7 @@ function Services() {
   return (
     <section className="services">
       <div className="services__inner">
+        <p className="services__intro">Gain clarity, confidence, and a practical plan for your next career move.</p>
         <h2 className="section-headline">What I Help With</h2>
         <div className="services__grid">
           {services.map((s, i) => (
@@ -185,7 +187,7 @@ function FinalCTA() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Book a Discovery Call
+          Book a Free 20-Minute Discovery Call
         </a>
       </div>
     </section>
