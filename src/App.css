@@ -73,7 +73,7 @@
   font-weight: 700;
   color: var(--color-black);
   line-height: 1.2;
-  margin-bottom: 48px;
+  margin-bottom: 28px;
   letter-spacing: -0.01em;
 }
 
@@ -111,7 +111,7 @@
    ============================ */
 .hero {
   background-color: var(--color-white);
-  padding: 120px 24px 80px;
+  padding: 72px 24px 56px;
 }
 
 .hero__inner {
@@ -135,12 +135,12 @@
   font-size: 1.1rem;
   color: var(--color-text-muted);
   max-width: 600px;
-  margin: 0 auto 44px;
+  margin: 0 auto 32px;
   line-height: 1.75;
 }
 
 .hero__cta {
-  margin-bottom: 56px;
+  margin-bottom: 36px;
 }
 
 .hero__divider {
@@ -187,7 +187,7 @@
 .services__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 56px 80px;
+  gap: 40px 64px;
 }
 
 .service-item__title {
@@ -236,7 +236,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0;
-  margin-top: 48px;
+  margin-top: 32px;
 }
 
 .why-me__outcome {
@@ -307,7 +307,7 @@
    ============================ */
 .final-cta {
   background-color: var(--color-black);
-  padding: 100px 24px;
+  padding: 72px 24px;
   text-align: center;
 }
 
@@ -329,7 +329,7 @@
 .final-cta__subtext {
   font-size: 1.05rem;
   color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 48px;
+  margin-bottom: 28px;
   line-height: 1.7;
 }
 
@@ -359,7 +359,7 @@
 
 @media (max-width: 640px) {
   :root {
-    --section-padding: 72px 20px;
+    --section-padding: 48px 20px;
   }
 
   .hero {
