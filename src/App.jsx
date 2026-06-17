@@ -215,7 +215,7 @@ function FinalCTA() {
 function Footer() {
   return (
     <footer className="footer">
-      <p className="footer__copy">&copy; 2025 Reimagined by Mira</p>
+      <p className="footer__copy">&copy; 2026 Reimagined by Mira</p>
     </footer>
   )
 }
