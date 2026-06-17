@@ -179,7 +179,7 @@ function Awards() {
         <div className="award-card">
           <div className="award-card__img-wrap">
             <img
-              src={`${import.meta.env.BASE_URL}certificate.jpg`}
+              src={`${import.meta.env.BASE_URL}chitchat.jpg`}
               alt="Official Certificate – Chitchat Champion awarded to Mira M."
               className="award-card__img"
             />
