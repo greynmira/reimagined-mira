@@ -351,6 +351,15 @@
   user-select: none;
 }
 
+.about__role {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-green);
+  margin-bottom: 16px;
+}
+
 .about__body {
   font-size: 1.05rem;
   color: var(--color-text-secondary);

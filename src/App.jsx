@@ -91,7 +91,7 @@ const services = [
   },
   {
     title: 'Networking',
-    items: ['Building meaningful professional relationships', 'Internal influence', 'Executive visibility'],
+    items: ['Build authentic professional relationships that create opportunity, visibility, and support throughout your career.', 'Internal influence', 'Executive visibility'],
   },
   {
     title: 'Personal Brand',
@@ -136,7 +136,7 @@ function WhyMe() {
           I&apos;ve spent my career navigating complex healthcare organizations, leading cross-functional initiatives, influencing without authority, and building trust across diverse stakeholder groups.
         </p>
         <p className="why-me__body">
-          Along the way, colleagues, leaders, and friends kept coming to me with their own career challenges. That pattern eventually became this practice.
+          Over the years, colleagues, mentees, and friends repeatedly sought me out for guidance on career decisions, workplace challenges, networking, and professional growth. That pattern eventually became this practice.
         </p>
         <div className="why-me__outcomes">
           {outcomes.map((o, i) => (
@@ -159,6 +159,7 @@ function About() {
         </div>
         <div className="about__right">
           <h2 className="section-headline">About Mira</h2>
+          <p className="about__role">Healthcare Product Leader · 8 years in strategy, digital health &amp; product</p>
           <p className="about__body">
             For the past eight years, I&apos;ve worked in healthcare strategy, digital health, and product leadership — helping teams navigate complexity, align stakeholders, and deliver meaningful outcomes. Reimagined by Mira was built from a simple observation: the people who are good at their jobs often need the most help navigating the system around them.
           </p>
