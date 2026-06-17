@@ -44,7 +44,7 @@ function Nav() {
       <div className="nav__inner">
         <div className="nav__logo">Reimagined<br />by Mira</div>
         <a href={CALENDLY_URL} className="btn-outline" target="_blank" rel="noopener noreferrer">
-          Book a complimentary 20-min call
+          Book a Free Discovery Call
         </a>
       </div>
     </nav>
@@ -161,7 +161,7 @@ function About() {
         </div>
         <div className="about__right">
           <h2 className="section-headline">About Mira</h2>
-          <p className="about__role">Healthcare Product Leader · 8 years in strategy, digital health &amp; product</p>
+          <p className="about__role">Healthcare Product Leader · Strategic Partnerships Lead, Heart &amp; Stroke Foundation</p>
           <p className="about__body">
             For the past eight years, I&apos;ve worked in healthcare strategy, digital health, and product leadership — helping teams navigate complexity, align stakeholders, and deliver meaningful outcomes. Reimagined by Mira was built from a simple observation: the people who are good at their jobs often need the most help navigating the system around them.
           </p>
