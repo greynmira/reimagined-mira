@@ -1,6 +1,42 @@
+import { useState } from 'react'
 import './App.css'
 
 const CALENDLY_URL = 'https://calendly.com'
+
+function PasswordGate({ onUnlock }) {
+  const [value, setValue] = useState('')
+  const [error, setError] = useState(false)
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    if (value.toLowerCase().trim() === 'ready') {
+      onUnlock()
+    } else {
+      setError(true)
+      setValue('')
+    }
+  }
+
+  return (
+    <div className="gate">
+      <div className="gate__inner">
+        <div className="gate__logo">Reimagined by Mira</div>
+        <form className="gate__form" onSubmit={handleSubmit}>
+          <input
+            className={`gate__input${error ? ' gate__input--error' : ''}`}
+            type="password"
+            placeholder="Enter password"
+            value={value}
+            autoFocus
+            onChange={e => { setValue(e.target.value); setError(false) }}
+          />
+          {error && <p className="gate__error">Incorrect password. Try again.</p>}
+          <button className="btn-primary gate__btn" type="submit">Enter</button>
+        </form>
+      </div>
+    </div>
+  )
+}
 
 function Nav() {
   return (
@@ -163,6 +199,10 @@ function Footer() {
 }
 
 function App() {
+  const [unlocked, setUnlocked] = useState(false)
+
+  if (!unlocked) return <PasswordGate onUnlock={() => setUnlocked(true)} />
+
   return (
     <>
       <Nav />
