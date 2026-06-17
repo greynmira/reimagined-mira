@@ -172,27 +172,6 @@ function About() {
   )
 }
 
-function Awards() {
-  return (
-    <section className="awards">
-      <div className="awards__inner">
-        <h2 className="section-headline">Recognition</h2>
-        <div className="award-card">
-          <div className="award-card__img-wrap">
-            <img
-              src={`${import.meta.env.BASE_URL}Chitchat.jpg`}
-              alt="Official Certificate – Chitchat Champion awarded to Mira Makan."
-              className="award-card__img"
-            />
-          </div>
-          <p className="award-card__caption">
-            Chitchat Champion — awarded by colleagues for mastering random conversations, morning desk pop-ins, ninja exits, and making coworkers smile even without coffee.
-          </p>
-        </div>
-      </div>
-    </section>
-  )
-}
 
 function FinalCTA() {
   return (
@@ -234,7 +213,6 @@ function App() {
         <Services />
         <WhyMe />
         <About />
-        <Awards />
         <FinalCTA />
       </main>
       <Footer />
