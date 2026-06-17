@@ -367,6 +367,67 @@
 }
 
 /* ============================
+   AWARDS
+   ============================ */
+.awards {
+  padding: var(--section-padding);
+  border-top: 1px solid var(--color-border);
+}
+
+.awards__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.award-card {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.award-card__img-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 340px;
+}
+
+.award-card__img {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  display: block;
+}
+
+.award-card__blur {
+  position: absolute;
+  /* Covers "Makan" — approximately right half of the name line */
+  top: 44%;
+  left: 52%;
+  width: 28%;
+  height: 7%;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.2);
+}
+
+.award-card__caption {
+  font-size: 0.97rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 480px;
+  padding-top: 8px;
+}
+
+@media (max-width: 700px) {
+  .award-card {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .award-card__img-wrap {
+    width: 100%;
+  }
+}
+
+/* ============================
    FINAL CTA
    ============================ */
 .final-cta {

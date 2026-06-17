@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-const CALENDLY_URL = 'https://calendly.com'
+const CALENDLY_URL = 'https://calendar.google.com/calendar/appointments'
 
 function PasswordGate({ onUnlock }) {
   const [value, setValue] = useState('')
@@ -171,6 +171,29 @@ function About() {
   )
 }
 
+function Awards() {
+  return (
+    <section className="awards">
+      <div className="awards__inner">
+        <h2 className="section-headline">Recognition</h2>
+        <div className="award-card">
+          <div className="award-card__img-wrap">
+            <img
+              src={`${import.meta.env.BASE_URL}certificate.jpg`}
+              alt="Official Certificate – Chitchat Champion awarded to Mira M."
+              className="award-card__img"
+            />
+            <div className="award-card__blur" aria-hidden="true" />
+          </div>
+          <p className="award-card__caption">
+            Chitchat Champion — awarded by colleagues for mastering random conversations, morning desk pop-ins, ninja exits, and making coworkers smile even without coffee.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function FinalCTA() {
   return (
     <section className="final-cta" id="contact">
@@ -211,6 +234,7 @@ function App() {
         <Services />
         <WhyMe />
         <About />
+        <Awards />
         <FinalCTA />
       </main>
       <Footer />
