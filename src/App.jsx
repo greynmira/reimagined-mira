@@ -42,7 +42,7 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="nav__inner">
-        <div className="nav__logo">Reimagined by Mira</div>
+        <div className="nav__logo">Reimagined<br />by Mira</div>
         <a href={CALENDLY_URL} className="btn-outline" target="_blank" rel="noopener noreferrer">
           Book a complimentary 20-min call
         </a>
