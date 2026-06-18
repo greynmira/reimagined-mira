@@ -191,7 +191,7 @@ function FinalCTA() {
   return (
     <section className="final-cta" id="contact">
       <div className="final-cta__inner">
-        <h2 className="final-cta__headline">Start Where You Are</h2>
+        <h2 className="final-cta__headline">Build a Career That Fits Who You Are</h2>
         <p className="final-cta__subtext">Book a complimentary 20-minute call.</p>
         <a
           href={CALENDLY_URL}
