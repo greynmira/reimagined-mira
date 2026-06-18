@@ -175,6 +175,57 @@ function About() {
 }
 
 
+const caseStudies = [
+  {
+    tag: 'Early Career',
+    title: 'Breaking Through Unemployment',
+    body: [
+      'A recent graduate came to me after spending more than six months unemployed and struggling to transition into a field outside their academic specialization.',
+      'Together, we refined their resume and cover letters, identified transferable skills, prepared for interviews, and developed a stronger professional narrative. One of the biggest challenges wasn\'t capability — it was learning how to communicate their value with confidence and help others see their potential.',
+      'After months of feeling stuck, they successfully secured a role in their target field and began building the career they had been working toward.',
+    ],
+  },
+  {
+    tag: 'Mid-Career',
+    title: 'Advocating for Your Dollar Value',
+    body: [
+      'A professional reached out because they felt undercompensated and wanted support navigating a conversation about salary and bonus expectations.',
+      'Talking about money can feel uncomfortable. Together, we worked on identifying their contributions, framing their impact, and preparing for a compensation discussion that felt professional, confident, and authentic.',
+      'The result was a successful conversation that led to an increase in both salary and bonus compensation. Our work later expanded into broader career strategy, interview preparation, and exploring new opportunities.',
+    ],
+  },
+  {
+    tag: 'Experienced Professionals',
+    title: 'Feeling Stuck and Wanting Change',
+    body: [
+      'A professional with more than 30 years of experience came to me feeling stuck and uncertain about what the next chapter of their career might look like.',
+      'Many experienced professionals reach a point where the "same old, same old" no longer feels fulfilling. Together, we explored networking strategies, relationship building, career reinvention, and how to continue growing in a rapidly changing professional landscape.',
+      'Through our work together, they expanded their professional network, explored new opportunities within their organization, and began approaching the next stage of their career with greater curiosity, confidence, and momentum.',
+    ],
+  },
+]
+
+function CaseStudies() {
+  return (
+    <section className="case-studies">
+      <div className="case-studies__inner">
+        <h2 className="section-headline">How I&apos;ve Helped Clients Navigate Career Challenges</h2>
+        <div className="case-studies__list">
+          {caseStudies.map((c, i) => (
+            <div key={i} className="case-study">
+              <div className="case-study__tag">{c.tag}</div>
+              <h3 className="case-study__title">{c.title}</h3>
+              {c.body.map((p, j) => (
+                <p key={j} className="case-study__body">{p}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function FinalCTA() {
   return (
     <section className="final-cta" id="contact">
@@ -215,6 +266,7 @@ function App() {
         <Services />
         <WhyMe />
         <About />
+        <CaseStudies />
         <FinalCTA />
       </main>
       <Footer />

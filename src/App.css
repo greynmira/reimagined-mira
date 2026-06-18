@@ -440,6 +440,58 @@
 }
 
 /* ============================
+   CASE STUDIES
+   ============================ */
+.case-studies {
+  padding: var(--section-padding);
+  border-top: 1px solid var(--color-border);
+}
+
+.case-studies__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.case-studies__list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.case-study {
+  border-left: 2px solid var(--color-green);
+  padding-left: 24px;
+}
+
+.case-study__tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-green);
+  margin-bottom: 6px;
+}
+
+.case-study__title {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 14px;
+}
+
+.case-study__body {
+  font-size: 0.97rem;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+
+.case-study__body:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================
    FINAL CTA
    ============================ */
 .final-cta {
