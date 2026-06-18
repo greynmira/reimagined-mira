@@ -146,14 +146,14 @@ const caseStudies = [
     title: 'Breaking Through Unemployment',
     challenge: 'Recent graduate unemployed for 6+ months, struggling to transition into a new field.',
     work: 'Resume positioning, transferable skills, interview preparation, and professional storytelling.',
-    outcome: 'Secured a role in their target field within three months.',
+    outcome: 'Secured a role in their target field within 3 months.',
   },
   {
     tag: 'Mid-Career',
     title: 'Advocating for Your Dollar Value',
     challenge: 'Felt undercompensated and unsure how to navigate a salary and bonus conversation.',
     work: 'Identifying contributions, framing impact, and preparing for a confident compensation discussion.',
-    outcome: 'Successfully negotiated increases in both salary and bonus.',
+    outcome: 'Successfully negotiated an increase in salary.',
   },
   {
     tag: 'Experienced Professional',
