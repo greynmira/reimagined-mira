@@ -80,19 +80,19 @@ function Hero() {
 const services = [
   {
     title: 'Career Strategy',
-    items: ['Promotions and advancement', 'Career transitions', 'Leadership growth'],
+    items: ['Promotions & advancement', 'Career transitions', 'Leadership growth'],
   },
   {
     title: 'Networking',
-    items: ['Build authentic professional relationships that create opportunity, visibility, and support throughout your career.', 'Internal influence', 'Executive visibility'],
+    items: ['Strategic relationship building', 'Internal influence', 'Executive visibility'],
   },
   {
     title: 'Personal Brand',
-    items: ['Confidence and presence', 'Communicating your value', 'Showing up authentically'],
+    items: ['Confidence & presence', 'Communicating your value', 'Professional storytelling'],
   },
   {
-    title: 'Resilience',
-    items: ['Difficult managers', 'Organizational politics', 'Career setbacks and change'],
+    title: 'Resilience & Change',
+    items: ['Difficult managers', 'Organizational politics', 'Career setbacks'],
   },
 ]
 
