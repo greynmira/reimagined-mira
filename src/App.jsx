@@ -108,7 +108,6 @@ function Services() {
   return (
     <section className="services">
       <div className="services__inner">
-        <p className="services__intro">Gain clarity, confidence, and a practical plan for your next career move.</p>
         <h2 className="section-headline">What I Help With</h2>
         <div className="services__grid">
           {services.map((s, i) => (
@@ -163,10 +162,7 @@ function About() {
           <h2 className="section-headline">About Mira</h2>
           <p className="about__role">Healthcare Product Leader · Strategic Partnerships Lead, Heart &amp; Stroke Foundation</p>
           <p className="about__body">
-            For the past eight years, I&apos;ve worked in healthcare strategy, digital health, and product leadership — helping teams navigate complexity, align stakeholders, and deliver meaningful outcomes. Reimagined by Mira was built from a simple observation: the people who are good at their jobs often need the most help navigating the system around them.
-          </p>
-          <p className="about__quote">
-            Because careers are rarely linear. And sometimes the most valuable thing isn&apos;t advice — it&apos;s having someone help you see the path more clearly.
+            8+ years in healthcare strategy, digital health, and product leadership. The people who are good at their jobs often need the most help navigating the system around them — that observation is what led to this practice.
           </p>
         </div>
       </div>
@@ -264,9 +260,9 @@ function App() {
       <main>
         <Hero />
         <Services />
+        <CaseStudies />
         <WhyMe />
         <About />
-        <CaseStudies />
         <FinalCTA />
       </main>
       <Footer />
