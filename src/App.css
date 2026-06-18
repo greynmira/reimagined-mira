@@ -176,7 +176,7 @@
    ============================ */
 .hero {
   background-color: var(--color-white);
-  padding: 48px 24px 40px;
+  padding: 48px 24px 32px;
 }
 
 .hero__inner {
@@ -205,18 +205,20 @@
 }
 
 .hero__cta {
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 
 .hero__cta-note {
   font-size: 0.85rem;
   color: var(--color-text-muted);
   margin-top: 12px;
+  margin-bottom: 0;
 }
 
 .hero__divider {
   border: none;
   border-top: 1px solid var(--color-border);
+  margin-top: 16px;
   margin-bottom: 20px;
 }
 
