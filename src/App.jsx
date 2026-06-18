@@ -224,8 +224,8 @@ function App() {
       <Nav />
       <main>
         <Hero />
-        <Services />
         <CaseStudies />
+        <Services />
         <About />
         <FinalCTA />
       </main>
