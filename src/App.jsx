@@ -70,7 +70,6 @@ function Hero() {
           >
             Book a complimentary 20-min call
           </a>
-          <p className="hero__cta-note">Free 20-minute conversation to explore your goals and determine whether we&apos;re a good fit.</p>
         </div>
       </div>
     </section>
