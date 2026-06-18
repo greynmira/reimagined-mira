@@ -68,7 +68,7 @@ function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Book a complimentary 20-min call
+            Book a free Discovery Call
           </a>
         </div>
       </div>
