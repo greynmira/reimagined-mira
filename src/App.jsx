@@ -72,14 +72,6 @@ function Hero() {
           </a>
           <p className="hero__cta-note">Free 20-minute conversation to explore your goals and determine whether we&apos;re a good fit.</p>
         </div>
-        <hr className="hero__divider" />
-        <div className="hero__trust">
-          <span className="hero__trust-item">Career Strategy</span>
-          <span className="hero__trust-sep" aria-hidden="true">·</span>
-          <span className="hero__trust-item">Personal Branding</span>
-          <span className="hero__trust-sep" aria-hidden="true">·</span>
-          <span className="hero__trust-item">Resilience &amp; Change</span>
-        </div>
       </div>
     </section>
   )
