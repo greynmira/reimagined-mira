@@ -176,7 +176,7 @@
    ============================ */
 .hero {
   background-color: var(--color-white);
-  padding: 48px 24px 32px;
+  padding: 48px 24px 16px;
 }
 
 .hero__inner {
