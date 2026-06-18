@@ -59,7 +59,7 @@ function Hero() {
           Career growth doesn&apos;t have to cost your authenticity.
         </h1>
         <p className="hero__subtext">
-          I help ambitious professionals build careers, networks, and personal brands that create opportunity — without burning themselves out.
+          I help ambitious professionals build careers, networks, and personal brands that create opportunity without burning themselves out.
         </p>
         <div className="hero__cta">
           <a
