@@ -126,29 +126,6 @@ function Services() {
   )
 }
 
-const outcomes = ['CLEARER', 'MORE CONFIDENT', 'LESS OVERWHELMED', 'BETTER EQUIPPED']
-
-function WhyMe() {
-  return (
-    <section className="why-me">
-      <div className="why-me__inner">
-        <h2 className="section-headline">Why Work With Me?</h2>
-        <p className="why-me__body">
-          I&apos;ve spent my career navigating complex healthcare organizations, leading cross-functional initiatives, influencing without authority, and building trust across diverse stakeholder groups.
-        </p>
-        <p className="why-me__body">
-          Over the years, colleagues, mentees, and friends repeatedly sought me out for guidance on career decisions, workplace challenges, networking, and professional growth. That pattern eventually became this practice.
-        </p>
-        <div className="why-me__outcomes">
-          {outcomes.map((o, i) => (
-            <span key={i} className="why-me__outcome">{o}</span>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function About() {
   return (
     <section className="about">
@@ -162,7 +139,10 @@ function About() {
           <h2 className="section-headline">About Mira</h2>
           <p className="about__role">Healthcare Product Leader · Strategic Partnerships Lead, Heart &amp; Stroke Foundation</p>
           <p className="about__body">
-            8+ years in healthcare strategy, digital health, and product leadership. The people who are good at their jobs often need the most help navigating the system around them — that observation is what led to this practice.
+            For the past 8+ years I&apos;ve worked across healthcare strategy, digital health, and product leadership.
+          </p>
+          <p className="about__quote">
+            The people who are good at their jobs often need the most help navigating the system around them.
           </p>
         </div>
       </div>
@@ -175,29 +155,23 @@ const caseStudies = [
   {
     tag: 'Early Career',
     title: 'Breaking Through Unemployment',
-    body: [
-      'A recent graduate came to me after spending more than six months unemployed and struggling to transition into a field outside their academic specialization.',
-      'Together, we refined their resume and cover letters, identified transferable skills, prepared for interviews, and developed a stronger professional narrative. One of the biggest challenges wasn\'t capability — it was learning how to communicate their value with confidence and help others see their potential.',
-      'After months of feeling stuck, they successfully secured a role in their target field and began building the career they had been working toward.',
-    ],
+    challenge: 'Recent graduate unemployed for 6+ months, struggling to transition into a new field.',
+    work: 'Resume positioning, transferable skills, interview preparation, and professional storytelling.',
+    outcome: 'Secured a role in their target field within three months.',
   },
   {
     tag: 'Mid-Career',
     title: 'Advocating for Your Dollar Value',
-    body: [
-      'A professional reached out because they felt undercompensated and wanted support navigating a conversation about salary and bonus expectations.',
-      'Talking about money can feel uncomfortable. Together, we worked on identifying their contributions, framing their impact, and preparing for a compensation discussion that felt professional, confident, and authentic.',
-      'The result was a successful conversation that led to an increase in both salary and bonus compensation. Our work later expanded into broader career strategy, interview preparation, and exploring new opportunities.',
-    ],
+    challenge: 'Felt undercompensated and unsure how to navigate a salary and bonus conversation.',
+    work: 'Identifying contributions, framing impact, and preparing for a confident compensation discussion.',
+    outcome: 'Successfully negotiated increases in both salary and bonus.',
   },
   {
-    tag: 'Experienced Professionals',
+    tag: 'Experienced Professional',
     title: 'Feeling Stuck and Wanting Change',
-    body: [
-      'A professional with more than 30 years of experience came to me feeling stuck and uncertain about what the next chapter of their career might look like.',
-      'Many experienced professionals reach a point where the "same old, same old" no longer feels fulfilling. Together, we explored networking strategies, relationship building, career reinvention, and how to continue growing in a rapidly changing professional landscape.',
-      'Through our work together, they expanded their professional network, explored new opportunities within their organization, and began approaching the next stage of their career with greater curiosity, confidence, and momentum.',
-    ],
+    challenge: '30+ years of experience, but feeling stuck and uncertain about what comes next.',
+    work: 'Networking strategies, relationship building, and career reinvention for a changing landscape.',
+    outcome: 'Expanded their network, uncovered new opportunities, and reignited career momentum.',
   },
 ]
 
@@ -205,15 +179,17 @@ function CaseStudies() {
   return (
     <section className="case-studies">
       <div className="case-studies__inner">
-        <h2 className="section-headline">How I&apos;ve Helped Clients Navigate Career Challenges</h2>
+        <h2 className="section-headline">Client Examples</h2>
         <div className="case-studies__list">
           {caseStudies.map((c, i) => (
             <div key={i} className="case-study">
               <div className="case-study__tag">{c.tag}</div>
               <h3 className="case-study__title">{c.title}</h3>
-              {c.body.map((p, j) => (
-                <p key={j} className="case-study__body">{p}</p>
-              ))}
+              <dl className="case-study__dl">
+                <dt>Challenge</dt><dd>{c.challenge}</dd>
+                <dt>What We Worked On</dt><dd>{c.work}</dd>
+                <dt>Outcome</dt><dd>{c.outcome}</dd>
+              </dl>
             </div>
           ))}
         </div>
@@ -227,7 +203,7 @@ function FinalCTA() {
     <section className="final-cta" id="contact">
       <div className="final-cta__inner">
         <h2 className="final-cta__headline">Start Where You Are</h2>
-        <p className="final-cta__subtext">You don&apos;t need to have everything figured out. You just need a place to start.</p>
+        <p className="final-cta__subtext">Book a complimentary 20-minute call.</p>
         <a
           href={CALENDLY_URL}
           className="btn-outline-light btn-primary--large"
@@ -261,7 +237,6 @@ function App() {
         <Hero />
         <Services />
         <CaseStudies />
-        <WhyMe />
         <About />
         <FinalCTA />
       </main>
