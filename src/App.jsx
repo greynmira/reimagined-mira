@@ -44,7 +44,7 @@ function Nav() {
       <div className="nav__inner">
         <div className="nav__logo">Reimagined<br />by Mira</div>
         <a href={CALENDLY_URL} className="btn-outline" target="_blank" rel="noopener noreferrer">
-          Book a Free Discovery Call
+          Book a free Discovery call
         </a>
       </div>
     </nav>
@@ -198,7 +198,7 @@ function FinalCTA() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Book a complimentary 20-min call
+          Book a free Discovery call
         </a>
       </div>
     </section>
