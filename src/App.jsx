@@ -141,9 +141,6 @@ function About() {
           <p className="about__body">
             For the past 8+ years I&apos;ve worked across healthcare strategy, digital health, and product leadership, while also serving as a Strategic Partnerships Lead with the Heart &amp; Stroke Foundation.
           </p>
-          <p className="about__quote">
-            The people who are good at their jobs often need the most help navigating the system around them.
-          </p>
         </div>
       </div>
     </section>
