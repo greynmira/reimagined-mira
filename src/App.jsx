@@ -124,7 +124,7 @@ function WhyIStarted() {
         <h2 className="section-headline">Why I Started<br />Reimagined by Mira</h2>
         <p>I&apos;m obsessed with career strategy.<br />Positioning, networking, personal brand, and career growth. <strong className="why-started__hook">I dream about this stuff so you don&apos;t have to.</strong></p>
         <p>I&apos;ve reinvented my own career more than once, from business school to clinical nutrition to digital health. Along the way, I&apos;ve learned that career paths are rarely linear and that feeling stuck doesn&apos;t have to be permanent.</p>
-        <p>What I&apos;ve learned is that most people aren&apos;t lacking talent. Commonly they are instead lacking perspective, accountability, and a trusted sounding board.</p>
+        <p>What I&apos;ve learned is that most people aren&apos;t lacking talent. More often, they are lacking perspective, accountability, and a trusted sounding board.</p>
         <p>That&apos;s why I created Reimagined by Mira.</p>
       </div>
     </section>
