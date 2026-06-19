@@ -203,7 +203,7 @@ function Closing() {
   return (
     <section className="closing">
       <div className="closing__inner">
-        <p>You&apos;ve spent enough time reading.<br />I&apos;ve spent enough time writing.<br /><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a free discovery call</a> to commit to the first step of change.<br />I&apos;m ready. Are you?</p>
+        <p>You&apos;ve spent enough time reading.<br />I&apos;ve spent enough time writing.<br /><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a free discovery call</a> to commit to the first step of change.<br /><strong className="why-started__hook">Ready? Are you?</strong></p>
       </div>
     </section>
   )
