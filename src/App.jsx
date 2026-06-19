@@ -158,8 +158,8 @@ const caseStudies = [
     tag: 'Experienced Professional',
     title: 'Beyond the Plateau',
     challenge: 'A professional with 30+ years of experience felt stuck and uncertain about what comes next.',
-    work: 'Networking strategies, relationship building, and exploring new possibilities in a changing professional landscape.',
-    outcome: 'Expanded their network, uncovered new opportunities, and reignited career momentum.',
+    work: 'Networking, relationship building, and exploring new opportunities.',
+    outcome: 'Identified and pursued meaningful opportunities aligned with their goals.',
   },
 ]
 
