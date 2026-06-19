@@ -128,7 +128,7 @@ function About() {
         </div>
         <div className="about__right">
           <h2 className="section-headline">About Mira</h2>
-          <p className="about__role">Healthcare Product Leader · Strategic Partnerships Lead, Heart &amp; Stroke Foundation</p>
+          <p className="about__role">Healthcare Product Leader · Strategic Partnerships Lead,<br />Heart &amp; Stroke Foundation</p>
           <p className="about__body">
             For the past 8+ years I&apos;ve worked across healthcare strategy, digital health, and product leadership, while also serving as a Strategic Partnerships Lead with the Heart &amp; Stroke Foundation.
           </p>        </div>
