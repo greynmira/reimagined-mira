@@ -126,6 +126,7 @@ function WhyIStarted() {
         <p>I&apos;ve reinvented my own career more than once, from business school to clinical nutrition to digital health. Along the way, I&apos;ve learned that career paths are rarely linear and that feeling stuck doesn&apos;t have to be permanent.</p>
         <p>What I&apos;ve learned is that most people aren&apos;t lacking talent. They&apos;re often lacking perspective, accountability, and a trusted sounding board.</p>
         <p>That&apos;s why I created Reimagined by Mira.</p>
+        <p>You&apos;ve spent enough time reading.<br />I&apos;ve spent enough time writing.<br /><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a free discovery call</a> to commit to the first step of change.<br />I&apos;m ready. Are you?</p>
       </div>
     </section>
   )
