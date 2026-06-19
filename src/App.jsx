@@ -207,7 +207,7 @@ function Closing() {
         <p>You&apos;ve spent enough time on this website. I&apos;ve spent enough time writing it.</p>
         <p className="closing__gap"><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a free call</a> and let&apos;s have a conversation. There are no sales pitches, no pressure, and no obligation to work together.</p>
         <p className="closing__gap">At worst, you&apos;ll spend 20 minutes speaking with me and leave with a fresh perspective. At best, you&apos;ll leave with more clarity, confidence, and a better sense of what comes next.</p>
-        <p><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
+        <p className="closing__gap"><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
       </div>
     </section>
   )
