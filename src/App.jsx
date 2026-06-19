@@ -167,7 +167,7 @@ function CaseStudies() {
   return (
     <section className="case-studies">
       <div className="case-studies__inner">
-        <h2 className="section-headline">Client Examples</h2>
+        <h2 className="section-headline">Case Studies</h2>
         <div className="case-studies__list">
           {caseStudies.map((c, i) => (
             <div key={i} className="case-study">
