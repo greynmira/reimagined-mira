@@ -532,6 +532,25 @@
 }
 
 /* ============================
+   CLOSING
+   ============================ */
+.closing {
+  padding: var(--section-padding);
+  border-top: 1px solid var(--color-border);
+}
+
+.closing__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.closing__inner p {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 2;
+}
+
+/* ============================
    FINAL CTA
    ============================ */
 .final-cta {
