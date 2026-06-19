@@ -204,7 +204,7 @@ function Closing() {
     <section className="closing">
       <div className="closing__inner">
         <h2 className="section-headline">Enough Thinking.</h2>
-        <p>You&apos;ve spent enough time reading.<br />I&apos;ve spent enough time writing.<br /><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a free discovery call</a> to commit to the first step of change.<br /><strong className="why-started__hook">Ready? Are you?</strong></p>
+        <p>You&apos;ve spent enough time reading.<br />I&apos;ve spent enough time writing.<br /><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a free discovery call</a> to commit to the first step of change.<br /><strong className="why-started__hook">I&apos;m ready. Come join me.</strong></p>
       </div>
     </section>
   )
