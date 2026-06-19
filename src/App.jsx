@@ -205,7 +205,7 @@ function Closing() {
       <div className="closing__inner">
         <h2 className="section-headline">Enough Thinking.</h2>
         <p>You&apos;ve spent enough time reading this website. Trust me, I&apos;ve spent enough time writing it.</p>
-        <p><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a free discovery call</a>, talk to a real human, and take a real step toward change.</p>
+        <p><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a free discovery call</a>, and take a real step toward change.</p>
         <p><strong className="why-started__hook">I&apos;m ready. Join me.</strong></p>
       </div>
     </section>
