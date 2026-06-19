@@ -150,7 +150,7 @@ const caseStudies = [
   {
     tag: 'Mid-Career',
     title: 'Navigating Compensation Conversations',
-    challenge: 'Felt undercompensated and unsure how to navigate a salary and bonus conversation.',
+    challenge: 'Felt undercompensated and unsure how to navigate a salary conversation.',
     work: 'Identifying contributions, framing impact, and preparing for a confident compensation discussion.',
     outcome: 'Successfully negotiated an increase in salary.',
   },
