@@ -334,6 +334,30 @@
 }
 
 /* ============================
+   WHY I STARTED
+   ============================ */
+.why-started {
+  padding: var(--section-padding);
+  border-top: 1px solid var(--color-border);
+}
+
+.why-started__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.why-started__inner p {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.why-started__inner p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================
    ABOUT
    ============================ */
 .about {
