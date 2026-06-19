@@ -357,6 +357,11 @@
   margin-bottom: 0;
 }
 
+.why-started__hook {
+  color: var(--color-green);
+  font-weight: 700;
+}
+
 /* ============================
    ABOUT
    ============================ */
