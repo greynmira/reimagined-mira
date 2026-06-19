@@ -206,7 +206,7 @@ function Closing() {
         <h2 className="section-headline">Enough Thinking.</h2>
         <p>You&apos;ve spent enough time on this website. I&apos;ve spent enough time writing it.</p>
         <p style={{marginTop: '32px'}}><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a free call</a> and let&apos;s have a conversation. There are no sales pitches, no pressure, and no obligation to work together.</p>
-        <p style={{marginTop: '32px'}}>At worst, you&apos;ll spend 20 minutes speaking with me and leave with a fresh perspective. At best, you&apos;ll leave with more clarity, confidence, and a better sense of what comes next.</p>
+        <p style={{marginTop: '32px'}}>At best, you&apos;ll leave with more clarity, confidence, and a better sense of what comes next.</p>
         <p style={{marginTop: '32px'}}><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
       </div>
     </section>
