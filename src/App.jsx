@@ -284,8 +284,8 @@ function App() {
         <CaseStudies />
         <Services />
         <WhyIStarted />
-        <About />
         <Testimonials />
+        <About />
         <Closing />
         <FinalCTA />
       </main>
