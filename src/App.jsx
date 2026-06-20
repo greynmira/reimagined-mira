@@ -201,15 +201,15 @@ function CaseStudies() {
 
 const testimonials = [
   {
-    quote: 'Working with Mira gave me the clarity I didn\'t know I was missing. Within weeks I had a clear direction and the confidence to go after it.',
+    quote: 'Mira has a unique ability to balance practical career strategy with genuine curiosity about the person behind the career. I left feeling understood, challenged, and more confident in my next steps.',
     name: 'Client, Mid-Career Professional',
   },
   {
-    quote: 'Mira has a way of cutting through the noise and helping you see what actually matters. She doesn\'t just listen — she challenges you to think differently.',
+    quote: 'What stood out most was Mira\'s ability to challenge my thinking while still making me feel supported. She helped me see opportunities and perspectives I hadn\'t considered on my own.',
     name: 'Client, Healthcare Leader',
   },
   {
-    quote: 'I came in feeling stuck after 20 years in the same industry. I left with a real plan and the motivation to act on it.',
+    quote: 'Mira helped me refine my career story, strengthen how I positioned my experience, and approach networking and interviews with confidence. The advice was practical, actionable, and tailored to me.',
     name: 'Client, Experienced Professional',
   },
 ]
