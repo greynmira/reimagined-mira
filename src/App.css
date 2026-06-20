@@ -532,6 +532,46 @@
 }
 
 /* ============================
+   TESTIMONIALS
+   ============================ */
+.testimonials {
+  padding: var(--section-padding);
+  border-top: 1px solid var(--color-border);
+}
+
+.testimonials__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.testimonials__list {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.testimonial {
+  border-left: 2px solid var(--color-green);
+  padding-left: 24px;
+}
+
+.testimonial__quote {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.testimonial__name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* ============================
    CLOSING
    ============================ */
 .closing {

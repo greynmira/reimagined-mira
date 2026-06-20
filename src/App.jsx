@@ -199,6 +199,39 @@ function CaseStudies() {
   )
 }
 
+const testimonials = [
+  {
+    quote: 'Working with Mira gave me the clarity I didn\'t know I was missing. Within weeks I had a clear direction and the confidence to go after it.',
+    name: 'Client, Mid-Career Professional',
+  },
+  {
+    quote: 'Mira has a way of cutting through the noise and helping you see what actually matters. She doesn\'t just listen — she challenges you to think differently.',
+    name: 'Client, Healthcare Leader',
+  },
+  {
+    quote: 'I came in feeling stuck after 20 years in the same industry. I left with a real plan and the motivation to act on it.',
+    name: 'Client, Experienced Professional',
+  },
+]
+
+function Testimonials() {
+  return (
+    <section className="testimonials">
+      <div className="testimonials__inner">
+        <h2 className="section-headline">What It&apos;s Like to Work Together</h2>
+        <div className="testimonials__list">
+          {testimonials.map((t, i) => (
+            <div key={i} className="testimonial">
+              <p className="testimonial__quote">&ldquo;{t.quote}&rdquo;</p>
+              <p className="testimonial__name">{t.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Closing() {
   return (
     <section className="closing">
@@ -253,6 +286,7 @@ function App() {
         <Services />
         <WhyIStarted />
         <About />
+        <Testimonials />
         <Closing />
         <FinalCTA />
       </main>
