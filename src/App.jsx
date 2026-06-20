@@ -223,7 +223,6 @@ function Testimonials() {
           {testimonials.map((t, i) => (
             <div key={i} className="testimonial">
               <p className="testimonial__quote">&ldquo;{t.quote}&rdquo;</p>
-              <p className="testimonial__name">{t.name}</p>
             </div>
           ))}
         </div>
