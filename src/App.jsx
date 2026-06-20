@@ -218,7 +218,7 @@ function Testimonials() {
   return (
     <section className="testimonials">
       <div className="testimonials__inner">
-        <h2 className="section-headline">What It&apos;s Like to Work Together</h2>
+        <h2 className="section-headline">What It&apos;s Like to<br />Work Together</h2>
         <div className="testimonials__list">
           {testimonials.map((t, i) => (
             <div key={i} className="testimonial">
