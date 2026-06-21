@@ -287,11 +287,20 @@
 }
 
 .service-item__icon {
-  width: 28px;
-  height: 28px;
+  width: 18px;
+  height: 18px;
   color: var(--color-green);
-  margin-bottom: 10px;
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  flex-shrink: 0;
+  position: relative;
+  top: -1px;
+}
+
+.service-item__title {
+  display: flex;
+  align-items: center;
 }
 
 .service-item__list li {
