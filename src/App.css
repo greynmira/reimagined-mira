@@ -286,6 +286,14 @@
   margin: 0;
 }
 
+.service-item__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-green);
+  margin-bottom: 10px;
+  display: block;
+}
+
 .service-item__list li {
   font-size: 0.93rem;
   color: var(--color-text-muted);

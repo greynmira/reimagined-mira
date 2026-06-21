@@ -76,6 +76,33 @@ function Hero() {
   )
 }
 
+const serviceIcons = {
+  'Career Strategy': (
+    <svg className="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
+      <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
+      <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
+    </svg>
+  ),
+  'Networking': (
+    <svg className="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/>
+      <line x1="12" y1="7" x2="5" y2="17"/><line x1="12" y1="7" x2="19" y2="17"/><line x1="5" y1="19" x2="19" y2="19"/>
+    </svg>
+  ),
+  'Personal Brand': (
+    <svg className="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </svg>
+  ),
+  'Resilience & Change': (
+    <svg className="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V12"/><path d="M12 12C12 12 8 10 8 6a4 4 0 0 1 8 0c0 4-4 6-4 6z"/>
+      <path d="M12 12C12 12 16 10 16 6"/><path d="M9 22h6"/>
+    </svg>
+  ),
+}
+
 const services = [
   {
     title: 'Career Strategy',
@@ -103,6 +130,7 @@ function Services() {
         <div className="services__grid">
           {services.map((s, i) => (
             <div key={i} className="service-item">
+              {serviceIcons[s.title]}
               <h3 className="service-item__title">{s.title}</h3>
               <ul className="service-item__list">
                 {s.items.map((item, j) => (
