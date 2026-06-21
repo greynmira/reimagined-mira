@@ -365,6 +365,25 @@
   margin-bottom: 0;
 }
 
+.section-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-green);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.inline-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--color-green);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+  position: relative;
+  top: -1px;
+}
+
 .why-started__hook {
   color: var(--color-green);
   font-weight: 700;

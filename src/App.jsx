@@ -149,6 +149,10 @@ function WhyIStarted() {
   return (
     <section className="why-started">
       <div className="why-started__inner">
+        <svg className="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M9 18h6"/><path d="M10 22h4"/>
+          <path d="M12 2a7 7 0 0 1 7 7c0 2.64-1.46 4.93-3.6 6.17L15 17H9l-.4-1.83A7 7 0 0 1 12 2z"/>
+        </svg>
         <h2 className="section-headline">Why Reimagined Mira</h2>
         <p><strong className="why-started__hook">I&apos;m obsessed with career strategy:</strong> positioning, networking, personal brand, and career growth. <em>I dream about this stuff so you don&apos;t have to.</em></p>
         <p>I&apos;ve reinvented my own career more than once, from business school to clinical nutrition to digital health. Along the way, I&apos;ve learned that career paths are rarely linear and that feeling stuck doesn&apos;t have to be permanent.</p>
@@ -267,7 +271,7 @@ function Closing() {
     <section className="closing">
       <div className="closing__inner">
         <h2 className="section-headline">Enough Thinking</h2>
-        <p><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a free call</a> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
+        <p><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer"><svg className="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a free call</a> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
         <p style={{marginTop: '32px'}}>At worst, you&apos;ll spend 20 minutes talking to a new person and leave with a fresh perspective. At best, you&apos;ll leave with more clarity, confidence, and a better sense of what comes next.</p>
         <p style={{marginTop: '32px'}}><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
       </div>
