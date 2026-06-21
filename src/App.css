@@ -528,23 +528,9 @@
   line-height: 1.6;
 }
 
-.cs-icon {
-  width: 14px;
-  height: 14px;
-  color: var(--color-green);
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 6px;
-  flex-shrink: 0;
-  position: relative;
-  top: -1px;
-}
-
 .case-study__dl dt {
   font-weight: 600;
   color: var(--color-black);
-  display: flex;
-  align-items: center;
   white-space: nowrap;
 }
 
@@ -575,6 +561,15 @@
 .testimonial {
   border-left: 2px solid var(--color-green);
   padding-left: 24px;
+}
+
+.testimonial__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-green);
+  opacity: 0.5;
+  margin-bottom: 10px;
+  display: block;
 }
 
 .testimonial__quote {

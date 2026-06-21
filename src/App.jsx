@@ -215,9 +215,9 @@ function CaseStudies() {
               <div className="case-study__tag">{c.tag}</div>
               <h3 className="case-study__title">{c.title}</h3>
               <dl className="case-study__dl">
-                <dt><svg className="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Challenge</dt><dd>{c.challenge}</dd>
-                <dt><svg className="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>What We Worked On</dt><dd>{c.work}</dd>
-                <dt><svg className="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Outcome</dt><dd>{c.outcome}</dd>
+                <dt>Challenge</dt><dd>{c.challenge}</dd>
+                <dt>What We Worked On</dt><dd>{c.work}</dd>
+                <dt>Outcome</dt><dd>{c.outcome}</dd>
               </dl>
             </div>
           ))}
@@ -250,7 +250,10 @@ function Testimonials() {
         <div className="testimonials__list">
           {testimonials.map((t, i) => (
             <div key={i} className="testimonial">
-              <p className="testimonial__quote">&ldquo;{t.quote}&rdquo;</p>
+              <svg className="testimonial__icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 7H7C5.9 7 5 7.9 5 9v4c0 1.1.9 2 2 2h2v2H5v2h6V9h-2V7zm8 0h-4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h2v2h-4v2h6V9h-2V7z"/>
+              </svg>
+              <p className="testimonial__quote">{t.quote}</p>
             </div>
           ))}
         </div>
