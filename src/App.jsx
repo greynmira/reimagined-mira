@@ -233,15 +233,15 @@ function CaseStudies() {
 const testimonials = [
   {
     quote: 'Mira has a unique ability to balance practical career strategy with genuine curiosity about the person behind the career. I left feeling understood, challenged, and more confident in my next steps.',
-    name: 'Client, Mid-Career Professional',
+    name: 'Network Senior Engineer',
   },
   {
     quote: 'What stood out most was Mira\'s ability to challenge my thinking while still making me feel supported. She helped me see opportunities and perspectives I hadn\'t considered on my own.',
-    name: 'Client, Healthcare Leader',
+    name: 'Cyber Risk Director',
   },
   {
     quote: 'Mira helped me refine my career story, strengthen how I positioned my experience, and approach networking and interviews with confidence. The advice was practical, actionable, and tailored to me.',
-    name: 'Client, Experienced Professional',
+    name: 'Film & Media Studies Graduate',
   },
 ]
 
@@ -257,6 +257,7 @@ function Testimonials() {
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
               <p className="testimonial__quote">{t.quote}</p>
+              <p className="testimonial__name">{t.name}</p>
             </div>
           ))}
         </div>
