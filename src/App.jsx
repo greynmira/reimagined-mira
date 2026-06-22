@@ -44,7 +44,7 @@ function Nav() {
       <div className="nav__inner">
         <div className="nav__logo">Reimagined<br />by Mira <svg className="logo-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18.5 8.7 18.5 7a6.5 6.5 0 0 0-13 0c0 1.7.8 3.2 2 4.2.8.8 1.3 1.4 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
         <a href={CALENDLY_URL} className="btn-outline" target="_blank" rel="noopener noreferrer">
-          Book a free Discovery call
+          Book Your Free Discovery Call
         </a>
       </div>
     </nav>
@@ -68,7 +68,7 @@ function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Book a free Discovery call
+            Book Your Free Discovery Call
           </a>
         </div>
       </div>
@@ -291,7 +291,7 @@ function FinalCTA() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Book a free Discovery call
+          Book Your Free Discovery Call
         </a>
       </div>
     </section>
