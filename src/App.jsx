@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-const CALENDLY_URL = 'https://calendar.google.com/calendar/appointments'
+const CALENDLY_URL = 'https://calendar.app.google/wN8366ubbwmXKxxw8'
 
 function PasswordGate({ onUnlock }) {
   const [value, setValue] = useState('')
