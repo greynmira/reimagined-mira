@@ -282,7 +282,7 @@ function FinalCTA() {
   return (
     <section className="final-cta" id="contact">
       <div className="final-cta__inner">
-        <
+        <a
           href={CALENDLY_URL}
           className="btn-outline-light btn-primary--large"
           target="_blank"
