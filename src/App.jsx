@@ -254,11 +254,11 @@ function CaseStudies() {
 const testimonials = [
   {
     quote: 'Mira has a unique ability to balance practical career strategy with genuine curiosity about the person behind the career. I left feeling understood, challenged, and more confident in my next steps.',
-    name: 'Network Senior Engineer',
+    name: 'Senior Network Engineer',
   },
   {
     quote: 'What stood out most was Mira\'s ability to challenge my thinking while still making me feel supported. She helped me see opportunities and perspectives I hadn\'t considered on my own.',
-    name: 'Cyber Risk Director',
+    name: 'Director of Business Development',
   },
   {
     quote: 'Mira helped me refine my career story, strengthen how I positioned my experience, and approach networking and interviews with confidence. The advice was practical, actionable, and tailored to me.',
