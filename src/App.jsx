@@ -246,6 +246,7 @@ function CaseStudies() {
             </div>
           ))}
         </div>
+        <p className="case-studies__note">Details anonymized for confidentiality.</p>
       </div>
     </section>
   )
