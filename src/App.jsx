@@ -332,7 +332,6 @@ function App() {
 
   return (
     <>
-      <ScrollProgress />
       <Nav />
       <main>
         <Hero />
