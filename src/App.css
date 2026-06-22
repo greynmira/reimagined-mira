@@ -1,4 +1,23 @@
 /* ============================
+   SCROLL PROGRESS
+   ============================ */
+.scroll-track {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 3px;
+  height: 100vh;
+  background-color: var(--color-border);
+  z-index: 200;
+}
+
+.scroll-thumb {
+  width: 100%;
+  background-color: var(--color-green);
+  transition: height 0.05s linear;
+}
+
+/* ============================
    PASSWORD GATE
    ============================ */
 .gate {

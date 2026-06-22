@@ -1,7 +1,28 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 const CALENDLY_URL = 'https://calendar.app.google/wN8366ubbwmXKxxw8'
+
+function ScrollProgress() {
+  const [progress, setProgress] = useState(0)
+
+  useEffect(() => {
+    function handleScroll() {
+      const el = document.documentElement
+      const scrolled = el.scrollTop || document.body.scrollTop
+      const total = el.scrollHeight - el.clientHeight
+      setProgress(total > 0 ? (scrolled / total) * 100 : 0)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  return (
+    <div className="scroll-track">
+      <div className="scroll-thumb" style={{ height: `${progress}%` }} />
+    </div>
+  )
+}
 
 function PasswordGate({ onUnlock }) {
   const [value, setValue] = useState('')
@@ -311,6 +332,7 @@ function App() {
 
   return (
     <>
+      <ScrollProgress />
       <Nav />
       <main>
         <Hero />
