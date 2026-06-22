@@ -44,7 +44,7 @@ function Nav() {
       <div className="nav__inner">
         <div className="nav__logo">Reimagined<br />by Mira <svg className="logo-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18.5 8.7 18.5 7a6.5 6.5 0 0 0-13 0c0 1.7.8 3.2 2 4.2.8.8 1.3 1.4 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
         <a href={CALENDLY_URL} className="btn-outline" target="_blank" rel="noopener noreferrer">
-          Book your free Discovery Call
+          Book your Free Discovery Call
         </a>
       </div>
     </nav>
@@ -68,7 +68,7 @@ function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Book your free Discovery Call
+            Book your Free Discovery Call
           </a>
         </div>
       </div>
@@ -271,7 +271,7 @@ function Closing() {
       <div className="closing__inner">
         <svg className="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         <h2 className="section-headline">Enough Thinking</h2>
-        <p><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book your free Discovery Call</a> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
+        <p><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book your Free Discovery Call</a> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
         <p style={{marginTop: '32px'}}>At worst, you&apos;ll spend 20 minutes talking to a new person and leave with a fresh perspective. At best, you&apos;ll leave with more clarity, confidence, and a better sense of what comes next.</p>
         <p style={{marginTop: '32px'}}><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
       </div>
@@ -291,7 +291,7 @@ function FinalCTA() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Book your free Discovery Call
+          Book your Free Discovery Call
         </a>
       </div>
     </section>
