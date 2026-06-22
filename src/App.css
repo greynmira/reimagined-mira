@@ -16,6 +16,16 @@
   width: 100%;
 }
 
+.logo-bulb {
+  width: 14px;
+  height: 14px;
+  color: var(--color-green);
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
 .gate__logo {
   font-family: var(--font-sans);
   font-size: 1.1rem;
