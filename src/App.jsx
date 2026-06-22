@@ -274,9 +274,6 @@ function Testimonials() {
         <div className="testimonials__list">
           {testimonials.map((t, i) => (
             <div key={i} className="testimonial">
-              <svg className="testimonial__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
               <p className="testimonial__quote">{t.quote}</p>
               <p className="testimonial__name">{t.name}</p>
             </div>
