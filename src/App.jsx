@@ -148,8 +148,8 @@ const services = [
 
 const typewriterPhrases = [
   'earn more.',
-  'open more doors.',
-  'make your next career move.',
+  'land your next role.',
+  'navigate your next career move.',
   'build confidence.',
   'rebrand your professional story.',
 ]
@@ -157,8 +157,19 @@ const typewriterPhrases = [
 function TypewriterSection() {
   const [phraseIndex, setPhraseIndex] = useState(0)
   const [displayed, setDisplayed] = useState('')
-  const [phase, setPhase] = useState('typing') // 'typing' | 'erasing' | 'final-fade' | 'final'
-  const [opacity, setOpacity] = useState(1)
+  const [phase, setPhase] = useState('typing')
+  const [animOpacity, setAnimOpacity] = useState(1)
+
+  function replay() {
+    setPhrase(0)
+    setDisplayed('')
+    setAnimOpacity(1)
+    setPhase('typing')
+  }
+
+  function setPhrase(i) {
+    setPhraseIndex(i)
+  }
 
   useEffect(() => {
     const current = typewriterPhrases[phraseIndex]
@@ -180,7 +191,7 @@ function TypewriterSection() {
         setPhase('typing')
       }
     } else if (phase === 'final-fade') {
-      setOpacity(0)
+      setAnimOpacity(0)
       timeout = setTimeout(() => setPhase('final'), 700)
     }
 
@@ -191,13 +202,23 @@ function TypewriterSection() {
     return (
       <div className="typewriter-section__final">
         <p className="typewriter-section__final-line">I can be your trusted thought partner.</p>
-        <a href={CALENDLY_URL} className="typewriter-section__book-now" target="_blank" rel="noopener noreferrer">Book now.</a>
+        <a
+          href={CALENDLY_URL}
+          className="btn-primary btn-primary--large"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book your Free Discovery Call
+        </a>
+        <button className="typewriter-section__replay" onClick={replay}>
+          Replay prompts
+        </button>
       </div>
     )
   }
 
   return (
-    <div className="typewriter-section__animated" style={{ opacity, transition: 'opacity 0.7s ease' }}>
+    <div className="typewriter-section__animated" style={{ opacity: animOpacity, transition: 'opacity 0.7s ease' }}>
       <p className="typewriter-section__fixed">I can help you&hellip;</p>
       <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
         {displayed}<span className="typewriter-section__cursor" aria-hidden="true">|</span>
