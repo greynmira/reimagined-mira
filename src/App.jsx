@@ -1,11 +1,27 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 
 const CALENDLY_URL = 'https://calendar.app.google/wN8366ubbwmXKxxw8'
 
 function BulbIcon() {
+  const ref = useRef(null)
+  const [active, setActive] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setActive(false)
+        requestAnimationFrame(() => requestAnimationFrame(() => setActive(true)))
+      }
+    }, { threshold: 0.5 })
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
   return (
-    <span className="bulb-wrap" aria-hidden="true">
+    <span className={`bulb-wrap${active ? ' bulb-wrap--active' : ''}`} ref={ref} aria-hidden="true">
       <svg className="logo-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18.5 8.7 18.5 7a6.5 6.5 0 0 0-13 0c0 1.7.8 3.2 2 4.2.8.8 1.3 1.4 1.5 2.5"/>
         <path d="M9 18h6"/><path d="M10 22h4"/>
