@@ -85,16 +85,6 @@ function Hero() {
         <div className="hero__typewriter">
           <TypewriterSection />
         </div>
-        <div className="hero__cta">
-          <a
-            href={CALENDLY_URL}
-            className="btn-primary btn-primary--large"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book your Free Discovery Call
-          </a>
-        </div>
       </div>
     </section>
   )
@@ -201,7 +191,17 @@ function TypewriterSection() {
   if (phase === 'final') {
     return (
       <div className="typewriter-section__final">
-        <p className="typewriter-section__final-line">Let me be your trusted thought partner.</p>
+        <p className="typewriter-section__final-line">
+          Let me be your<br />trusted thought partner.
+        </p>
+        <a
+          href={CALENDLY_URL}
+          className="btn-primary btn-primary--large"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book your Free Discovery Call
+        </a>
         <button className="typewriter-section__replay" onClick={replay}>
           Click to replay prompts.
         </button>
@@ -210,12 +210,19 @@ function TypewriterSection() {
   }
 
   return (
-    <div className="typewriter-section__animated" style={{ opacity: animOpacity, transition: 'opacity 0.7s ease' }}>
-      <p className="typewriter-section__fixed">I can help you&hellip;</p>
-      <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
-        {displayed}<span className="typewriter-section__cursor" aria-hidden="true">|</span>
-      </p>
-    </div>
+    <>
+      <div className="typewriter-section__animated" style={{ opacity: animOpacity, transition: 'opacity 0.7s ease' }}>
+        <p className="typewriter-section__fixed">I can help you&hellip;</p>
+        <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
+          {displayed}<span className="typewriter-section__cursor" aria-hidden="true">|</span>
+        </p>
+      </div>
+      <div className="hero__cta" style={{ opacity: animOpacity, transition: 'opacity 0.7s ease' }}>
+        <a href={CALENDLY_URL} className="btn-primary btn-primary--large" target="_blank" rel="noopener noreferrer">
+          Book your Free Discovery Call
+        </a>
+      </div>
+    </>
   )
 }
 
