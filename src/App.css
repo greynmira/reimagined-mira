@@ -35,14 +35,63 @@
   width: 100%;
 }
 
+.bulb-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  top: -1px;
+}
+
 .logo-bulb {
   width: 14px;
   height: 14px;
   color: var(--color-green);
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
+  display: block;
+  animation: bulb-glow 1.6s ease 0.4s both;
+}
+
+@keyframes bulb-glow {
+  0%   { filter: none; }
+  35%  { filter: drop-shadow(0 0 4px rgba(255, 210, 100, 0.4)) drop-shadow(0 0 2px rgba(27, 67, 50, 0.25)); }
+  100% { filter: none; }
+}
+
+.bulb-spark {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(255, 210, 100, 0.9);
+  pointer-events: none;
+}
+
+.bulb-spark--1 {
+  top: -3px;
+  right: -3px;
+  animation: spark-fade 0.9s ease 0.55s both;
+}
+
+.bulb-spark--2 {
+  top: 0px;
+  left: -4px;
+  animation: spark-fade 0.9s ease 0.7s both;
+}
+
+.bulb-spark--3 {
+  bottom: 2px;
+  right: -4px;
+  animation: spark-fade 0.9s ease 0.62s both;
+}
+
+@keyframes spark-fade {
+  0%   { opacity: 0; transform: scale(0); }
+  35%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-bulb { animation: none; }
+  .bulb-spark { display: none; }
 }
 
 .gate__logo {

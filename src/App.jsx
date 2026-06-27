@@ -3,6 +3,20 @@ import './App.css'
 
 const CALENDLY_URL = 'https://calendar.app.google/wN8366ubbwmXKxxw8'
 
+function BulbIcon() {
+  return (
+    <span className="bulb-wrap" aria-hidden="true">
+      <svg className="logo-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18.5 8.7 18.5 7a6.5 6.5 0 0 0-13 0c0 1.7.8 3.2 2 4.2.8.8 1.3 1.4 1.5 2.5"/>
+        <path d="M9 18h6"/><path d="M10 22h4"/>
+      </svg>
+      <span className="bulb-spark bulb-spark--1" />
+      <span className="bulb-spark bulb-spark--2" />
+      <span className="bulb-spark bulb-spark--3" />
+    </span>
+  )
+}
+
 function ScrollProgress() {
   const [progress, setProgress] = useState(0)
 
@@ -41,7 +55,7 @@ function PasswordGate({ onUnlock }) {
   return (
     <div className="gate">
       <div className="gate__inner">
-        <div className="gate__logo">Reimagined by Mira <svg className="logo-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18.5 8.7 18.5 7a6.5 6.5 0 0 0-13 0c0 1.7.8 3.2 2 4.2.8.8 1.3 1.4 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
+        <div className="gate__logo">Reimagined by Mira <BulbIcon /></div>
         <form className="gate__form" onSubmit={handleSubmit}>
           <input
             className={`gate__input${error ? ' gate__input--error' : ''}`}
@@ -63,7 +77,7 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="nav__inner">
-        <div className="nav__logo">Reimagined<br />by Mira <svg className="logo-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18.5 8.7 18.5 7a6.5 6.5 0 0 0-13 0c0 1.7.8 3.2 2 4.2.8.8 1.3 1.4 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
+        <div className="nav__logo">Reimagined<br />by Mira <BulbIcon /></div>
         <a href={CALENDLY_URL} className="btn-outline" target="_blank" rel="noopener noreferrer">
           Book your Free Discovery Call
         </a>
@@ -400,7 +414,7 @@ function FinalCTA() {
 function Footer() {
   return (
     <footer className="footer">
-      <p className="footer__copy">&copy; 2026 Reimagined by Mira <svg className="logo-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18.5 8.7 18.5 7a6.5 6.5 0 0 0-13 0c0 1.7.8 3.2 2 4.2.8.8 1.3 1.4 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></p>
+      <p className="footer__copy">&copy; 2026 Reimagined by Mira <BulbIcon /></p>
     </footer>
   )
 }
