@@ -152,30 +152,25 @@ const typewriterPhrases = [
   'change fields.',
   'build confidence.',
   'rebrand your story.',
-  'make your next move clearer.',
-  'work with a trusted thought partner.',
 ]
-
-const FINAL_PHRASE = 'work with a trusted thought partner, book now.'
 
 function TypewriterSection() {
   const [phraseIndex, setPhraseIndex] = useState(0)
   const [displayed, setDisplayed] = useState('')
-  const [phase, setPhase] = useState('typing')
-  const [done, setDone] = useState(false)
+  const [phase, setPhase] = useState('typing') // 'typing' | 'erasing' | 'final-fade' | 'final'
+  const [opacity, setOpacity] = useState(1)
 
   useEffect(() => {
-    if (done) return
-    const current = phraseIndex < typewriterPhrases.length ? typewriterPhrases[phraseIndex] : FINAL_PHRASE
+    const current = typewriterPhrases[phraseIndex]
     let timeout
 
     if (phase === 'typing') {
       if (displayed.length < current.length) {
         timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 55)
-      } else if (phraseIndex < typewriterPhrases.length) {
+      } else if (phraseIndex < typewriterPhrases.length - 1) {
         timeout = setTimeout(() => setPhase('erasing'), 3000)
       } else {
-        setDone(true)
+        timeout = setTimeout(() => setPhase('final-fade'), 3000)
       }
     } else if (phase === 'erasing') {
       if (displayed.length > 0) {
@@ -184,18 +179,30 @@ function TypewriterSection() {
         setPhraseIndex(phraseIndex + 1)
         setPhase('typing')
       }
+    } else if (phase === 'final-fade') {
+      setOpacity(0)
+      timeout = setTimeout(() => setPhase('final'), 700)
     }
 
     return () => clearTimeout(timeout)
-  }, [displayed, phase, phraseIndex, done])
+  }, [displayed, phase, phraseIndex])
+
+  if (phase === 'final') {
+    return (
+      <div className="typewriter-section__final">
+        <p className="typewriter-section__final-line">I can be your trusted thought partner.</p>
+        <a href={CALENDLY_URL} className="typewriter-section__book-now" target="_blank" rel="noopener noreferrer">Book now.</a>
+      </div>
+    )
+  }
 
   return (
-    <>
+    <div className="typewriter-section__animated" style={{ opacity, transition: 'opacity 0.7s ease' }}>
       <p className="typewriter-section__fixed">I can help you&hellip;</p>
       <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
-        {displayed}{!done && <span className="typewriter-section__cursor" aria-hidden="true">|</span>}
+        {displayed}<span className="typewriter-section__cursor" aria-hidden="true">|</span>
       </p>
-    </>
+    </div>
   )
 }
 

@@ -714,8 +714,32 @@
   50% { opacity: 0; }
 }
 
-.typewriter-section__cta {
-  margin-top: 0;
+.typewriter-section__final {
+  text-align: left;
+}
+
+.typewriter-section__final-line {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--color-green);
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.typewriter-section__book-now {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  line-height: 1.2;
+  display: block;
+}
+
+.typewriter-section__book-now:hover {
+  color: var(--color-green);
 }
 
 /* ============================
