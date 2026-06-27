@@ -3,7 +3,7 @@ import './App.css'
 
 const CALENDLY_URL = 'https://calendar.app.google/wN8366ubbwmXKxxw8'
 
-function BulbIcon() {
+function BulbIcon({ large = false }) {
   const ref = useRef(null)
   const [active, setActive] = useState(false)
 
@@ -21,8 +21,8 @@ function BulbIcon() {
   }, [])
 
   return (
-    <span className={`bulb-wrap${active ? ' bulb-wrap--active' : ''}`} ref={ref} aria-hidden="true">
-      <svg className="logo-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <span className={`bulb-wrap${large ? ' bulb-wrap--large' : ''}${active ? ' bulb-wrap--active' : ''}`} ref={ref} aria-hidden="true">
+      <svg className={large ? 'section-icon' : 'logo-bulb'} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18.5 8.7 18.5 7a6.5 6.5 0 0 0-13 0c0 1.7.8 3.2 2 4.2.8.8 1.3 1.4 1.5 2.5"/>
         <path d="M9 18h6"/><path d="M10 22h4"/>
       </svg>
@@ -186,7 +186,7 @@ const typewriterPhrases = [
 function TypewriterSection({ onDone, onReplay }) {
   const [phraseIndex, setPhraseIndex] = useState(0)
   const [displayed, setDisplayed] = useState('')
-  const [phase, setPhase] = useState('typing')
+  const [phase, setPhase] = useState('waiting')
   const [animOpacity, setAnimOpacity] = useState(1)
 
   function replay() {
@@ -201,7 +201,9 @@ function TypewriterSection({ onDone, onReplay }) {
     const current = typewriterPhrases[phraseIndex]
     let timeout
 
-    if (phase === 'typing') {
+    if (phase === 'waiting') {
+      timeout = setTimeout(() => setPhase('typing'), 2000)
+    } else if (phase === 'typing') {
       if (displayed.length < current.length) {
         timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 55)
       } else if (phraseIndex < typewriterPhrases.length - 1) {
@@ -281,10 +283,7 @@ function WhyIStarted() {
   return (
     <section className="why-started">
       <div className="why-started__inner">
-        <svg className="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18.5 8.7 18.5 7a6.5 6.5 0 0 0-13 0c0 1.7.8 3.2 2 4.2.8.8 1.3 1.4 1.5 2.5"/>
-          <path d="M9 18h6"/><path d="M10 22h4"/>
-        </svg>
+        <BulbIcon large />
         <h2 className="section-headline">Why Reimagined Mira</h2>
         <p><strong className="why-started__hook">I&apos;m obsessed with career strategy:</strong> positioning, networking, personal brand, and career growth. <em>I dream about this stuff so you don&apos;t have to.</em></p>
         <p>I&apos;ve reinvented my own career more than once, from business school to clinical nutrition to digital health. Along the way, I&apos;ve learned that career paths are rarely linear and that feeling stuck doesn&apos;t have to be permanent.</p>
