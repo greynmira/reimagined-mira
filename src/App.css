@@ -206,17 +206,18 @@
   margin-bottom: 20px;
 }
 
-/* Stage 1 — heading enters view: reveal + subtle color shift toward green */
+/* Stage 1 — heading enters view: reveal straight into green + glow */
 .closing-headline--visible {
   opacity: 1;
   transform: translateY(0);
-  color: #2d4a3e;
+  color: var(--color-green);
+  text-shadow: 0 0 28px rgba(45, 106, 79, 0.45), 0 0 10px rgba(45, 106, 79, 0.28);
 }
 
-/* Stage 2 — sparkles arrive: full brand green + glow, stays permanently */
+/* Stage 2 — sparkles arrive: intensify the glow, stays permanently */
 .closing-headline--glowing {
   color: var(--color-green);
-  text-shadow: 0 0 28px rgba(45, 106, 79, 0.5), 0 0 10px rgba(45, 106, 79, 0.3);
+  text-shadow: 0 0 36px rgba(45, 106, 79, 0.65), 0 0 14px rgba(45, 106, 79, 0.4);
 }
 
 @media (prefers-reduced-motion: reduce) {
