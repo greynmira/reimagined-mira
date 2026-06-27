@@ -183,8 +183,8 @@
   animation-duration: 2s;
 }
 
-/* "Enough Thinking" heading — centered + italic only after sparks arrive */
-.closing-headline--italic {
+/* "Enough Thinking" heading — always italic */
+.closing-headline {
   font-style: italic;
 }
 
