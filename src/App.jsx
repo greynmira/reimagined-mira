@@ -1,22 +1,7 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 const CALENDLY_URL = 'https://calendar.app.google/wN8366ubbwmXKxxw8'
-
-function useInView(threshold = 0.15) {
-  const ref = useRef(null)
-  const [visible, setVisible] = useState(false)
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { setVisible(true); obs.disconnect() }
-    }, { threshold })
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [threshold])
-  return [ref, visible]
-}
 
 function ScrollProgress() {
   const [progress, setProgress] = useState(0)
@@ -93,15 +78,11 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero__inner">
-        <h1 className="hero__headline hero__headline--enter">
+        <h1 className="hero__headline">
           Career growth doesn&apos;t have to cost your authenticity.
         </h1>
-        <p className="hero__subtext hero__subtext--enter">
-          I help ambitious professionals build{' '}
-          <span className="hero__emphasis">careers</span>,{' '}
-          <span className="hero__emphasis">networks</span>, and{' '}
-          <span className="hero__emphasis">personal brands</span> that create{' '}
-          <span className="hero__emphasis">opportunity</span> without burning themselves out.
+        <p className="hero__subtext">
+          I help ambitious professionals build careers, networks, and personal brands that create opportunity without burning themselves out.
         </p>
         <div className="hero__typewriter">
           <TypewriterSection onDone={() => setTypewriterDone(true)} onReplay={() => setTypewriterDone(false)} />
@@ -245,14 +226,13 @@ function TypewriterSection({ onDone, onReplay }) {
 }
 
 function Services() {
-  const [ref, visible] = useInView(0.1)
   return (
-    <section className="services" ref={ref}>
+    <section className="services">
       <div className="services__inner">
         <h2 className="section-headline">What I Help With</h2>
         <div className="services__grid">
           {services.map((s, i) => (
-            <div key={i} className={`service-item reveal${visible ? ' reveal--visible' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
+            <div key={i} className="service-item">
               <h3 className="service-item__title">{serviceIcons[s.title]}{s.title}</h3>
               <ul className="service-item__list">
                 {s.items.map((item, j) => (
@@ -268,11 +248,10 @@ function Services() {
 }
 
 function WhyIStarted() {
-  const [ref, visible] = useInView(0.1)
   return (
-    <section className="why-started" ref={ref}>
+    <section className="why-started">
       <div className="why-started__inner">
-        <svg className={`section-icon section-icon--glow${visible ? ' reveal--visible' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18.5 8.7 18.5 7a6.5 6.5 0 0 0-13 0c0 1.7.8 3.2 2 4.2.8.8 1.3 1.4 1.5 2.5"/>
           <path d="M9 18h6"/><path d="M10 22h4"/>
         </svg>
@@ -331,29 +310,6 @@ const caseStudies = [
   },
 ]
 
-function CaseStudyCard({ c }) {
-  const [ref, visible] = useInView(0.1)
-  return (
-    <div ref={ref} className="case-study">
-      <div className={`reveal${visible ? ' reveal--visible' : ''}`} style={{ transitionDelay: '0ms' }}>
-        <div className="case-study__tag">{c.tag}</div>
-        <h3 className="case-study__title">{c.title}</h3>
-      </div>
-      <dl className="case-study__dl">
-        <div className={`reveal${visible ? ' reveal--visible' : ''}`} style={{ transitionDelay: '150ms' }}>
-          <dt>Challenge</dt><dd>{c.challenge}</dd>
-        </div>
-        <div className={`reveal${visible ? ' reveal--visible' : ''}`} style={{ transitionDelay: '280ms' }}>
-          <dt>What We Worked On</dt><dd>{c.work}</dd>
-        </div>
-        <div className={`reveal${visible ? ' reveal--visible' : ''}`} style={{ transitionDelay: '410ms' }}>
-          <dt>Outcome</dt><dd>{c.outcome}</dd>
-        </div>
-      </dl>
-    </div>
-  )
-}
-
 function CaseStudies() {
   return (
     <section className="case-studies">
@@ -361,7 +317,15 @@ function CaseStudies() {
         <h2 className="section-headline">Case Studies</h2>
         <div className="case-studies__list">
           {caseStudies.map((c, i) => (
-            <CaseStudyCard key={i} c={c} />
+            <div key={i} className="case-study">
+              <div className="case-study__tag">{c.tag}</div>
+              <h3 className="case-study__title">{c.title}</h3>
+              <dl className="case-study__dl">
+                <dt>Challenge</dt><dd>{c.challenge}</dd>
+                <dt>What We Worked On</dt><dd>{c.work}</dd>
+                <dt>Outcome</dt><dd>{c.outcome}</dd>
+              </dl>
+            </div>
           ))}
         </div>
         <p className="case-studies__note">Details anonymized for confidentiality.</p>
@@ -385,16 +349,6 @@ const testimonials = [
   },
 ]
 
-function TestimonialCard({ t, delay }) {
-  const [ref, visible] = useInView(0.1)
-  return (
-    <div ref={ref} className={`testimonial reveal${visible ? ' reveal--visible' : ''}`} style={{ transitionDelay: `${delay}ms` }}>
-      <p className="testimonial__quote">{t.quote}</p>
-      <p className="testimonial__name">{t.name}</p>
-    </div>
-  )
-}
-
 function Testimonials() {
   return (
     <section className="testimonials">
@@ -402,7 +356,10 @@ function Testimonials() {
         <h2 className="section-headline">What It&apos;s Like to<br />Work Together</h2>
         <div className="testimonials__list">
           {testimonials.map((t, i) => (
-            <TestimonialCard key={i} t={t} delay={i * 150} />
+            <div key={i} className="testimonial">
+              <p className="testimonial__quote">{t.quote}</p>
+              <p className="testimonial__name">{t.name}</p>
+            </div>
           ))}
         </div>
       </div>
@@ -411,28 +368,25 @@ function Testimonials() {
 }
 
 function Closing() {
-  const [ref, visible] = useInView(0.15)
   return (
-    <section className="closing" ref={ref}>
+    <section className="closing">
       <div className="closing__inner">
-        <svg className={`section-icon section-icon--glow${visible ? ' reveal--visible' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <h2 className={`section-headline reveal${visible ? ' reveal--visible' : ''}`} style={{ transitionDelay: '100ms' }}>Enough Thinking</h2>
-        <p className={`reveal${visible ? ' reveal--visible' : ''}`} style={{ transitionDelay: '220ms' }}><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book your Free Discovery Call</a> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
-        <p className={`reveal${visible ? ' reveal--visible' : ''}`} style={{ marginTop: '32px', transitionDelay: '340ms' }}><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
+        <svg className="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <h2 className="section-headline">Enough Thinking</h2>
+        <p><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book your Free Discovery Call</a> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
+        <p style={{marginTop: '32px'}}><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
       </div>
     </section>
   )
 }
 
 function FinalCTA() {
-  const [ref, visible] = useInView(0.2)
   return (
-    <section className="final-cta" id="contact" ref={ref}>
+    <section className="final-cta" id="contact">
       <div className="final-cta__inner">
         <a
           href={CALENDLY_URL}
-          className={`btn-outline-light btn-primary--large reveal${visible ? ' reveal--visible' : ''}`}
-          style={{ transitionDelay: '100ms' }}
+          className="btn-outline-light btn-primary--large"
           target="_blank"
           rel="noopener noreferrer"
         >
