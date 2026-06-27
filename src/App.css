@@ -186,7 +186,6 @@
 /* "Enough Thinking" heading — centered + italic only after sparks arrive */
 .closing-headline--italic {
   font-style: italic;
-  text-align: center;
 }
 
 .closing-headline--glowing {
