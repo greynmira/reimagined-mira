@@ -43,13 +43,16 @@ function BulbIcon({ large = false, onActive }) {
 
 function SparkFlight({ bulbRect, dotRects }) {
   if (!bulbRect) return null
-  const sx = bulbRect.left + bulbRect.width / 2
+  const cx = bulbRect.left + bulbRect.width / 2
   const sy = bulbRect.top + bulbRect.height / 2
+  // Fan start positions slightly so sparks spread from the bulb before converging
+  const startOffsets = [-7, 0, 7]
 
   return createPortal(
     <>
       {dotRects.map((dotRect, i) => {
         if (!dotRect) return null
+        const sx = cx + startOffsets[i]
         const ex = dotRect.left + dotRect.width / 2
         const ey = dotRect.top + dotRect.height / 2
         return (
@@ -61,7 +64,7 @@ function SparkFlight({ bulbRect, dotRects }) {
               top: `${sy}px`,
               '--ex': `${ex - sx}px`,
               '--ey': `${ey - sy}px`,
-              animationDelay: `${i * 100}ms`,
+              animationDelay: `${i * 180}ms`,
             }}
           />
         )
@@ -297,8 +300,8 @@ function TypewriterSection({ onDone, onReplay }) {
 
       setSparkFlight({ bulbRect, dotRects })
 
-      // Reveal each dot as its spark arrives (75% of 2.4s = 1800ms travel + 160ms stagger)
-      const arrivalBase = 1800
+      // Reveal each dot as its spark arrives (75% of 2s = 1500ms + 180ms stagger)
+      const arrivalBase = 1500
       dotRefs.forEach((_, i) => {
         setTimeout(() => {
           setDotsRevealed(prev => {
@@ -306,14 +309,14 @@ function TypewriterSection({ onDone, onReplay }) {
             next[i] = true
             return next
           })
-        }, arrivalBase + i * 160)
+        }, arrivalBase + i * 180)
       })
 
       // Start typing after all three dots have landed and sparks finish fading
       setTimeout(() => {
         setSparkFlight(null)
         setPhase('typing')
-      }, arrivalBase + 2 * 160 + 520)
+      }, arrivalBase + 2 * 180 + 520)
     }
     return () => { ctx.handlerRef.current = null }
   }, [])
