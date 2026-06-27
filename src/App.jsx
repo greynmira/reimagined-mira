@@ -193,16 +193,6 @@ function TypewriterSection() {
         <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
           {displayed}{!done && <span className="typewriter-section__cursor" aria-hidden="true">|</span>}
         </p>
-        <div className="typewriter-section__cta">
-          <a
-            href={CALENDLY_URL}
-            className="btn-primary btn-primary--large"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book your Free Discovery Call
-          </a>
-        </div>
       </div>
     </section>
   )
