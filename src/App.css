@@ -192,7 +192,8 @@
   transform: translateY(16px);
   transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-              color 1.4s ease;
+              color 1.4s ease,
+              text-shadow 1.4s ease;
 }
 
 /* Short green accent line above heading */
@@ -212,9 +213,10 @@
   color: #2d4a3e;
 }
 
-/* Stage 2 — sparkles arrive: full brand green, stays permanently */
+/* Stage 2 — sparkles arrive: full brand green + glow, stays permanently */
 .closing-headline--glowing {
   color: var(--color-green);
+  text-shadow: 0 0 28px rgba(45, 106, 79, 0.5), 0 0 10px rgba(45, 106, 79, 0.3);
 }
 
 @media (prefers-reduced-motion: reduce) {
