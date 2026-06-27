@@ -178,9 +178,35 @@
   100% { opacity: 0;    transform: translate(calc(-50% + var(--ex)), calc(-50% + var(--ey))) scale(0.2); }
 }
 
-/* "Enough Thinking" heading — always italic */
+/* "Enough Thinking" heading — prominent, editorial, revealed on scroll */
 .closing-headline {
-  font-style: italic;
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 700;
+  color: var(--color-black);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-top: 0;
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Short green accent line above heading */
+.closing-headline::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--color-green);
+  margin-bottom: 20px;
+}
+
+.closing-headline--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .closing-headline--glowing {
@@ -189,9 +215,17 @@
 
 @keyframes closing-heading-glow {
   0%   { text-shadow: none; }
-  15%  { text-shadow: 0 0 20px rgba(45, 106, 79, 0.5), 0 0 8px rgba(45, 106, 79, 0.3); }
-  50%  { text-shadow: 0 0 14px rgba(45, 106, 79, 0.28); }
+  15%  { text-shadow: 0 0 20px rgba(45, 106, 79, 0.45), 0 0 8px rgba(45, 106, 79, 0.28); }
+  50%  { text-shadow: 0 0 12px rgba(45, 106, 79, 0.22); }
   100% { text-shadow: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .closing-headline {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Animated dots in "I can help you…" */
@@ -841,12 +875,12 @@
    CLOSING
    ============================ */
 .closing {
-  padding: var(--section-padding);
+  padding: 72px 24px 64px;
   border-top: 1px solid var(--color-border);
 }
 
 .closing__inner {
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto;
 }
 

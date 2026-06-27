@@ -544,8 +544,24 @@ function Testimonials() {
 function Closing() {
   const ctx = useContext(SparkCtx)
   const headingRef = useRef(null)
+  const sectionRef = useRef(null)
+  const [inView, setInView] = useState(false)
   const [sparkFlight, setSparkFlight] = useState(null)
   const [glowing, setGlowing] = useState(false)
+
+  // Reveal heading when section scrolls into view
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setInView(true)
+        obs.disconnect()
+      }
+    }, { threshold: 0.25 })
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
 
   useEffect(() => {
     if (!ctx) return
@@ -563,7 +579,6 @@ function Closing() {
 
       setSparkFlight({ bulbRect, headingRect })
 
-      // Sparks arrive ~1.8s after launch; glow starts on arrival
       setTimeout(() => {
         setSparkFlight(null)
         setGlowing(true)
@@ -574,15 +589,14 @@ function Closing() {
   }, [])
 
   return (
-    <section className="closing">
+    <section className="closing" ref={sectionRef}>
       <div className="closing__inner">
         {sparkFlight && (
           <ClosingSparkFlight bulbRect={sparkFlight.bulbRect} headingRect={sparkFlight.headingRect} />
         )}
-        <svg className="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         <h2
           ref={headingRef}
-          className={`section-headline closing-headline${glowing ? ' closing-headline--glowing' : ''}`}
+          className={`closing-headline${inView ? ' closing-headline--visible' : ''}${glowing ? ' closing-headline--glowing' : ''}`}
         >
           Enough Thinking
         </h2>
