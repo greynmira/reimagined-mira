@@ -202,14 +202,6 @@ function TypewriterSection() {
     return (
       <div className="typewriter-section__final">
         <p className="typewriter-section__final-line">Let me be your trusted thought partner.</p>
-        <a
-          href={CALENDLY_URL}
-          className="btn-primary btn-primary--large"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Book your Free Discovery Call
-        </a>
         <button className="typewriter-section__replay" onClick={replay}>
           Replay prompts
         </button>
