@@ -676,6 +676,58 @@
 }
 
 /* ============================
+   TYPEWRITER SECTION
+   ============================ */
+.typewriter-section {
+  background-color: var(--color-white);
+  padding: 80px 24px;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.typewriter-section__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.typewriter-section__fixed {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.typewriter-section__phrase {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--color-green);
+  margin: 0 0 48px 0;
+  min-height: 3.4rem;
+  line-height: 1.2;
+}
+
+.typewriter-section__cursor {
+  display: inline-block;
+  color: var(--color-green);
+  font-weight: 300;
+  margin-left: 2px;
+  animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter-section__cta {
+  margin-top: 0;
+}
+
+/* ============================
    FINAL CTA
    ============================ */
 .final-cta {
@@ -834,5 +886,14 @@
   .section-headline {
     font-size: 1.6rem;
     margin-bottom: 20px;
+  }
+
+  .typewriter-section__fixed {
+    font-size: 2rem;
+  }
+
+  .typewriter-section__phrase {
+    font-size: 2rem;
+    min-height: 2.6rem;
   }
 }

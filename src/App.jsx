@@ -143,6 +143,65 @@ const services = [
   },
 ]
 
+const typewriterPhrases = [
+  'earn more.',
+  'get interviews.',
+  'change fields.',
+  'build confidence.',
+  'rebrand your story.',
+  'make your next move clearer.',
+  'work with a trusted thought partner.',
+]
+
+function TypewriterSection() {
+  const [phraseIndex, setPhraseIndex] = useState(0)
+  const [displayed, setDisplayed] = useState('')
+  const [phase, setPhase] = useState('typing')
+
+  useEffect(() => {
+    const current = typewriterPhrases[phraseIndex]
+    let timeout
+
+    if (phase === 'typing') {
+      if (displayed.length < current.length) {
+        timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 55)
+      } else {
+        timeout = setTimeout(() => setPhase('erasing'), 3000)
+      }
+    } else if (phase === 'erasing') {
+      if (displayed.length > 0) {
+        timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 30)
+      } else {
+        setPhraseIndex((phraseIndex + 1) % typewriterPhrases.length)
+        setPhase('typing')
+      }
+    }
+
+    return () => clearTimeout(timeout)
+  }, [displayed, phase, phraseIndex])
+
+  return (
+    <section className="typewriter-section">
+      <div className="typewriter-section__inner">
+        <p className="typewriter-section__fixed">I can help you&hellip;</p>
+        <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
+          {displayed}<span className="typewriter-section__cursor" aria-hidden="true">|</span>
+        </p>
+        <div className="typewriter-section__cta">
+          <a
+            href={CALENDLY_URL}
+            className="btn-primary btn-primary--large"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book your Free Discovery Call
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Services() {
   return (
     <section className="services">
@@ -333,6 +392,7 @@ function App() {
       <Nav />
       <main>
         <Hero />
+        <TypewriterSection />
         <CaseStudies />
         <Services />
         <WhyIStarted />
