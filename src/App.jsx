@@ -387,10 +387,6 @@ function Footer() {
 }
 
 function App() {
-  const [unlocked, setUnlocked] = useState(false)
-
-  if (!unlocked) return <PasswordGate onUnlock={() => setUnlocked(true)} />
-
   return (
     <>
       <Nav />
