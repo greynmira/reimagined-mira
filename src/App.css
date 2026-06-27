@@ -190,8 +190,11 @@
   margin-bottom: 28px;
   opacity: 0;
   transform: translateY(16px);
+  text-shadow: none;
+  /* All three properties transition together for a unified reveal */
   transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              text-shadow 1.4s ease;
 }
 
 /* Short green accent line above heading */
@@ -204,20 +207,16 @@
   margin-bottom: 20px;
 }
 
+/* Stage 1 — heading enters view: reveal + subtle ambient glow */
 .closing-headline--visible {
   opacity: 1;
   transform: translateY(0);
+  text-shadow: 0 0 40px rgba(45, 106, 79, 0.16), 0 0 16px rgba(45, 106, 79, 0.09);
 }
 
+/* Stage 2 — sparkles arrive: full glow, stays permanently */
 .closing-headline--glowing {
-  animation: closing-heading-glow 3.6s ease forwards;
-}
-
-@keyframes closing-heading-glow {
-  0%   { text-shadow: none; }
-  15%  { text-shadow: 0 0 20px rgba(45, 106, 79, 0.45), 0 0 8px rgba(45, 106, 79, 0.28); }
-  50%  { text-shadow: 0 0 12px rgba(45, 106, 79, 0.22); }
-  100% { text-shadow: none; }
+  text-shadow: 0 0 28px rgba(45, 106, 79, 0.42), 0 0 12px rgba(45, 106, 79, 0.26);
 }
 
 @media (prefers-reduced-motion: reduce) {
