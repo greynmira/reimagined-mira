@@ -201,7 +201,7 @@ function TypewriterSection() {
   if (phase === 'final') {
     return (
       <div className="typewriter-section__final">
-        <p className="typewriter-section__final-line">I can be your trusted thought partner.</p>
+        <p className="typewriter-section__final-line">Let me be your trusted thought partner.</p>
         <a
           href={CALENDLY_URL}
           className="btn-primary btn-primary--large"
