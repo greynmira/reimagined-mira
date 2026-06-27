@@ -203,7 +203,7 @@ function TypewriterSection() {
       <div className="typewriter-section__final">
         <p className="typewriter-section__final-line">Let me be your trusted thought partner.</p>
         <button className="typewriter-section__replay" onClick={replay}>
-          Replay prompts
+          Click to replay prompts.
         </button>
       </div>
     )
