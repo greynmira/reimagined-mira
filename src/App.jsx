@@ -71,6 +71,37 @@ function SparkFlight({ bulbRect, dotRects }) {
   )
 }
 
+function ClosingSparkFlight({ bulbRect, headingRect }) {
+  if (!bulbRect || !headingRect) return null
+  const sx = bulbRect.left + bulbRect.width / 2
+  const sy = bulbRect.top + bulbRect.height / 2
+
+  // 3 sparks spread across the heading width
+  const targets = [0.2, 0.5, 0.8].map(frac => ({
+    x: headingRect.left + headingRect.width * frac,
+    y: headingRect.top + headingRect.height / 2,
+  }))
+
+  return createPortal(
+    <>
+      {targets.map((target, i) => (
+        <span
+          key={i}
+          className="spark-flight spark-flight--slow"
+          style={{
+            left: `${sx}px`,
+            top: `${sy}px`,
+            '--ex': `${target.x - sx}px`,
+            '--ey': `${target.y - sy}px`,
+            animationDelay: `${i * 180}ms`,
+          }}
+        />
+      ))}
+    </>,
+    document.body
+  )
+}
+
 function ScrollProgress() {
   const [progress, setProgress] = useState(0)
 
@@ -508,11 +539,50 @@ function Testimonials() {
 }
 
 function Closing() {
+  const ctx = useContext(SparkCtx)
+  const headingRef = useRef(null)
+  const [sparkFlight, setSparkFlight] = useState(null)
+  const [glowing, setGlowing] = useState(false)
+
+  useEffect(() => {
+    if (!ctx) return
+    ctx.closingHandlerRef.current = (bulbEl) => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      if (prefersReduced) {
+        setGlowing(true)
+        setTimeout(() => setGlowing(false), 3200)
+        return
+      }
+
+      const bulbRect = bulbEl.getBoundingClientRect()
+      const headingRect = headingRef.current?.getBoundingClientRect()
+      if (!headingRect) return
+
+      setSparkFlight({ bulbRect, headingRect })
+
+      // Sparks travel ~2s (slowest spark has 360ms delay + 2s duration, arrives at 72% ≈ 1.8s)
+      setTimeout(() => {
+        setSparkFlight(null)
+        setGlowing(true)
+        setTimeout(() => setGlowing(false), 3200)
+      }, 2000)
+    }
+    return () => { ctx.closingHandlerRef.current = null }
+  }, [])
+
   return (
     <section className="closing">
       <div className="closing__inner">
+        {sparkFlight && (
+          <ClosingSparkFlight bulbRect={sparkFlight.bulbRect} headingRect={sparkFlight.headingRect} />
+        )}
         <svg className="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <h2 className="section-headline">Enough Thinking</h2>
+        <h2
+          ref={headingRef}
+          className={`section-headline${glowing ? ' closing-headline--glowing' : ''}`}
+        >
+          Enough Thinking
+        </h2>
         <p><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book your Free Discovery Call</a> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
         <p style={{marginTop: '32px'}}><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
       </div>
@@ -538,18 +608,25 @@ function FinalCTA() {
 }
 
 function Footer() {
+  const ctx = useContext(SparkCtx)
+
+  function handleBulbActive(el) {
+    if (ctx?.closingHandlerRef?.current) ctx.closingHandlerRef.current(el)
+  }
+
   return (
     <footer className="footer">
-      <p className="footer__copy">&copy; 2026 Reimagined by Mira <BulbIcon /></p>
+      <p className="footer__copy">&copy; 2026 Reimagined by Mira <BulbIcon onActive={handleBulbActive} /></p>
     </footer>
   )
 }
 
 function App() {
   const handlerRef = useRef(null)
+  const closingHandlerRef = useRef(null)
 
   return (
-    <SparkCtx.Provider value={{ handlerRef }}>
+    <SparkCtx.Provider value={{ handlerRef, closingHandlerRef }}>
       <Nav />
       <main>
         <Hero />

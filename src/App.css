@@ -96,34 +96,38 @@
 .bulb-wrap--large .bulb-spark--3 { bottom: 5px; right: 2px; }
 
 .bulb-wrap--large.bulb-wrap--active .bulb-spark--1 {
-  animation: spark-out-large 1.2s ease 0.35s forwards;
+  animation: spark-out-large 2.4s ease 0.35s forwards;
 }
 .bulb-wrap--large.bulb-wrap--active .bulb-spark--2 {
-  animation: spark-out-large 1.2s ease 0.5s forwards;
+  animation: spark-out-large 2.4s ease 0.5s forwards;
 }
 .bulb-wrap--large.bulb-wrap--active .bulb-spark--3 {
-  animation: spark-out-large 1.2s ease 0.42s forwards;
+  animation: spark-out-large 2.4s ease 0.42s forwards;
 }
 
 @keyframes spark-out-large {
   0%   { opacity: 0;   transform: translate(0, 0) scale(0); }
-  25%  { opacity: 1;   transform: translate(0, 0) scale(1.6); }
+  16%  { opacity: 1;   transform: translate(0, 0) scale(1.4); }
+  52%  { opacity: 0.9; transform: translate(13px, -13px) scale(0.8); }
+  76%  { opacity: 0.5; transform: translate(17px, -17px) scale(0.4); }
   100% { opacity: 0;   transform: translate(18px, -18px) scale(0.1); }
 }
 
 .bulb-wrap--active .bulb-spark--1 {
-  animation: spark-out 1.2s ease 0.28s forwards;
+  animation: spark-out 2.2s ease 0.28s forwards;
 }
 .bulb-wrap--active .bulb-spark--2 {
-  animation: spark-out 1.2s ease 0.44s forwards;
+  animation: spark-out 2.2s ease 0.44s forwards;
 }
 .bulb-wrap--active .bulb-spark--3 {
-  animation: spark-out 1.2s ease 0.36s forwards;
+  animation: spark-out 2.2s ease 0.36s forwards;
 }
 
 @keyframes spark-out {
   0%   { opacity: 0;   transform: translate(0, 0) scale(0); }
-  25%  { opacity: 1;   transform: translate(0, 0) scale(1.6); }
+  16%  { opacity: 1;   transform: translate(0, 0) scale(1.4); }
+  50%  { opacity: 0.9; transform: translate(10px, -10px) scale(0.8); }
+  75%  { opacity: 0.5; transform: translate(13px, -13px) scale(0.4); }
   100% { opacity: 0;   transform: translate(14px, -14px) scale(0.1); }
 }
 
@@ -148,6 +152,23 @@
   72%  { opacity: 0.85; transform: translate(calc(-50% + var(--ex)), calc(-50% + var(--ey))) scale(0.9); }
   88%  { opacity: 0.4;  transform: translate(calc(-50% + var(--ex)), calc(-50% + var(--ey))) scale(0.6); }
   100% { opacity: 0;    transform: translate(calc(-50% + var(--ex)), calc(-50% + var(--ey))) scale(0.2); }
+}
+
+/* Slower variant for footer → heading flight */
+.spark-flight--slow {
+  animation-duration: 2s;
+}
+
+/* "Enough Thinking" heading glow when footer sparks arrive */
+.closing-headline--glowing {
+  animation: closing-heading-glow 3.2s ease forwards;
+}
+
+@keyframes closing-heading-glow {
+  0%   { text-shadow: none; }
+  18%  { text-shadow: 0 0 18px rgba(45, 106, 79, 0.55), 0 0 7px rgba(45, 106, 79, 0.35); }
+  55%  { text-shadow: 0 0 12px rgba(45, 106, 79, 0.3); }
+  100% { text-shadow: none; }
 }
 
 /* Animated dots in "I can help you…" */
