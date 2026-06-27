@@ -1,11 +1,16 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, createContext, useContext } from 'react'
+import { createPortal } from 'react-dom'
 import './App.css'
 
 const CALENDLY_URL = 'https://calendar.app.google/wN8366ubbwmXKxxw8'
 
-function BulbIcon({ large = false }) {
+const SparkCtx = createContext(null)
+
+function BulbIcon({ large = false, onActive }) {
   const ref = useRef(null)
   const [active, setActive] = useState(false)
+  const onActiveRef = useRef(onActive)
+  useEffect(() => { onActiveRef.current = onActive }, [onActive])
 
   useEffect(() => {
     const el = ref.current
@@ -13,7 +18,10 @@ function BulbIcon({ large = false }) {
     const obs = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setActive(false)
-        requestAnimationFrame(() => requestAnimationFrame(() => setActive(true)))
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          setActive(true)
+          if (onActiveRef.current) onActiveRef.current(ref.current)
+        }))
       }
     }, { threshold: 0.5 })
     obs.observe(el)
@@ -29,8 +37,37 @@ function BulbIcon({ large = false }) {
       <span className="bulb-spark bulb-spark--1" />
       <span className="bulb-spark bulb-spark--2" />
       <span className="bulb-spark bulb-spark--3" />
-      {!large && <><span className="bulb-spark bulb-spark--shoot1" /><span className="bulb-spark bulb-spark--shoot2" /></>}
     </span>
+  )
+}
+
+function SparkFlight({ bulbRect, dotRects }) {
+  if (!bulbRect) return null
+  const sx = bulbRect.left + bulbRect.width / 2
+  const sy = bulbRect.top + bulbRect.height / 2
+
+  return createPortal(
+    <>
+      {dotRects.map((dotRect, i) => {
+        if (!dotRect) return null
+        const ex = dotRect.left + dotRect.width / 2
+        const ey = dotRect.top + dotRect.height / 2
+        return (
+          <span
+            key={i}
+            className="spark-flight"
+            style={{
+              left: `${sx}px`,
+              top: `${sy}px`,
+              '--ex': `${ex - sx}px`,
+              '--ey': `${ey - sy}px`,
+              animationDelay: `${i * 100}ms`,
+            }}
+          />
+        )
+      })}
+    </>,
+    document.body
   )
 }
 
@@ -91,10 +128,16 @@ function PasswordGate({ onUnlock }) {
 }
 
 function Nav() {
+  const ctx = useContext(SparkCtx)
+
+  function handleBulbActive(el) {
+    if (ctx?.handlerRef?.current) ctx.handlerRef.current(el)
+  }
+
   return (
     <nav className="nav">
       <div className="nav__inner">
-        <div className="nav__logo">Reimagined<br />by Mira <BulbIcon /></div>
+        <div className="nav__logo">Reimagined<br />by Mira <BulbIcon onActive={handleBulbActive} /></div>
         <a href={CALENDLY_URL} className="btn-outline" target="_blank" rel="noopener noreferrer">
           Book your Free Discovery Call
         </a>
@@ -185,26 +228,72 @@ const typewriterPhrases = [
 ]
 
 function TypewriterSection({ onDone, onReplay }) {
+  const ctx = useContext(SparkCtx)
   const [phraseIndex, setPhraseIndex] = useState(0)
   const [displayed, setDisplayed] = useState('')
   const [phase, setPhase] = useState('waiting')
   const [animOpacity, setAnimOpacity] = useState(1)
+  const [sparkFlight, setSparkFlight] = useState(null)
+  const [dotsRevealed, setDotsRevealed] = useState([false, false, false])
+
+  const dotRef0 = useRef(null)
+  const dotRef1 = useRef(null)
+  const dotRef2 = useRef(null)
+  const dotRefs = [dotRef0, dotRef1, dotRef2]
 
   function replay() {
     setPhraseIndex(0)
     setDisplayed('')
     setAnimOpacity(1)
     setPhase('typing')
+    setDotsRevealed([true, true, true])
+    setSparkFlight(null)
     if (onReplay) onReplay()
   }
 
   useEffect(() => {
+    if (!ctx) return
+    ctx.handlerRef.current = (bulbEl) => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      if (prefersReduced) {
+        setDotsRevealed([true, true, true])
+        setTimeout(() => setPhase('typing'), 300)
+        return
+      }
+
+      const bulbRect = bulbEl.getBoundingClientRect()
+      const dotRects = dotRefs.map(r => r.current?.getBoundingClientRect() ?? null)
+
+      setSparkFlight({ bulbRect, dotRects })
+
+      // Reveal each dot as its spark arrives (~800ms travel + 100ms stagger per dot)
+      const arrivalBase = 780
+      dotRects.forEach((_, i) => {
+        setTimeout(() => {
+          setDotsRevealed(prev => {
+            const next = [...prev]
+            next[i] = true
+            return next
+          })
+        }, arrivalBase + i * 100)
+      })
+
+      // Start typing after all three dots have landed
+      setTimeout(() => {
+        setSparkFlight(null)
+        setPhase('typing')
+      }, arrivalBase + 2 * 100 + 350)
+    }
+    return () => { ctx.handlerRef.current = null }
+  }, [])
+
+  useEffect(() => {
+    if (phase === 'waiting') return
+
     const current = typewriterPhrases[phraseIndex]
     let timeout
 
-    if (phase === 'waiting') {
-      timeout = setTimeout(() => setPhase('typing'), 2000)
-    } else if (phase === 'typing') {
+    if (phase === 'typing') {
       if (displayed.length < current.length) {
         timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 55)
       } else if (phraseIndex < typewriterPhrases.length - 1) {
@@ -248,22 +337,34 @@ function TypewriterSection({ onDone, onReplay }) {
     )
   }
 
-  const dotsLive = phase !== 'waiting'
-
   return (
-    <div className="typewriter-section__animated" style={{ opacity: animOpacity, transition: 'opacity 0.7s ease' }}>
-      <p className="typewriter-section__fixed">
-        I can help you<span className="typewriter-dots" aria-hidden="true">
-          <span className={`typewriter-dot${dotsLive ? ' typewriter-dot--active' : ''}`} style={{ animationDelay: '0ms' }}>.</span>
-          <span className={`typewriter-dot${dotsLive ? ' typewriter-dot--active' : ''}`} style={{ animationDelay: '120ms' }}>.</span>
-          <span className={`typewriter-dot${dotsLive ? ' typewriter-dot--active' : ''}`} style={{ animationDelay: '240ms' }}>.</span>
-        </span>
-        <span className="sr-only">&hellip;</span>
-      </p>
-      <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
-        {displayed}<span className="typewriter-section__cursor" aria-hidden="true">|</span>
-      </p>
-    </div>
+    <>
+      {sparkFlight && (
+        <SparkFlight bulbRect={sparkFlight.bulbRect} dotRects={sparkFlight.dotRects} />
+      )}
+      <div className="typewriter-section__animated" style={{ opacity: animOpacity, transition: 'opacity 0.7s ease' }}>
+        <p className="typewriter-section__fixed">
+          I can help you<span className="typewriter-dots" aria-hidden="true">
+            <span
+              ref={dotRef0}
+              className={`typewriter-dot${dotsRevealed[0] ? ' typewriter-dot--active' : ''}`}
+            >.</span>
+            <span
+              ref={dotRef1}
+              className={`typewriter-dot${dotsRevealed[1] ? ' typewriter-dot--active' : ''}`}
+            >.</span>
+            <span
+              ref={dotRef2}
+              className={`typewriter-dot${dotsRevealed[2] ? ' typewriter-dot--active' : ''}`}
+            >.</span>
+          </span>
+          <span className="sr-only">&hellip;</span>
+        </p>
+        <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
+          {displayed}<span className="typewriter-section__cursor" aria-hidden="true">|</span>
+        </p>
+      </div>
+    </>
   )
 }
 
@@ -445,8 +546,10 @@ function Footer() {
 }
 
 function App() {
+  const handlerRef = useRef(null)
+
   return (
-    <>
+    <SparkCtx.Provider value={{ handlerRef }}>
       <Nav />
       <main>
         <Hero />
@@ -459,7 +562,7 @@ function App() {
         <FinalCTA />
       </main>
       <Footer />
-    </>
+    </SparkCtx.Provider>
   )
 }
 
