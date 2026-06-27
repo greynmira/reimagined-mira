@@ -297,8 +297,8 @@ function TypewriterSection({ onDone, onReplay }) {
 
       setSparkFlight({ bulbRect, dotRects })
 
-      // Reveal each dot as its spark arrives (~1080ms travel + 130ms stagger per dot)
-      const arrivalBase = 1080
+      // Reveal each dot as its spark arrives (75% of 2.4s = 1800ms travel + 160ms stagger)
+      const arrivalBase = 1800
       dotRefs.forEach((_, i) => {
         setTimeout(() => {
           setDotsRevealed(prev => {
@@ -306,14 +306,14 @@ function TypewriterSection({ onDone, onReplay }) {
             next[i] = true
             return next
           })
-        }, arrivalBase + i * 130)
+        }, arrivalBase + i * 160)
       })
 
       // Start typing after all three dots have landed and sparks finish fading
       setTimeout(() => {
         setSparkFlight(null)
         setPhase('typing')
-      }, arrivalBase + 2 * 130 + 500)
+      }, arrivalBase + 2 * 160 + 520)
     }
     return () => { ctx.handlerRef.current = null }
   }, [])
