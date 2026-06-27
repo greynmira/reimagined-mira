@@ -153,39 +153,45 @@ const typewriterPhrases = [
   'work with a trusted thought partner.',
 ]
 
+const FINAL_PHRASE = 'work with a trusted thought partner, book now.'
+
 function TypewriterSection() {
   const [phraseIndex, setPhraseIndex] = useState(0)
   const [displayed, setDisplayed] = useState('')
   const [phase, setPhase] = useState('typing')
+  const [done, setDone] = useState(false)
 
   useEffect(() => {
-    const current = typewriterPhrases[phraseIndex]
+    if (done) return
+    const current = phraseIndex < typewriterPhrases.length ? typewriterPhrases[phraseIndex] : FINAL_PHRASE
     let timeout
 
     if (phase === 'typing') {
       if (displayed.length < current.length) {
         timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 55)
-      } else {
+      } else if (phraseIndex < typewriterPhrases.length) {
         timeout = setTimeout(() => setPhase('erasing'), 3000)
+      } else {
+        setDone(true)
       }
     } else if (phase === 'erasing') {
       if (displayed.length > 0) {
         timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 30)
       } else {
-        setPhraseIndex((phraseIndex + 1) % typewriterPhrases.length)
+        setPhraseIndex(phraseIndex + 1)
         setPhase('typing')
       }
     }
 
     return () => clearTimeout(timeout)
-  }, [displayed, phase, phraseIndex])
+  }, [displayed, phase, phraseIndex, done])
 
   return (
     <section className="typewriter-section">
       <div className="typewriter-section__inner">
         <p className="typewriter-section__fixed">I can help you&hellip;</p>
         <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
-          {displayed}<span className="typewriter-section__cursor" aria-hidden="true">|</span>
+          {displayed}{!done && <span className="typewriter-section__cursor" aria-hidden="true">|</span>}
         </p>
         <div className="typewriter-section__cta">
           <a
