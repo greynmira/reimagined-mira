@@ -183,13 +183,10 @@
   animation-duration: 2s;
 }
 
-/* "Enough Thinking" heading */
-.closing-headline {
-  text-align: center;
-}
-
+/* "Enough Thinking" heading — centered + italic only after sparks arrive */
 .closing-headline--italic {
   font-style: italic;
+  text-align: center;
 }
 
 .closing-headline--glowing {
