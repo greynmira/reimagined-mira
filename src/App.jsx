@@ -543,14 +543,16 @@ function Closing() {
   const headingRef = useRef(null)
   const [sparkFlight, setSparkFlight] = useState(null)
   const [glowing, setGlowing] = useState(false)
+  const [italic, setItalic] = useState(false)
 
   useEffect(() => {
     if (!ctx) return
     ctx.closingHandlerRef.current = (bulbEl) => {
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
       if (prefersReduced) {
+        setItalic(true)
         setGlowing(true)
-        setTimeout(() => setGlowing(false), 3200)
+        setTimeout(() => setGlowing(false), 3600)
         return
       }
 
@@ -560,12 +562,13 @@ function Closing() {
 
       setSparkFlight({ bulbRect, headingRect })
 
-      // Sparks travel ~2s (slowest spark has 360ms delay + 2s duration, arrives at 72% ≈ 1.8s)
+      // Sparks arrive ~1.8s after launch; italic + glow start on arrival
       setTimeout(() => {
         setSparkFlight(null)
+        setItalic(true)
         setGlowing(true)
-        setTimeout(() => setGlowing(false), 3200)
-      }, 2000)
+        setTimeout(() => setGlowing(false), 3600)
+      }, 1900)
     }
     return () => { ctx.closingHandlerRef.current = null }
   }, [])
@@ -579,7 +582,7 @@ function Closing() {
         <svg className="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         <h2
           ref={headingRef}
-          className={`section-headline${glowing ? ' closing-headline--glowing' : ''}`}
+          className={`section-headline closing-headline${italic ? ' closing-headline--italic' : ''}${glowing ? ' closing-headline--glowing' : ''}`}
         >
           Enough Thinking
         </h2>
