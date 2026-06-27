@@ -29,6 +29,7 @@ function BulbIcon({ large = false }) {
       <span className="bulb-spark bulb-spark--1" />
       <span className="bulb-spark bulb-spark--2" />
       <span className="bulb-spark bulb-spark--3" />
+      {!large && <><span className="bulb-spark bulb-spark--shoot1" /><span className="bulb-spark bulb-spark--shoot2" /></>}
     </span>
   )
 }
@@ -247,9 +248,18 @@ function TypewriterSection({ onDone, onReplay }) {
     )
   }
 
+  const dotsLive = phase !== 'waiting'
+
   return (
     <div className="typewriter-section__animated" style={{ opacity: animOpacity, transition: 'opacity 0.7s ease' }}>
-      <p className="typewriter-section__fixed">I can help you&hellip;</p>
+      <p className="typewriter-section__fixed">
+        I can help you<span className="typewriter-dots" aria-hidden="true">
+          <span className={`typewriter-dot${dotsLive ? ' typewriter-dot--active' : ''}`} style={{ animationDelay: '0ms' }}>.</span>
+          <span className={`typewriter-dot${dotsLive ? ' typewriter-dot--active' : ''}`} style={{ animationDelay: '120ms' }}>.</span>
+          <span className={`typewriter-dot${dotsLive ? ' typewriter-dot--active' : ''}`} style={{ animationDelay: '240ms' }}>.</span>
+        </span>
+        <span className="sr-only">&hellip;</span>
+      </p>
       <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
         {displayed}<span className="typewriter-section__cursor" aria-hidden="true">|</span>
       </p>
