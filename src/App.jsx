@@ -73,6 +73,8 @@ function Nav() {
 }
 
 function Hero() {
+  const [typewriterDone, setTypewriterDone] = useState(false)
+
   return (
     <section className="hero">
       <div className="hero__inner">
@@ -83,8 +85,15 @@ function Hero() {
           I help ambitious professionals build careers, networks, and personal brands that create opportunity without burning themselves out.
         </p>
         <div className="hero__typewriter">
-          <TypewriterSection />
+          <TypewriterSection onDone={() => setTypewriterDone(true)} onReplay={() => setTypewriterDone(false)} />
         </div>
+        {!typewriterDone && (
+          <div className="hero__cta">
+            <a href={CALENDLY_URL} className="btn-primary btn-primary--large" target="_blank" rel="noopener noreferrer">
+              Book your Free Discovery Call
+            </a>
+          </div>
+        )}
       </div>
     </section>
   )
@@ -144,21 +153,18 @@ const typewriterPhrases = [
   'rebrand your professional story.',
 ]
 
-function TypewriterSection() {
+function TypewriterSection({ onDone, onReplay }) {
   const [phraseIndex, setPhraseIndex] = useState(0)
   const [displayed, setDisplayed] = useState('')
   const [phase, setPhase] = useState('typing')
   const [animOpacity, setAnimOpacity] = useState(1)
 
   function replay() {
-    setPhrase(0)
+    setPhraseIndex(0)
     setDisplayed('')
     setAnimOpacity(1)
     setPhase('typing')
-  }
-
-  function setPhrase(i) {
-    setPhraseIndex(i)
+    if (onReplay) onReplay()
   }
 
   useEffect(() => {
@@ -182,7 +188,7 @@ function TypewriterSection() {
       }
     } else if (phase === 'final-fade') {
       setAnimOpacity(0)
-      timeout = setTimeout(() => setPhase('final'), 700)
+      timeout = setTimeout(() => { setPhase('final'); if (onDone) onDone() }, 700)
     }
 
     return () => clearTimeout(timeout)
@@ -210,19 +216,12 @@ function TypewriterSection() {
   }
 
   return (
-    <>
-      <div className="typewriter-section__animated" style={{ opacity: animOpacity, transition: 'opacity 0.7s ease' }}>
-        <p className="typewriter-section__fixed">I can help you&hellip;</p>
-        <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
-          {displayed}<span className="typewriter-section__cursor" aria-hidden="true">|</span>
-        </p>
-      </div>
-      <div className="hero__cta" style={{ opacity: animOpacity, transition: 'opacity 0.7s ease' }}>
-        <a href={CALENDLY_URL} className="btn-primary btn-primary--large" target="_blank" rel="noopener noreferrer">
-          Book your Free Discovery Call
-        </a>
-      </div>
-    </>
+    <div className="typewriter-section__animated" style={{ opacity: animOpacity, transition: 'opacity 0.7s ease' }}>
+      <p className="typewriter-section__fixed">I can help you&hellip;</p>
+      <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
+        {displayed}<span className="typewriter-section__cursor" aria-hidden="true">|</span>
+      </p>
+    </div>
   )
 }
 
