@@ -676,26 +676,16 @@
 }
 
 /* ============================
-   TYPEWRITER SECTION
+   TYPEWRITER (inline in hero)
    ============================ */
-.typewriter-section {
-  background-color: var(--color-white);
-  padding: 80px 24px;
-  text-align: center;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.typewriter-section__inner {
-  max-width: 720px;
-  margin: 0 auto;
+.hero__typewriter {
+  margin: 40px 0 40px;
 }
 
 .typewriter-section__fixed {
   font-family: var(--font-serif);
   font-size: 2.8rem;
   font-weight: 500;
-  font-style: italic;
   color: var(--color-text-secondary);
   margin: 0 0 8px 0;
   line-height: 1.2;
@@ -705,9 +695,8 @@
   font-family: var(--font-serif);
   font-size: 2.8rem;
   font-weight: 600;
-  font-style: italic;
   color: var(--color-green);
-  margin: 0 0 48px 0;
+  margin: 0;
   min-height: 3.4rem;
   line-height: 1.2;
 }
@@ -890,12 +879,9 @@
     margin-bottom: 20px;
   }
 
-  .typewriter-section__fixed {
-    font-size: 2rem;
-  }
-
+  .typewriter-section__fixed,
   .typewriter-section__phrase {
-    font-size: 2rem;
-    min-height: 2.6rem;
+    font-size: 1.8rem;
+    min-height: 2.4rem;
   }
 }

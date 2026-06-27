@@ -82,6 +82,9 @@ function Hero() {
         <p className="hero__subtext">
           I help ambitious professionals build careers, networks, and personal brands that create opportunity without burning themselves out.
         </p>
+        <div className="hero__typewriter">
+          <TypewriterSection />
+        </div>
         <div className="hero__cta">
           <a
             href={CALENDLY_URL}
@@ -187,14 +190,12 @@ function TypewriterSection() {
   }, [displayed, phase, phraseIndex, done])
 
   return (
-    <section className="typewriter-section">
-      <div className="typewriter-section__inner">
-        <p className="typewriter-section__fixed">I can help you&hellip;</p>
-        <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
-          {displayed}{!done && <span className="typewriter-section__cursor" aria-hidden="true">|</span>}
-        </p>
-      </div>
-    </section>
+    <>
+      <p className="typewriter-section__fixed">I can help you&hellip;</p>
+      <p className="typewriter-section__phrase" aria-live="polite" aria-atomic="true">
+        {displayed}{!done && <span className="typewriter-section__cursor" aria-hidden="true">|</span>}
+      </p>
+    </>
   )
 }
 
@@ -388,7 +389,6 @@ function App() {
       <Nav />
       <main>
         <Hero />
-        <TypewriterSection />
         <CaseStudies />
         <Services />
         <WhyIStarted />
