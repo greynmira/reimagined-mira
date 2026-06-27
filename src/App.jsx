@@ -148,10 +148,10 @@ const services = [
 
 const typewriterPhrases = [
   'earn more.',
-  'get interviews.',
-  'change fields.',
+  'open more doors.',
+  'make your next career move.',
   'build confidence.',
-  'rebrand your story.',
+  'rebrand your professional story.',
 ]
 
 function TypewriterSection() {
