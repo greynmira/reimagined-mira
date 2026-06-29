@@ -454,7 +454,7 @@ function WhyIStarted() {
     <section className="why-started">
       <div className="why-started__inner">
         <BulbIcon large />
-        <h2 className="section-headline">Why Reimagined Mira</h2>
+        <h2 className="section-headline">Why<br />Reimagined Mira</h2>
         <p><strong className="why-started__hook">I&apos;m obsessed with career strategy:</strong> positioning, networking, personal brand, and career growth. <em>I dream about this stuff so you don&apos;t have to.</em></p>
         <p>I&apos;ve reinvented my own career more than once, from business school to clinical nutrition to digital health. Along the way, I&apos;ve learned that career paths are rarely linear and that feeling stuck doesn&apos;t have to be permanent.</p>
         <p>Most commonly, people aren&apos;t lacking talent. They&apos;re often lacking perspective, accountability, and a trusted sounding board.</p>
