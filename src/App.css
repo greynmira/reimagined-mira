@@ -1318,7 +1318,7 @@
 
   /* ABOUT MIRA — 2-column credibility section */
   .about {
-    padding: 96px 64px;
+    padding: 100px 64px;
     background: #F9FAF8;
     border-top: 1px solid #e6ede8;
     border-bottom: 1px solid #e6ede8;
@@ -1326,32 +1326,35 @@
   .about__inner {
     max-width: 1080px;
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 300px 1fr;
     column-gap: 0;
-    align-items: start;
+    align-items: center;
   }
   .about__inner > .section-headline {
     grid-column: 1; grid-row: 1;
-    margin-bottom: 20px;
-    font-size: clamp(1.8rem, 2.2vw, 2.2rem);
+    margin-bottom: 16px;
+    font-size: clamp(1.9rem, 2.3vw, 2.3rem);
     letter-spacing: -0.02em;
     padding-right: 56px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--color-green);
   }
   .about__inner > .about__role {
     grid-column: 1; grid-row: 2;
-    font-size: 1rem;
-    line-height: 1.72;
+    font-size: 1.02rem;
+    line-height: 1.75;
     text-transform: none;
     letter-spacing: 0;
     color: var(--color-green);
     font-weight: 600;
     margin-bottom: 0;
     padding-right: 56px;
+    padding-top: 4px;
   }
   .about__inner > .about__body {
     grid-column: 2; grid-row: 1 / 3;
-    font-size: 1.13rem; line-height: 1.9;
-    padding-left: 64px;
+    font-size: 1.14rem; line-height: 1.92;
+    padding-left: 68px;
     border-left: 1px solid #d4e0d7;
     margin-bottom: 0;
     color: var(--color-text-secondary);
@@ -1360,7 +1363,7 @@
 
   /* ENOUGH THINKING — dark green final CTA band */
   .closing {
-    padding: 112px 64px;
+    padding: 120px 64px;
     background: #1B4332;
     position: relative;
     overflow: hidden;
@@ -1375,33 +1378,33 @@
     pointer-events: none;
   }
   .closing__inner {
-    max-width: 1080px;
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    column-gap: 96px;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     position: relative;
+    margin: 0 auto;
   }
-  .closing__inner > .closing-headline { grid-column: 1; grid-row: 1 / 4; margin-bottom: 0; align-self: center; }
+  .closing__inner > .closing-headline { margin-bottom: 28px; }
   .closing__inner > p {
-    grid-column: 2;
-    font-size: 1.13rem; line-height: 1.9;
+    font-size: 1.2rem; line-height: 1.9;
     margin-top: 0;
     color: rgba(255,255,255,0.78);
+    max-width: 560px;
   }
   .closing__highlight { color: #a8d9bc; }
-  .closing .why-started__hook { color: rgba(255,255,255,0.95); font-weight: 600; }
+  .closing .why-started__hook { color: #a8d9bc; font-weight: 600; }
   .closing__cta-btn {
     display: inline-block;
-    grid-column: 2;
-    margin-top: 36px;
+    margin-top: 44px;
     background: #fff;
     border: 2px solid #fff;
     color: #1B4332;
     font-family: var(--font-sans);
     font-size: 1.1rem;
     font-weight: 600;
-    padding: 22px 56px;
+    padding: 22px 64px;
     letter-spacing: 0.01em;
     text-align: center;
     cursor: pointer;
@@ -1414,22 +1417,22 @@
     box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   }
   .closing-headline {
-    font-size: clamp(2rem, 2.8vw, 2.8rem);
+    font-size: clamp(2.4rem, 3.2vw, 3.4rem);
     font-weight: 600;
-    color: rgba(255,255,255,0.72);
+    color: rgba(255,255,255,0.78);
     letter-spacing: -0.02em;
     font-family: var(--font-serif);
-    line-height: 1.2;
+    line-height: 1.15;
   }
   .closing-headline::before { display: none; }
   .closing-headline--visible {
-    color: rgba(255,255,255,0.72);
+    color: rgba(255,255,255,0.78);
     text-shadow: none;
     opacity: 1;
     transform: translateY(0);
   }
   .closing-headline--glowing {
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.92);
     text-shadow: none;
   }
 
