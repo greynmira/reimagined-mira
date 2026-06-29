@@ -1217,15 +1217,16 @@
     background: #f8fbf9;
     border-top-color: #0d2b1a;
   }
+  .service-item__icon-wrap { margin-bottom: 20px; }
   .service-item__title {
     font-size: 1.18rem;
     font-family: var(--font-sans);
     font-weight: 700;
     color: var(--color-black);
     margin-bottom: 22px;
-    margin-top: 4px;
+    margin-top: 0;
   }
-  .service-item__icon { width: 20px; height: 20px; margin-right: 8px; color: var(--color-green); }
+  .service-item__icon { width: 22px; height: 22px; color: var(--color-green); display: block; }
   .service-item__list li {
     font-size: 1.06rem; padding: 6px 0; line-height: 1.72;
     color: var(--color-text-secondary);

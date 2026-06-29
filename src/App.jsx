@@ -435,7 +435,8 @@ function Services() {
         <div className="services__grid">
           {services.map((s, i) => (
             <div key={i} className="service-item">
-              <h3 className="service-item__title">{serviceIcons[s.title]}{s.title}</h3>
+              <div className="service-item__icon-wrap">{serviceIcons[s.title]}</div>
+              <h3 className="service-item__title">{s.title}</h3>
               <ul className="service-item__list">
                 {s.items.map((item, j) => (
                   <li key={j}>{item}</li>
