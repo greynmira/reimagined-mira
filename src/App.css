@@ -1193,41 +1193,41 @@
   }
 
   /* WHAT I HELP WITH — 4-column horizontal card row */
-  .services { padding: 96px 64px; background: #F3F5F2; border-top: 1px solid #e6ede8; }
+  .services { padding: 100px 64px; background: #F3F5F2; border-top: 1px solid #e6ede8; }
   .services__inner { max-width: 1280px; }
   .services__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 28px;
     border: none;
   }
   .service-item {
-    padding: 52px 40px 48px;
+    padding: 56px 44px 52px;
     position: relative;
     border: 1px solid #dde8e0;
     border-top: 3px solid var(--color-green);
     background: #fff;
-    transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease, border-top-color 0.22s ease;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease, border-top-color 0.28s ease;
     transform: translateY(0);
     box-shadow: none;
   }
   .service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 36px rgba(27, 67, 50, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(27, 67, 50, 0.09);
     background: #f8fbf9;
     border-top-color: #0d2b1a;
   }
   .service-item__title {
-    font-size: 1.13rem;
+    font-size: 1.18rem;
     font-family: var(--font-sans);
     font-weight: 700;
     color: var(--color-black);
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     margin-top: 4px;
   }
   .service-item__icon { width: 20px; height: 20px; margin-right: 8px; color: var(--color-green); }
   .service-item__list li {
-    font-size: 1.02rem; padding: 5px 0; line-height: 1.7;
+    font-size: 1.06rem; padding: 6px 0; line-height: 1.72;
     color: var(--color-text-secondary);
   }
 
@@ -1318,7 +1318,7 @@
 
   /* ABOUT MIRA — 3-column credibility strip */
   .about {
-    padding: 72px 64px;
+    padding: 80px 64px;
     background: #fff;
     border-top: 1px solid #d4e0d7;
     border-bottom: 1px solid #d4e0d7;
@@ -1326,41 +1326,41 @@
   .about__inner {
     max-width: 1200px;
     display: grid;
-    grid-template-columns: 220px 1fr 1.6fr;
+    grid-template-columns: 260px 320px 1fr;
     column-gap: 0;
     align-items: center;
   }
   .about__inner > .section-headline {
     grid-column: 1; grid-row: 1;
     margin-bottom: 0;
-    font-size: 1.7rem;
-    letter-spacing: -0.02em;
-    padding-right: 48px;
-    border-right: 1px solid #d4e0d7;
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+    padding-right: 52px;
+    border-right: 3px solid var(--color-green);
   }
   .about__inner > .about__role {
     grid-column: 2; grid-row: 1;
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.08rem;
+    line-height: 1.75;
     text-transform: none;
     letter-spacing: 0;
     color: var(--color-green);
     font-weight: 600;
-    padding: 0 48px;
+    padding: 0 52px;
     border-right: 1px solid #d4e0d7;
     margin-bottom: 0;
   }
   .about__inner > .about__body {
     grid-column: 3; grid-row: 1;
-    font-size: 1.1rem; line-height: 1.85;
-    padding-left: 48px;
+    font-size: 1.12rem; line-height: 1.88;
+    padding-left: 52px;
     margin-bottom: 0;
     color: var(--color-text-secondary);
   }
 
   /* ENOUGH THINKING — dark green final CTA band */
   .closing {
-    padding: 100px 64px;
+    padding: 112px 64px;
     background: #1B4332;
     position: relative;
     overflow: hidden;
@@ -1378,63 +1378,62 @@
     max-width: 1080px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 80px;
+    column-gap: 96px;
     align-items: center;
     position: relative;
   }
   .closing__inner > .section-icon {
     grid-column: 1; grid-row: 1;
-    margin-bottom: 24px;
-    color: rgba(255,255,255,0.5);
-    width: 36px; height: 36px;
+    margin-bottom: 28px;
+    color: rgba(255,255,255,0.45);
+    width: 28px; height: 28px;
   }
   .closing__inner > .closing-headline { grid-column: 1; grid-row: 2; margin-bottom: 0; }
   .closing__inner > p {
     grid-column: 2;
-    font-size: 1.1rem; line-height: 1.88;
+    font-size: 1.13rem; line-height: 1.9;
     margin-top: 0;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.78);
   }
-  .closing__inner > p a { color: #a8d9bc; text-decoration: none; }
-  .closing__inner > p a:hover { text-decoration: underline; }
-  .closing .why-started__hook { color: #a8d9bc; font-weight: 600; }
+  .closing .why-started__hook { color: rgba(255,255,255,0.95); font-weight: 600; }
   .closing__cta-btn {
     display: inline-block;
     grid-column: 2;
-    margin-top: 32px;
+    margin-top: 36px;
     background: #fff;
     border: 2px solid #fff;
     color: #1B4332;
     font-family: var(--font-sans);
-    font-size: 1.08rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    padding: 20px 52px;
+    padding: 22px 56px;
     letter-spacing: 0.01em;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
   }
   .closing__cta-btn:hover {
     background: #f0f7f3;
-    box-shadow: 0 6px 28px rgba(0,0,0,0.22);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   }
   .closing-headline {
-    font-size: clamp(1.6rem, 2.2vw, 2.1rem);
-    font-weight: 600;
-    color: rgba(255,255,255,0.72);
+    font-size: clamp(1.5rem, 2vw, 1.9rem);
+    font-weight: 500;
+    color: rgba(255,255,255,0.55);
     letter-spacing: -0.01em;
+    font-family: var(--font-serif);
   }
   .closing-headline::before { display: none; }
   .closing-headline--visible {
-    color: rgba(255,255,255,0.72);
+    color: rgba(255,255,255,0.55);
     text-shadow: none;
     opacity: 1;
     transform: translateY(0);
   }
   .closing-headline--glowing {
-    color: rgba(255,255,255,0.82);
+    color: rgba(255,255,255,0.68);
     text-shadow: none;
   }
 
