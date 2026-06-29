@@ -1484,3 +1484,15 @@
   /* FINAL CTA — hidden on desktop; Closing IS the final CTA */
   .final-cta { display: none; }
 }
+
+/* Narrow desktop/laptop windows: the 4-col Services grid needs more room
+   than it has between 901-1099px, so drop to 2 columns and tighten padding
+   to avoid horizontal overflow. */
+@media (min-width: 901px) and (max-width: 1099px) {
+  .services { padding: 80px 32px; }
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .service-item { padding: 40px 28px 36px; }
+}
