@@ -614,14 +614,13 @@ function Closing() {
         {sparkFlight && (
           <ClosingSparkFlight bulbRect={sparkFlight.bulbRect} headingRect={sparkFlight.headingRect} />
         )}
-        <svg className="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         <h2
           ref={headingRef}
           className={`closing-headline${inView ? ' closing-headline--visible' : ''}${glowing ? ' closing-headline--glowing' : ''}`}
         >
           Enough Thinking
         </h2>
-        <p>Book your Free Discovery Call and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
+        <p><span className="closing__highlight">Book your Free Discovery Call</span> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
         <p style={{marginTop: '32px'}}><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
         <a href={CALENDLY_URL} className="closing__cta-btn" ref={btnRef} target="_blank" rel="noopener noreferrer">
           Book your Free Discovery Call
