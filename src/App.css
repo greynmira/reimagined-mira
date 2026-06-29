@@ -1110,7 +1110,28 @@
    ============================ */
 @media (min-width: 901px) {
   :root {
-    --section-padding: 88px 48px;
+    --section-padding: 96px 48px;
+  }
+
+  /* ======================================================
+     GLOBAL DESKTOP TYPOGRAPHY UPGRADES
+     Serif headings + green accent line before each one
+     gives an editorial, premium personal-brand feel.
+     ====================================================== */
+  .section-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 2.6vw, 2.5rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+  }
+  /* Small green rule above every section heading */
+  .section-headline::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--color-green);
+    margin-bottom: 18px;
   }
 
   /* ======================================================
@@ -1123,117 +1144,131 @@
   /* ======================================================
      HERO — approved, unchanged
      ====================================================== */
-  .hero { padding: 104px 48px 88px; }
-  .hero__inner { max-width: 880px; }
+  .hero { padding: 112px 48px 96px; }
+  .hero__inner { max-width: 860px; }
   .hero__headline { font-size: clamp(2.8rem, 4.5vw, 4rem); margin-bottom: 32px; }
-  .hero__subtext { max-width: 680px; font-size: 1.15rem; margin-bottom: 28px; }
-  .hero__typewriter { margin: 56px 0 56px; }
+  .hero__subtext { max-width: 660px; font-size: 1.18rem; margin-bottom: 28px; }
+  .hero__typewriter { margin: 60px 0; }
   .typewriter-section__fixed,
   .typewriter-section__phrase { font-size: 3rem; }
   .typewriter-section__phrase { min-height: 3.6rem; }
   .typewriter-section__final-line { font-size: 2.6rem; }
 
   /* ======================================================
-     CASE STUDIES — lightly refined, direction approved
-     Two-column card: tag+title left, stacked dl right.
-     Cards have tinted background + green left accent.
+     CASE STUDIES
+     Very subtle warm tint on section, crisp white cards.
+     Two-column: tag + title anchored left, stacked dl right.
      ====================================================== */
-  .case-studies { padding: 88px 48px; }
+  .case-studies { padding: 96px 48px; background: #F9FAF8; }
   .case-studies__inner { max-width: 1080px; }
-  .case-studies__list { gap: 20px; }
+  .case-studies__list { gap: 16px; }
 
   .case-study {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 220px 1fr;
     grid-template-rows: auto 1fr;
-    gap: 0 64px;
-    padding: 40px 44px 40px 36px;
-    background: #f7f9f8;
-    border: 1px solid var(--color-border);
+    gap: 0 56px;
+    padding: 44px 48px 44px 40px;
+    background: #fff;
+    border: 1px solid #e6ede8;
     border-left: 4px solid var(--color-green);
     align-items: start;
   }
   .case-study__tag {
     grid-column: 1; grid-row: 1;
-    font-size: 0.75rem; letter-spacing: 0.12em;
-    margin-bottom: 12px;
+    font-size: 0.72rem; letter-spacing: 0.14em;
+    margin-bottom: 14px;
   }
   .case-study__title {
     grid-column: 1; grid-row: 2;
-    font-size: 1.35rem; font-weight: 700; line-height: 1.3;
+    font-size: 1.25rem; font-weight: 700; line-height: 1.3;
     margin-bottom: 0;
   }
   .case-study__dl { grid-column: 2; grid-row: 1 / span 2; display: block; }
   .case-study__dl dt {
     display: block;
-    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.09em;
+    font-size: 0.73rem; font-weight: 700; letter-spacing: 0.11em;
     text-transform: uppercase; color: var(--color-green);
-    white-space: normal; margin-top: 28px; margin-bottom: 6px;
+    margin-top: 24px; margin-bottom: 6px;
   }
   .case-study__dl dt:first-child { margin-top: 0; }
   .case-study__dl dd {
     display: block;
-    font-size: 1.06rem; line-height: 1.72;
+    font-size: 1.06rem; line-height: 1.78;
     color: var(--color-text-secondary); margin: 0;
   }
 
   /* ======================================================
      WHAT I HELP WITH
-     Full-width tinted section band. Four white service
-     cards in a 2×2 grid with generous padding and
-     intentional heading/text sizing.
+     Tinted band. White cards with a 3px green top accent —
+     an editorial card treatment that signals intentional
+     design. Generous internal padding.
      ====================================================== */
-  .services { padding: 88px 48px; background: #F5F7F4; }
+  .services { padding: 96px 48px; background: #F3F5F2; }
   .services__inner { max-width: 1080px; }
   .services__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
   .service-item {
     background: #fff;
     border: 1px solid #dde8e0;
-    padding: 36px 40px;
+    border-top: 3px solid var(--color-green);
+    padding: 44px 48px;
   }
-  .service-item__title { font-size: 1.3rem; margin-bottom: 16px; }
-  .service-item__icon { width: 24px; height: 24px; margin-right: 10px; }
-  .service-item__list li { font-size: 1.05rem; padding: 5px 0; line-height: 1.55; }
+  .service-item__title {
+    font-size: 1.22rem; margin-bottom: 20px;
+    color: var(--color-black);
+  }
+  .service-item__icon { width: 22px; height: 22px; margin-right: 10px; }
+  .service-item__list li {
+    font-size: 1.06rem; padding: 6px 0; line-height: 1.62;
+    color: var(--color-text-secondary);
+  }
 
   /* ======================================================
      WHY REIMAGINED MIRA
-     Full-width white band. Two-column editorial layout:
-     icon + heading anchored left, body copy right.
+     White band. Two-column editorial layout. Left col has
+     the bulb icon + heading. Right col has copy with a
+     continuous vertical accent line on its left edge.
+     Using margin: 0 + padding-bottom so the border-left
+     runs unbroken across all stacked paragraphs.
      ====================================================== */
-  .why-started { padding: 88px 48px; }
+  .why-started { padding: 96px 48px; }
   .why-started__inner {
     max-width: 1080px;
     display: grid;
-    grid-template-columns: 280px 1fr;
-    column-gap: 80px;
+    grid-template-columns: 300px 1fr;
+    column-gap: 0;
     align-items: start;
   }
-  /* Left column: icon then heading */
   .why-started__inner > .bulb-wrap {
     grid-column: 1; grid-row: 1;
-    margin: 0 0 16px 0;
-    display: block;
+    margin: 0 0 20px 0; display: block;
   }
   .why-started__inner > .section-headline {
     grid-column: 1; grid-row: 2;
     align-self: start; margin-bottom: 0;
+    padding-right: 48px;
   }
-  /* Right column: all paragraphs stacked */
+  /* Suppress accent rule in left col — bulb icon is the marker */
+  .why-started__inner > .section-headline::before { display: none; }
+
+  /* Right col paragraphs: no margin-bottom so border is continuous */
   .why-started__inner > p {
     grid-column: 2;
-    font-size: 1.06rem; line-height: 1.88;
-    margin-bottom: 20px; color: var(--color-text-secondary);
+    font-size: 1.1rem; line-height: 1.9;
+    margin-bottom: 0;
+    padding: 0 0 24px 64px;
+    color: var(--color-text-secondary);
+    border-left: 1px solid #c4d9cb;
   }
-  .why-started__inner > p:last-child { margin-bottom: 0; }
+  .why-started__inner > p:last-child { padding-bottom: 0; }
 
   /* ======================================================
      TESTIMONIALS
-     Full-width tinted section band. Two-column grid of
-     white quote cards with green left accent. Third card
-     fills bottom-left naturally, balanced and readable.
+     Tinted band. Premium quote cards: white bg, generous
+     padding, 4px green left accent. 2-column grid.
      ====================================================== */
-  .testimonials { padding: 88px 48px; background: #F5F7F4; }
+  .testimonials { padding: 96px 48px; background: #F3F5F2; }
   .testimonials__inner { max-width: 1080px; }
   .testimonials__list {
     display: grid;
@@ -1241,55 +1276,65 @@
     gap: 20px;
     align-items: start;
   }
-  /* Clear any previous spanning rules */
   .testimonial:first-child { grid-column: auto; }
   .testimonial:nth-child(2) { border-right: none; }
 
   .testimonial {
     background: #fff;
     border: 1px solid #dde8e0;
-    border-left: 3px solid var(--color-green);
-    padding: 36px 40px;
+    border-left: 4px solid var(--color-green);
+    padding: 44px 48px;
   }
   .testimonial__quote {
-    font-size: 1.06rem; line-height: 1.82;
+    font-size: 1.1rem; line-height: 1.88;
     font-style: italic; margin-bottom: 0;
+    color: var(--color-text-secondary);
   }
-  .testimonial__name { font-size: 0.83rem; letter-spacing: 0.07em; margin-top: 18px; }
+  .testimonial__name {
+    font-size: 0.82rem; letter-spacing: 0.09em; margin-top: 22px;
+  }
 
   /* ======================================================
      ABOUT MIRA
-     Subtle tinted section band. Two-column: heading +
-     credentials left / body text right. Text-only, no icon.
+     Clean white band. Two-column: heading + credentials
+     left / body text right. Left col gets a subtle right
+     border as a visual column separator, adding structure
+     without fussiness.
      ====================================================== */
-  .about { padding: 88px 48px; background: #F8FAF7; }
+  .about { padding: 96px 48px; background: #fff; }
   .about__inner {
     max-width: 1080px;
     display: grid;
     grid-template-columns: 280px 1fr;
-    gap: 0 72px;
+    gap: 0;
     align-items: start;
   }
   .about__inner > .section-headline {
-    grid-column: 1; grid-row: 1; margin-bottom: 16px;
+    grid-column: 1; grid-row: 1; margin-bottom: 20px;
+    padding-right: 52px;
+    border-right: 1px solid #d4e0d7;
   }
   .about__inner > .about__role {
     grid-column: 1; grid-row: 2;
-    font-size: 0.85rem; line-height: 1.72;
+    font-size: 0.85rem; line-height: 1.75;
+    text-transform: none; letter-spacing: 0.04em;
+    padding-right: 52px;
+    border-right: 1px solid #d4e0d7;
+    padding-bottom: 4px;
   }
   .about__inner > .about__body {
     grid-column: 2; grid-row: 1 / span 2;
-    font-size: 1.06rem; line-height: 1.88;
-    padding-top: 6px; margin-bottom: 0;
+    font-size: 1.1rem; line-height: 1.9;
+    padding-left: 64px; margin-bottom: 0;
   }
 
   /* ======================================================
      CLOSING — ENOUGH THINKING
-     Subtle tinted band (transitions cleanly into dark CTA).
+     Tinted band for visual rhythm before the dark CTA.
      Two-column: icon + heading left / copy right.
-     Glow dialed to elegant on desktop, not heavy.
+     Glow is subtle on desktop — confident, not dramatic.
      ====================================================== */
-  .closing { padding: 88px 48px; background: #F8FAF7; }
+  .closing { padding: 96px 48px; background: #F3F5F2; }
   .closing__inner {
     max-width: 1080px;
     display: grid;
@@ -1297,30 +1342,30 @@
     column-gap: 80px;
     align-items: start;
   }
-  /* Left column: calendar icon then glowing heading */
   .closing__inner > .section-icon {
-    grid-column: 1; grid-row: 1; margin-bottom: 16px;
+    grid-column: 1; grid-row: 1; margin-bottom: 20px;
   }
   .closing__inner > .closing-headline {
     grid-column: 1; grid-row: 2;
   }
-  /* Right column: both paragraphs (second has inline margin-top) */
   .closing__inner > p {
     grid-column: 2;
-    font-size: 1.06rem; line-height: 1.82;
+    font-size: 1.1rem; line-height: 1.88;
+    color: var(--color-text-secondary);
   }
 
-  .closing-headline { font-size: clamp(2.8rem, 4vw, 3.4rem); }
+  .closing-headline { font-size: clamp(2.6rem, 3.8vw, 3.2rem); }
+  /* Glow subtly reduced for desktop — elegant, not overwrought */
   .closing-headline--visible {
-    text-shadow: 0 0 16px rgba(45, 106, 79, 0.2), 0 0 6px rgba(45, 106, 79, 0.11);
+    text-shadow: 0 0 12px rgba(45, 106, 79, 0.14), 0 0 4px rgba(45, 106, 79, 0.08);
   }
   .closing-headline--glowing {
-    text-shadow: 0 0 22px rgba(45, 106, 79, 0.3), 0 0 8px rgba(45, 106, 79, 0.18);
+    text-shadow: 0 0 18px rgba(45, 106, 79, 0.2), 0 0 6px rgba(45, 106, 79, 0.12);
   }
 
   /* ======================================================
-     FINAL CTA — dark band, strong button
+     FINAL CTA — dark band, confident button
      ====================================================== */
-  .final-cta { padding: 60px 48px; }
-  .btn-outline-light { font-size: 1.05rem; padding: 18px 48px; }
+  .final-cta { padding: 72px 48px; }
+  .btn-outline-light { font-size: 1.05rem; padding: 18px 52px; }
 }
