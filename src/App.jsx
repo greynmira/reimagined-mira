@@ -174,7 +174,7 @@ function Nav() {
         <div className="nav__logo">Reimagined<br />by Mira <BulbIcon onActive={handleBulbActive} /></div>
         <a href={CALENDLY_URL} className="btn-outline" target="_blank" rel="noopener noreferrer">
           <span className="nav__cta-full">Book your Free Discovery Call</span>
-          <span className="nav__cta-short">Book a Call</span>
+          <span className="nav__cta-short">Book Now</span>
         </a>
       </div>
     </nav>
