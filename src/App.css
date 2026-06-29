@@ -648,6 +648,7 @@
   max-width: 720px;
   margin: 0 auto;
 }
+.about__tiles { display: none; }
 
 .about__role {
   font-size: 0.82rem;
@@ -1317,7 +1318,7 @@
   }
   .testimonial__name { font-size: 0.82rem; letter-spacing: 0.09em; margin-top: 22px; }
 
-  /* ABOUT MIRA — 2-column credibility section */
+  /* ABOUT MIRA — 2-column + credential tiles */
   .about {
     padding: 100px 64px;
     background: #F9FAF8;
@@ -1328,8 +1329,9 @@
     max-width: 1080px;
     display: grid;
     grid-template-columns: 300px 1fr;
+    grid-template-rows: auto auto auto;
     column-gap: 0;
-    align-items: center;
+    align-items: start;
   }
   .about__inner > .section-headline {
     grid-column: 1; grid-row: 1;
@@ -1359,6 +1361,37 @@
     margin-bottom: 0;
     color: var(--color-text-secondary);
     align-self: center;
+  }
+  .about__tiles {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+    padding-top: 48px;
+    border-top: 1px solid #e6ede8;
+  }
+  .about__tile {
+    background: #fff;
+    border: 1px solid #dde8e0;
+    border-top: 3px solid var(--color-green);
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .about__tile-stat {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-black);
+    letter-spacing: -0.01em;
+  }
+  .about__tile-label {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
   }
 
   /* ENOUGH THINKING — dark green final CTA band */
