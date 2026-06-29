@@ -564,6 +564,7 @@ function Testimonials() {
 function Closing() {
   const ctx = useContext(SparkCtx)
   const headingRef = useRef(null)
+  const btnRef = useRef(null)
   const sectionRef = useRef(null)
   const [inView, setInView] = useState(false)
   const [sparkFlight, setSparkFlight] = useState(null)
@@ -593,7 +594,9 @@ function Closing() {
       }
 
       const bulbRect = bulbEl.getBoundingClientRect()
-      const headingRect = headingRef.current?.getBoundingClientRect()
+      // Target the CTA button (falls back to heading if button not visible on mobile)
+      const targetEl = btnRef.current?.offsetParent ? btnRef.current : headingRef.current
+      const headingRect = targetEl?.getBoundingClientRect()
       if (!headingRect) return
 
       setSparkFlight({ bulbRect, headingRect })
@@ -621,7 +624,7 @@ function Closing() {
         </h2>
         <p><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book your Free Discovery Call</a> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
         <p style={{marginTop: '32px'}}><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
-        <a href={CALENDLY_URL} className="closing__cta-btn" target="_blank" rel="noopener noreferrer">
+        <a href={CALENDLY_URL} className="closing__cta-btn" ref={btnRef} target="_blank" rel="noopener noreferrer">
           Book your Free Discovery Call
         </a>
       </div>
