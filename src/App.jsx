@@ -637,7 +637,7 @@ function Closing() {
         >
           Enough Thinking
         </h2>
-        <p><span className="closing__highlight">Book your Free Discovery Call</span> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
+        <p><a href={CALENDLY_URL} className="closing__highlight" target="_blank" rel="noopener noreferrer">Book your Free Discovery Call</a> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
         <p style={{marginTop: '32px'}}><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
         <a href={CALENDLY_URL} className="closing__cta-btn" ref={btnRef} target="_blank" rel="noopener noreferrer">
           Book your Free Discovery Call
