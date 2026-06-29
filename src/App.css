@@ -1114,14 +1114,14 @@
   }
 
   /* ======================================================
-     NAV — approved, keep as-is
+     NAV — approved, unchanged
      ====================================================== */
   .nav { padding: 0 48px; }
   .nav__inner { max-width: 1080px; height: 72px; }
   .nav__logo { font-size: 1.05rem; }
 
   /* ======================================================
-     HERO — approved, keep as-is
+     HERO — approved, unchanged
      ====================================================== */
   .hero { padding: 104px 48px 88px; }
   .hero__inner { max-width: 880px; }
@@ -1134,11 +1134,9 @@
   .typewriter-section__final-line { font-size: 2.6rem; }
 
   /* ======================================================
-     CASE STUDIES
-     Each study is a proper content card: two-column interior
-     (tag + title left / detail right), comfortable padding,
-     subtle tinted background, strong green left accent.
-     Right column stacks label-then-body, not a side grid.
+     CASE STUDIES — lightly refined, direction approved
+     Two-column card: tag+title left, stacked dl right.
+     Cards have tinted background + green left accent.
      ====================================================== */
   .case-studies { padding: 88px 48px; }
   .case-studies__inner { max-width: 1080px; }
@@ -1155,103 +1153,87 @@
     border-left: 4px solid var(--color-green);
     align-items: start;
   }
-
   .case-study__tag {
     grid-column: 1; grid-row: 1;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
+    font-size: 0.75rem; letter-spacing: 0.12em;
     margin-bottom: 12px;
   }
   .case-study__title {
     grid-column: 1; grid-row: 2;
-    font-size: 1.35rem;
-    font-weight: 700;
-    line-height: 1.3;
+    font-size: 1.35rem; font-weight: 700; line-height: 1.3;
     margin-bottom: 0;
   }
-
-  /* Right side: stacked label-then-copy blocks, not inline grid */
-  .case-study__dl {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    display: block;
-  }
+  .case-study__dl { grid-column: 2; grid-row: 1 / span 2; display: block; }
   .case-study__dl dt {
     display: block;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--color-green);
-    white-space: normal;
-    margin-top: 28px;
-    margin-bottom: 6px;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--color-green);
+    white-space: normal; margin-top: 28px; margin-bottom: 6px;
   }
   .case-study__dl dt:first-child { margin-top: 0; }
   .case-study__dl dd {
     display: block;
-    font-size: 1.06rem;
-    line-height: 1.72;
-    color: var(--color-text-secondary);
-    margin: 0;
+    font-size: 1.06rem; line-height: 1.72;
+    color: var(--color-text-secondary); margin: 0;
   }
 
   /* ======================================================
      WHAT I HELP WITH
-     Four true service cards in a 2×2 grid. Each card has
-     its own tinted background, border, and generous inner
-     padding. Text sizes match desktop readability targets.
+     Full-width tinted section band. Four white service
+     cards in a 2×2 grid with generous padding and
+     intentional heading/text sizing.
      ====================================================== */
-  .services { padding: 88px 48px; }
+  .services { padding: 88px 48px; background: #F5F7F4; }
   .services__inner { max-width: 1080px; }
-  .services__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+  .services__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
   .service-item {
-    background: #f7f9f8;
-    border: 1px solid var(--color-border);
-    padding: 32px 36px;
+    background: #fff;
+    border: 1px solid #dde8e0;
+    padding: 36px 40px;
   }
-  .service-item__title {
-    font-size: 1.25rem;
-    margin-bottom: 16px;
-  }
-  .service-item__icon {
-    width: 22px;
-    height: 22px;
-    margin-right: 10px;
-  }
-  .service-item__list li {
-    font-size: 1.05rem;
-    padding: 5px 0;
-    line-height: 1.55;
-  }
+  .service-item__title { font-size: 1.3rem; margin-bottom: 16px; }
+  .service-item__icon { width: 24px; height: 24px; margin-right: 10px; }
+  .service-item__list li { font-size: 1.05rem; padding: 5px 0; line-height: 1.55; }
 
   /* ======================================================
      WHY REIMAGINED MIRA
-     Editorial essay block. 17px body text, generous line
-     height. Heading anchored below the icon.
+     Full-width white band. Two-column editorial layout:
+     icon + heading anchored left, body copy right.
      ====================================================== */
   .why-started { padding: 88px 48px; }
-  .why-started__inner { max-width: 820px; }
-  .why-started__inner > .section-headline { margin-bottom: 28px; }
-  .why-started__inner p {
-    font-size: 1.06rem;
-    line-height: 1.88;
-    margin-bottom: 20px;
-    color: var(--color-text-secondary);
+  .why-started__inner {
+    max-width: 1080px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    column-gap: 80px;
+    align-items: start;
   }
-  .why-started__inner p:last-child { margin-bottom: 0; }
+  /* Left column: icon then heading */
+  .why-started__inner > .bulb-wrap {
+    grid-column: 1; grid-row: 1;
+    margin: 0 0 16px 0;
+    display: block;
+  }
+  .why-started__inner > .section-headline {
+    grid-column: 1; grid-row: 2;
+    align-self: start; margin-bottom: 0;
+  }
+  /* Right column: all paragraphs stacked */
+  .why-started__inner > p {
+    grid-column: 2;
+    font-size: 1.06rem; line-height: 1.88;
+    margin-bottom: 20px; color: var(--color-text-secondary);
+  }
+  .why-started__inner > p:last-child { margin-bottom: 0; }
 
   /* ======================================================
      TESTIMONIALS
-     2-column grid of readable quote cards. Each card has
-     tinted background, full border, green left accent,
-     and comfortable padding. 17px quote text.
+     Full-width tinted section band. Two-column grid of
+     white quote cards with green left accent. Third card
+     fills bottom-left naturally, balanced and readable.
      ====================================================== */
-  .testimonials { padding: 88px 48px; }
+  .testimonials { padding: 88px 48px; background: #F5F7F4; }
   .testimonials__inner { max-width: 1080px; }
   .testimonials__list {
     display: grid;
@@ -1259,35 +1241,28 @@
     gap: 20px;
     align-items: start;
   }
-
-  /* Reset the "featured first" span from the previous iteration */
+  /* Clear any previous spanning rules */
   .testimonial:first-child { grid-column: auto; }
   .testimonial:nth-child(2) { border-right: none; }
 
   .testimonial {
-    background: #f7f9f8;
-    border: 1px solid var(--color-border);
+    background: #fff;
+    border: 1px solid #dde8e0;
     border-left: 3px solid var(--color-green);
-    padding: 32px 36px;
+    padding: 36px 40px;
   }
   .testimonial__quote {
-    font-size: 1.06rem;
-    line-height: 1.8;
-    font-style: italic;
-    margin-bottom: 0;
+    font-size: 1.06rem; line-height: 1.82;
+    font-style: italic; margin-bottom: 0;
   }
-  .testimonial__name {
-    font-size: 0.82rem;
-    letter-spacing: 0.07em;
-    margin-top: 18px;
-  }
+  .testimonial__name { font-size: 0.83rem; letter-spacing: 0.07em; margin-top: 18px; }
 
   /* ======================================================
      ABOUT MIRA
-     Two-column: heading + credentials left / body right.
-     No icon, no avatar. 17px body text.
+     Subtle tinted section band. Two-column: heading +
+     credentials left / body text right. Text-only, no icon.
      ====================================================== */
-  .about { padding: 88px 48px; }
+  .about { padding: 88px 48px; background: #F8FAF7; }
   .about__inner {
     max-width: 1080px;
     display: grid;
@@ -1296,33 +1271,45 @@
     align-items: start;
   }
   .about__inner > .section-headline {
-    grid-column: 1; grid-row: 1;
-    margin-bottom: 16px;
+    grid-column: 1; grid-row: 1; margin-bottom: 16px;
   }
   .about__inner > .about__role {
     grid-column: 1; grid-row: 2;
-    font-size: 0.85rem;
-    line-height: 1.7;
+    font-size: 0.85rem; line-height: 1.72;
   }
   .about__inner > .about__body {
     grid-column: 2; grid-row: 1 / span 2;
-    font-size: 1.06rem;
-    line-height: 1.88;
-    padding-top: 6px;
-    margin-bottom: 0;
+    font-size: 1.06rem; line-height: 1.88;
+    padding-top: 6px; margin-bottom: 0;
   }
 
   /* ======================================================
      CLOSING — ENOUGH THINKING
-     Subtler glow. Aligned with the rest of the container.
-     17px copy. Confident and minimal.
+     Subtle tinted band (transitions cleanly into dark CTA).
+     Two-column: icon + heading left / copy right.
+     Glow dialed to elegant on desktop, not heavy.
      ====================================================== */
-  .closing { padding: 80px 48px 72px; }
-  .closing__inner { max-width: 820px; }
-  .closing__inner p {
-    font-size: 1.06rem;
-    line-height: 1.82;
+  .closing { padding: 88px 48px; background: #F8FAF7; }
+  .closing__inner {
+    max-width: 1080px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    align-items: start;
   }
+  /* Left column: calendar icon then glowing heading */
+  .closing__inner > .section-icon {
+    grid-column: 1; grid-row: 1; margin-bottom: 16px;
+  }
+  .closing__inner > .closing-headline {
+    grid-column: 1; grid-row: 2;
+  }
+  /* Right column: both paragraphs (second has inline margin-top) */
+  .closing__inner > p {
+    grid-column: 2;
+    font-size: 1.06rem; line-height: 1.82;
+  }
+
   .closing-headline { font-size: clamp(2.8rem, 4vw, 3.4rem); }
   .closing-headline--visible {
     text-shadow: 0 0 16px rgba(45, 106, 79, 0.2), 0 0 6px rgba(45, 106, 79, 0.11);
@@ -1332,8 +1319,8 @@
   }
 
   /* ======================================================
-     FINAL CTA
+     FINAL CTA — dark band, strong button
      ====================================================== */
-  .final-cta { padding: 56px 48px; }
-  .btn-outline-light { font-size: 1rem; padding: 16px 44px; }
+  .final-cta { padding: 60px 48px; }
+  .btn-outline-light { font-size: 1.05rem; padding: 18px 48px; }
 }
