@@ -435,7 +435,6 @@ function Services() {
         <div className="services__grid">
           {services.map((s, i) => (
             <div key={i} className="service-item">
-              <span className="service-item__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
               <h3 className="service-item__title">{serviceIcons[s.title]}{s.title}</h3>
               <ul className="service-item__list">
                 {s.items.map((item, j) => (
