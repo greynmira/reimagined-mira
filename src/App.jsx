@@ -474,18 +474,20 @@ function About() {
         <p className="about__body">
           For the past 8+ years, I&apos;ve worked across healthcare strategy, digital health, and product leadership while helping professionals navigate career growth, networking, personal brand, and change.
         </p>
-        <div className="about__tiles">
-          <div className="about__tile">
-            <span className="about__tile-stat">8+ Years</span>
-            <span className="about__tile-label">Healthcare Strategy &amp; Digital Health</span>
+        <div className="about__stats">
+          <div className="about__stat">
+            <span className="about__stat-figure">8+</span>
+            <span className="about__stat-label">Years in Healthcare Strategy &amp; Digital Health</span>
           </div>
-          <div className="about__tile">
-            <span className="about__tile-stat">Heart &amp; Stroke Foundation</span>
-            <span className="about__tile-label">Strategic Partnerships Lead</span>
+          <div className="about__stat-divider" aria-hidden="true" />
+          <div className="about__stat">
+            <span className="about__stat-figure">Heart &amp; Stroke</span>
+            <span className="about__stat-label">Strategic Partnerships Lead, Heart &amp; Stroke Foundation</span>
           </div>
-          <div className="about__tile">
-            <span className="about__tile-stat">Product Leadership</span>
-            <span className="about__tile-label">Career Coaching · Networking · Brand</span>
+          <div className="about__stat-divider" aria-hidden="true" />
+          <div className="about__stat">
+            <span className="about__stat-figure">Product</span>
+            <span className="about__stat-label">Product &amp; Partnership Leadership across Digital Health</span>
           </div>
         </div>
       </div>
