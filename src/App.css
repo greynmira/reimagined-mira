@@ -1332,24 +1332,24 @@
   }
   .about__inner > .section-headline {
     grid-column: 1; grid-row: 1;
-    margin-bottom: 16px;
+    margin-bottom: 28px;
     font-size: clamp(1.9rem, 2.3vw, 2.3rem);
     letter-spacing: -0.02em;
     padding-right: 56px;
-    padding-bottom: 20px;
+    padding-bottom: 28px;
     border-bottom: 2px solid var(--color-green);
   }
   .about__inner > .about__role {
     grid-column: 1; grid-row: 2;
     font-size: 1.02rem;
-    line-height: 1.75;
+    line-height: 1.85;
     text-transform: none;
     letter-spacing: 0;
     color: var(--color-green);
     font-weight: 600;
     margin-bottom: 0;
     padding-right: 56px;
-    padding-top: 4px;
+    padding-top: 16px;
   }
   .about__inner > .about__body {
     grid-column: 2; grid-row: 1 / 3;
