@@ -196,16 +196,6 @@
               text-shadow 1.4s ease;
 }
 
-/* Short green accent line above heading */
-.closing-headline::before {
-  content: '';
-  display: block;
-  width: 28px;
-  height: 2px;
-  background: var(--color-green);
-  margin-bottom: 20px;
-}
-
 /* Stage 1 — heading enters view: reveal straight into green + glow */
 .closing-headline--visible {
   opacity: 1;
@@ -992,12 +982,12 @@
    HERO VISUAL (desktop only)
    ============================ */
 .hero__visual { display: none; }
-.hero__content { /* inherits hero__inner centering on mobile */ }
 
 /* ============================
-   CAREER MAP (desktop only)
+   CLOSING CTA BUTTON (desktop only)
    ============================ */
-.career-map { display: none; }
+.closing__cta-btn { display: none; }
+.hero__content { /* inherits hero__inner centering on mobile */ }
 
 /* ============================
    RESPONSIVE
@@ -1122,20 +1112,12 @@
 @media (min-width: 901px) {
   :root { --section-padding: 100px 64px; }
 
-  /* Global: serif section headings + green accent rule */
+  /* Global: serif section headings — clean, no decorative dash */
   .section-headline {
     font-family: var(--font-serif);
     font-size: clamp(2rem, 2.6vw, 2.5rem);
     letter-spacing: -0.02em;
     margin-bottom: 44px;
-  }
-  .section-headline::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 2px;
-    background: var(--color-green);
-    margin-bottom: 20px;
   }
 
   /* NAV */
@@ -1143,8 +1125,7 @@
   .nav__inner { max-width: 1200px; height: 72px; }
   .nav__logo { font-size: 1.05rem; }
 
-  /* HERO — Stance-inspired split layout
-     Text left, abstract SVG right. Max visual impact on first load. */
+  /* HERO — split layout: text left, SVG visual right */
   .hero { padding: 0; overflow: hidden; }
   .hero__inner {
     max-width: 1200px;
@@ -1171,111 +1152,6 @@
     height: 420px;
   }
   .hero__visual svg { width: 100%; height: 100%; }
-
-  /* CAREER MAP — desktop-only framework diagram
-     Inspired by Stance's importance/urgency matrix.
-     Four quadrant panels with border-grid structure.
-     Communicates methodology, not just a service list. */
-  .career-map {
-    display: block;
-    padding: 96px 64px;
-    background: #F3F5F2;
-    border-top: 1px solid #e6ede8;
-  }
-  .career-map__inner { max-width: 1080px; margin: 0 auto; }
-  .career-map__intro { margin-bottom: 56px; }
-  .career-map__eyebrow {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--color-green);
-    margin-bottom: 16px;
-  }
-  .career-map__heading {
-    font-family: var(--font-serif);
-    font-size: clamp(2rem, 2.8vw, 2.6rem);
-    font-weight: 700;
-    color: var(--color-black);
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    margin: 0 0 14px;
-  }
-  .career-map__sub {
-    font-size: 1.08rem;
-    color: var(--color-text-muted);
-    max-width: 560px;
-    line-height: 1.75;
-    margin: 0;
-  }
-  .career-map__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid #c8d8cc;
-  }
-  .career-map__quad {
-    padding: 48px 52px;
-    position: relative;
-    border-right: 1px solid #c8d8cc;
-    border-bottom: 1px solid #c8d8cc;
-    background: #fff;
-    transition: background-color 0.2s ease;
-  }
-  .career-map__quad:hover { background: #f8fbf9; }
-  .career-map__quad:nth-child(even) { border-right: none; }
-  .career-map__quad:nth-child(3),
-  .career-map__quad:nth-child(4) { border-bottom: none; }
-  .career-map__num {
-    position: absolute;
-    top: 28px;
-    right: 44px;
-    font-family: var(--font-serif);
-    font-size: 3.2rem;
-    font-weight: 700;
-    color: var(--color-green);
-    opacity: 0.07;
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-  }
-  .career-map__label {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--color-green);
-    background: #eef4f0;
-    display: inline-block;
-    padding: 3px 10px 2px;
-    margin-bottom: 16px;
-  }
-  .career-map__quad-title {
-    font-family: var(--font-sans);
-    font-size: 1.22rem;
-    font-weight: 700;
-    color: var(--color-black);
-    margin: 0 0 18px;
-    line-height: 1.25;
-  }
-  .career-map__quad-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .career-map__quad-list li {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    line-height: 1.65;
-    padding: 4px 0 4px 18px;
-    position: relative;
-  }
-  .career-map__quad-list li::before {
-    content: '–';
-    position: absolute;
-    left: 0;
-    color: var(--color-green);
-    font-weight: 600;
-  }
 
   /* CASE STUDIES — white band, tinted cards */
   .case-studies { padding: 100px 64px; background: #fff; }
@@ -1316,32 +1192,48 @@
     color: var(--color-text-secondary); margin: 0;
   }
 
-  /* SERVICES — tinted band, white cards, green top accent, hover lift */
-  .services { padding: 100px 64px; background: #F3F5F2; }
+  /* WHAT I HELP WITH — border-grid framework style */
+  .services { padding: 96px 64px; background: #F3F5F2; border-top: 1px solid #e6ede8; }
   .services__inner { max-width: 1080px; }
-  .services__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .services__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #c8d8cc;
+    gap: 0;
+  }
   .service-item {
-    background: #fff;
-    border: 1px solid #dde8e0;
-    border-top: 3px solid var(--color-green);
     padding: 48px 52px;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    position: relative;
+    border-right: 1px solid #c8d8cc;
+    border-bottom: 1px solid #c8d8cc;
+    border-top: none;
+    background: #fff;
+    transition: background-color 0.2s ease;
+    transform: none;
+    box-shadow: none;
   }
   .service-item:hover {
-    box-shadow: 0 8px 32px rgba(27, 67, 50, 0.09);
-    transform: translateY(-3px);
+    background: #f8fbf9;
+    transform: none;
+    box-shadow: none;
   }
-  .service-item__title { font-size: 1.22rem; margin-bottom: 22px; color: var(--color-black); }
-  .service-item__icon { width: 22px; height: 22px; margin-right: 10px; }
+  .service-item:nth-child(even) { border-right: none; }
+  .service-item:nth-child(3),
+  .service-item:nth-child(4) { border-bottom: none; }
+  .service-item__title {
+    font-size: 1.22rem;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: 22px;
+  }
+  .service-item__icon { width: 22px; height: 22px; margin-right: 10px; color: var(--color-green); }
   .service-item__list li {
-    font-size: 1.08rem; padding: 6px 0; line-height: 1.62;
+    font-size: 1.05rem; padding: 5px 0; line-height: 1.62;
     color: var(--color-text-secondary);
   }
 
-  /* WHY REIMAGINED MIRA — full-width dark green editorial band
-     The emotional heart of the page. Stance-inspired: bold colour band
-     with large heading left and copy right on dark green.
-     Radial glow in top-right corner adds depth. */
+  /* WHY REIMAGINED MIRA — dark green editorial band */
   .why-started {
     padding: 100px 64px;
     background: #1B4332;
@@ -1380,7 +1272,6 @@
     font-family: var(--font-serif);
     font-size: clamp(1.9rem, 2.4vw, 2.4rem);
   }
-  /* No accent rule needed — heading on dark green is its own anchor */
   .why-started__inner > .section-headline::before { display: none; }
   .why-started .section-icon,
   .why-started .logo-bulb { color: rgba(255,255,255,0.65); }
@@ -1388,7 +1279,6 @@
     background: rgba(255,255,255,0.6);
     box-shadow: 0 0 3px rgba(255,255,255,0.35);
   }
-  /* Right col: continuous vertical accent line via zero-margin + padding-bottom trick */
   .why-started__inner > p {
     grid-column: 2;
     font-size: 1.12rem;
@@ -1401,60 +1291,68 @@
   .why-started__inner > p:last-child { padding-bottom: 0; }
   .why-started .why-started__hook { color: #a8d9bc; }
 
-  /* TESTIMONIALS — pale tint band, 3-column grid of premium white cards */
+  /* TESTIMONIALS — 3-column equal-height cards */
   .testimonials { padding: 100px 64px; background: #F9FAF8; }
   .testimonials__inner { max-width: 1080px; }
   .testimonials__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    align-items: start;
+    align-items: stretch;
   }
   .testimonial {
     background: #fff;
     border: 1px solid #dde8e0;
     border-top: 3px solid var(--color-green);
     border-left: none;
-    padding: 44px 44px;
+    padding: 44px;
+    display: flex;
+    flex-direction: column;
   }
-  .testimonial:first-child { grid-column: auto; }
-  .testimonial:nth-child(2) { border-right: none; }
   .testimonial__icon { display: none; }
   .testimonial__quote {
     font-size: 1.08rem; line-height: 1.88;
     font-style: italic; margin-bottom: 0;
     color: var(--color-text-secondary);
+    flex: 1;
   }
   .testimonial__name { font-size: 0.82rem; letter-spacing: 0.09em; margin-top: 22px; }
 
-  /* ABOUT MIRA — white band, two-column with right-border divider */
+  /* ABOUT MIRA — white band, two-column editorial bio */
   .about { padding: 100px 64px; background: #fff; }
   .about__inner {
     max-width: 1080px;
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 0;
+    grid-template-columns: 300px 1fr;
+    column-gap: 0;
     align-items: start;
   }
   .about__inner > .section-headline {
-    grid-column: 1; grid-row: 1; margin-bottom: 20px;
-    padding-right: 52px;
-    border-right: 1px solid #d4e0d7;
+    grid-column: 1; grid-row: 1;
+    margin-bottom: 20px;
+    font-size: clamp(1.9rem, 2.4vw, 2.4rem);
+    padding-right: 0;
+    border-right: none;
   }
   .about__inner > .about__role {
     grid-column: 1; grid-row: 2;
-    font-size: 0.85rem; line-height: 1.75;
-    text-transform: none; letter-spacing: 0.04em;
-    padding-right: 52px; padding-bottom: 4px;
-    border-right: 1px solid #d4e0d7;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    text-transform: none;
+    letter-spacing: 0.03em;
+    padding-right: 0;
+    padding-bottom: 0;
+    border-right: none;
   }
   .about__inner > .about__body {
     grid-column: 2; grid-row: 1 / span 2;
     font-size: 1.12rem; line-height: 1.9;
-    padding-left: 64px; margin-bottom: 0;
+    border-left: 1px solid #d4e0d7;
+    padding-left: 72px;
+    margin-bottom: 0;
   }
 
-  /* CLOSING — tinted band, two-column, glow at minimum viable intensity */
+  /* ENOUGH THINKING — tinted band, two-column CTA layout */
   .closing { padding: 100px 64px; background: #F3F5F2; }
   .closing__inner {
     max-width: 1080px;
@@ -1468,9 +1366,16 @@
   .closing__inner > p {
     grid-column: 2;
     font-size: 1.12rem; line-height: 1.88;
+    margin-top: 0;
     color: var(--color-text-secondary);
   }
+  .closing__cta-btn {
+    display: inline-block;
+    grid-column: 2;
+    margin-top: 12px;
+  }
   .closing-headline { font-size: clamp(2.6rem, 3.8vw, 3.4rem); }
+  .closing-headline::before { display: none; }
   .closing-headline--visible {
     text-shadow: 0 0 12px rgba(45, 106, 79, 0.12), 0 0 4px rgba(45, 106, 79, 0.07);
   }
@@ -1478,10 +1383,8 @@
     text-shadow: 0 0 18px rgba(45, 106, 79, 0.18), 0 0 6px rgba(45, 106, 79, 0.1);
   }
 
-  /* FINAL CTA — substantial black band */
+  /* FINAL CTA */
   .final-cta { padding: 88px 64px; }
   .final-cta__inner { max-width: 680px; }
-  .final-cta__headline { font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 20px; }
-  .final-cta__subtext { font-size: 1.12rem; margin-bottom: 36px; }
   .btn-outline-light { font-size: 1.1rem; padding: 20px 56px; }
 }

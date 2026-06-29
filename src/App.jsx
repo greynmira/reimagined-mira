@@ -221,7 +221,7 @@ function Hero() {
             <circle cx="145" cy="192" r="2.5" fill="#2d6a4f" opacity="0.4"/>
             <circle cx="395" cy="262" r="2" fill="#2d6a4f" opacity="0.35"/>
             <circle cx="172" cy="388" r="2.5" fill="#2d6a4f" opacity="0.3"/>
-            <g transform="translate(216,210)" opacity="0.12" stroke="#1B4332" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <g transform="translate(228,229)" opacity="0.22" stroke="#1B4332" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18.5 8.7 18.5 7a6.5 6.5 0 0 0-13 0c0 1.7.8 3.2 2 4.2.8.8 1.3 1.4 1.5 2.5"/>
               <path d="M9 18h6"/><path d="M10 22h4"/>
             </g>
@@ -464,57 +464,6 @@ function WhyIStarted() {
   )
 }
 
-const mapQuadrants = [
-  {
-    num: '01', label: 'Advance',
-    title: 'Career Strategy',
-    items: ['Promotions & advancement', 'Career transitions', 'Leadership growth'],
-  },
-  {
-    num: '02', label: 'Connect',
-    title: 'Networking',
-    items: ['Strategic relationship building', 'Internal influence', 'Executive visibility'],
-  },
-  {
-    num: '03', label: 'Stand Out',
-    title: 'Personal Brand',
-    items: ['Confidence & presence', 'Communicating your value', 'Professional storytelling'],
-  },
-  {
-    num: '04', label: 'Navigate',
-    title: 'Resilience & Change',
-    items: ['Difficult managers', 'Organizational politics', 'Career setbacks'],
-  },
-]
-
-function CareerMap() {
-  return (
-    <section className="career-map">
-      <div className="career-map__inner">
-        <div className="career-map__intro">
-          <p className="career-map__eyebrow">The Framework</p>
-          <h2 className="career-map__heading">Four dimensions of career clarity.</h2>
-          <p className="career-map__sub">Most professionals are strong in one or two areas. Real momentum comes from addressing all four.</p>
-        </div>
-        <div className="career-map__grid">
-          {mapQuadrants.map((q, i) => (
-            <div key={i} className="career-map__quad">
-              <span className="career-map__num" aria-hidden="true">{q.num}</span>
-              <p className="career-map__label">{q.label}</p>
-              <h3 className="career-map__quad-title">{q.title}</h3>
-              <ul className="career-map__quad-list">
-                {q.items.map((item, j) => (
-                  <li key={j}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function About() {
   return (
     <section className="about">
@@ -670,7 +619,10 @@ function Closing() {
           Enough Thinking
         </h2>
         <p><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book your Free Discovery Call</a> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
-        <p style={{marginTop: '32px'}}><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
+        <p><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
+        <a href={CALENDLY_URL} className="closing__cta-btn btn-primary btn-primary--large" target="_blank" rel="noopener noreferrer">
+          Book your Free Discovery Call
+        </a>
       </div>
     </section>
   )
@@ -716,7 +668,6 @@ function App() {
       <Nav />
       <main>
         <Hero />
-        <CareerMap />
         <CaseStudies />
         <Services />
         <WhyIStarted />
