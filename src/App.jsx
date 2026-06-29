@@ -474,20 +474,18 @@ function About() {
         <p className="about__body">
           For the past 8+ years, I&apos;ve worked across healthcare strategy, digital health, and product leadership while helping professionals navigate career growth, networking, personal brand, and change.
         </p>
-        <div className="about__stats">
-          <div className="about__stat">
-            <span className="about__stat-figure">8+</span>
-            <span className="about__stat-label">Years in Healthcare Strategy &amp; Digital Health</span>
+        <div className="about__pillars">
+          <div className="about__pillar">
+            <h3 className="about__pillar-title">Strategic Operator</h3>
+            <p className="about__pillar-body">I bring structure, clarity, and strategic thinking to complex career questions.</p>
           </div>
-          <div className="about__stat-divider" aria-hidden="true" />
-          <div className="about__stat">
-            <span className="about__stat-figure">Heart &amp; Stroke</span>
-            <span className="about__stat-label">Strategic Partnerships Lead, Heart &amp; Stroke Foundation</span>
+          <div className="about__pillar">
+            <h3 className="about__pillar-title">Purpose-Driven Leader</h3>
+            <p className="about__pillar-body">My work spans digital health, community partnerships, and volunteer leadership with Heart &amp; Stroke Foundation.</p>
           </div>
-          <div className="about__stat-divider" aria-hidden="true" />
-          <div className="about__stat">
-            <span className="about__stat-figure">Product</span>
-            <span className="about__stat-label">Product &amp; Partnership Leadership across Digital Health</span>
+          <div className="about__pillar">
+            <h3 className="about__pillar-title">Curious Storyteller</h3>
+            <p className="about__pillar-body">From podcasting to mentorship, I've always been drawn to helping people make sense of their next chapter.</p>
           </div>
         </div>
       </div>

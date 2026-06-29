@@ -648,7 +648,7 @@
   max-width: 720px;
   margin: 0 auto;
 }
-.about__stats { display: none; }
+.about__stats, .about__pillars { display: none; }
 
 .about__role {
   font-size: 0.82rem;
@@ -1362,43 +1362,38 @@
     color: var(--color-text-secondary);
     align-self: center;
   }
-  .about__stats {
+  .about__pillars {
     grid-column: 1 / -1;
     grid-row: 3;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
     margin-top: 52px;
     padding-top: 48px;
     border-top: 1px solid #e6ede8;
-    gap: 0;
   }
-  .about__stat {
-    flex: 1;
+  .about__pillar {
+    padding: 32px 36px 36px;
+    background: #fff;
+    border: 1px solid #dde8e0;
+    border-top: 3px solid var(--color-green);
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 0 40px;
+    gap: 14px;
   }
-  .about__stat:first-child { padding-left: 0; }
-  .about__stat:last-child { padding-right: 0; }
-  .about__stat-divider {
-    width: 1px;
-    height: 56px;
-    background: #d4e0d7;
-    flex-shrink: 0;
-  }
-  .about__stat-figure {
+  .about__pillar-title {
     font-family: var(--font-serif);
-    font-size: clamp(1.6rem, 2vw, 2rem);
+    font-size: 1.2rem;
     font-weight: 600;
-    color: var(--color-green);
-    letter-spacing: -0.02em;
-    line-height: 1;
+    color: var(--color-black);
+    letter-spacing: -0.01em;
+    margin: 0;
   }
-  .about__stat-label {
-    font-size: 0.88rem;
+  .about__pillar-body {
+    font-size: 1rem;
+    line-height: 1.75;
     color: var(--color-text-secondary);
-    line-height: 1.55;
+    margin: 0;
   }
 
   /* ENOUGH THINKING — dark green final CTA band */
