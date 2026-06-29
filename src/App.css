@@ -655,30 +655,8 @@
 }
 
 .about__inner {
-  max-width: var(--max-width);
+  max-width: 720px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.about__avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: var(--color-green);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about__avatar-initials {
-  font-family: var(--font-sans);
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-white);
-  user-select: none;
 }
 
 .about__role {
@@ -1013,16 +991,6 @@
 /* ============================
    RESPONSIVE
    ============================ */
-@media (max-width: 900px) {
-  .about__inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .about__left {
-    display: none;
-  }
-}
 
 @media (max-width: 640px) {
   :root {
@@ -1134,5 +1102,82 @@
 
   .typewriter-section__final-line {
     font-size: 1.6rem;
+  }
+}
+
+/* ============================
+   DESKTOP LAYOUT (≥ 901px)
+   ============================ */
+@media (min-width: 901px) {
+  :root {
+    --section-padding: 64px 40px;
+  }
+
+  /* Nav: align inner with page content width */
+  .nav {
+    padding: 0 40px;
+  }
+  .nav__inner {
+    max-width: 900px;
+  }
+
+  /* Hero: more breathing room, slightly wider inner */
+  .hero {
+    padding: 88px 40px 72px;
+  }
+  .hero__inner {
+    max-width: 840px;
+  }
+  .hero__subtext {
+    max-width: 680px;
+  }
+
+  /* What I Help With: constrained, balanced grid */
+  .services__inner {
+    max-width: 900px;
+  }
+  .services__grid {
+    gap: 36px 56px;
+  }
+
+  /* Case Studies: consistent content width */
+  .case-studies__inner {
+    max-width: 900px;
+  }
+  /* Pin the label column so it doesn't stretch arbitrarily */
+  .case-study__dl {
+    grid-template-columns: 160px 1fr;
+    gap: 8px 20px;
+  }
+
+  /* Why Reimagined Mira: editorial reading width */
+  .why-started__inner {
+    max-width: 760px;
+  }
+
+  /* Testimonials: consistent content width */
+  .testimonials__inner {
+    max-width: 900px;
+  }
+
+  /* About: text-only, reading width, aligned with other text sections */
+  .about {
+    padding: 64px 40px;
+  }
+  .about__inner {
+    max-width: 760px;
+  }
+
+  /* Closing: centered, intimate feel */
+  .closing {
+    padding: 88px 40px 80px;
+  }
+  .closing__inner {
+    max-width: 760px;
+  }
+
+  /* Final CTA: consistent padding */
+  .final-cta {
+    padding: 56px 40px;
   }
 }

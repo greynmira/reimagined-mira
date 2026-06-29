@@ -443,17 +443,11 @@ function About() {
   return (
     <section className="about">
       <div className="about__inner">
-        <div className="about__left">
-          <div className="about__avatar" aria-hidden="true">
-            <span className="about__avatar-initials">M</span>
-          </div>
-        </div>
-        <div className="about__right">
-          <h2 className="section-headline">About Mira</h2>
-          <p className="about__role">Healthcare Product Leader · Strategic Partnerships Lead,<br />Heart &amp; Stroke Foundation</p>
-          <p className="about__body">
-            For the past 8+ years, I&apos;ve worked across healthcare strategy, digital health, and product leadership while helping professionals navigate career growth, networking, personal brand, and change.
-          </p>        </div>
+        <h2 className="section-headline">About Mira</h2>
+        <p className="about__role">Healthcare Product Leader · Strategic Partnerships Lead,<br />Heart &amp; Stroke Foundation</p>
+        <p className="about__body">
+          For the past 8+ years, I&apos;ve worked across healthcare strategy, digital health, and product leadership while helping professionals navigate career growth, networking, personal brand, and change.
+        </p>
       </div>
     </section>
   )
