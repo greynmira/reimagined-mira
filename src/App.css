@@ -779,6 +779,16 @@
   color: var(--color-green);
   margin-top: 14px;
   margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.case-study__dt-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--color-green);
 }
 
 .case-study__dl dt:first-child {
@@ -1191,11 +1201,14 @@
   }
   .case-study__dl { grid-column: 2; grid-row: 1 / span 2; display: block; }
   .case-study__dl dt {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-size: 0.73rem; font-weight: 700; letter-spacing: 0.11em;
     text-transform: uppercase; color: var(--color-green);
     margin-top: 24px; margin-bottom: 6px;
   }
+  .case-study__dt-icon { width: 13px; height: 13px; }
   .case-study__dl dt:first-child { margin-top: 0; }
   .case-study__dl dd {
     display: block;

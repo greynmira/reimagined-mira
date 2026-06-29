@@ -530,9 +530,18 @@ function CaseStudies() {
               <div className="case-study__tag">{c.tag}</div>
               <h3 className="case-study__title">{c.title}</h3>
               <dl className="case-study__dl">
-                <dt>Challenge</dt><dd>{c.challenge}</dd>
-                <dt>What We Worked On</dt><dd>{c.work}</dd>
-                <dt>Outcome</dt><dd>{c.outcome}</dd>
+                <dt>
+                  <svg className="case-study__dt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L12 6M12 18L12 22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12L6 12M18 12L22 12M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93"/></svg>
+                  Challenge
+                </dt><dd>{c.challenge}</dd>
+                <dt>
+                  <svg className="case-study__dt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><path d="M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M5.64 18.36l2.12-2.12M16.24 7.76l2.12-2.12"/></svg>
+                  What We Worked On
+                </dt><dd>{c.work}</dd>
+                <dt>
+                  <svg className="case-study__dt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  Outcome
+                </dt><dd>{c.outcome}</dd>
               </dl>
             </div>
           ))}
