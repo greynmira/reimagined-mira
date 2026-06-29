@@ -990,6 +990,11 @@
 .hero__content { /* inherits hero__inner centering on mobile */ }
 
 /* ============================
+   SERVICE NUMBERS (desktop only)
+   ============================ */
+.service-item__num { display: none; }
+
+/* ============================
    RESPONSIVE
    ============================ */
 
