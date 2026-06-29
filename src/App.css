@@ -409,6 +409,9 @@
   line-height: 1.2;
 }
 
+.nav__cta-short { display: none; }
+.nav__cta-full { display: inline; }
+
 /* ============================
    HERO
    ============================ */
@@ -1017,7 +1020,11 @@
   .btn-outline {
     font-size: 0.8rem;
     padding: 8px 14px;
+    white-space: nowrap;
   }
+
+  .nav__cta-full { display: none; }
+  .nav__cta-short { display: inline; }
 
   .hero {
     padding: 56px 20px 48px;
