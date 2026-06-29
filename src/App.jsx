@@ -435,6 +435,7 @@ function Services() {
         <div className="services__grid">
           {services.map((s, i) => (
             <div key={i} className="service-item">
+              <span className="service-item__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
               <h3 className="service-item__title">{serviceIcons[s.title]}{s.title}</h3>
               <ul className="service-item__list">
                 {s.items.map((item, j) => (
@@ -620,7 +621,7 @@ function Closing() {
         </h2>
         <p><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book your Free Discovery Call</a> and let&apos;s have a conversation. There is no pressure or obligation to work together.</p>
         <p><strong className="why-started__hook">I&apos;m ready to meet you when you are.</strong></p>
-        <a href={CALENDLY_URL} className="closing__cta-btn btn-primary btn-primary--large" target="_blank" rel="noopener noreferrer">
+        <a href={CALENDLY_URL} className="closing__cta-btn" target="_blank" rel="noopener noreferrer">
           Book your Free Discovery Call
         </a>
       </div>
