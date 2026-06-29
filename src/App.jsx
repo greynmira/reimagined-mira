@@ -680,8 +680,6 @@ function FinalCTA() {
   return (
     <section className="final-cta" id="contact">
       <div className="final-cta__inner">
-        <h2 className="final-cta__headline">Ready to reimagine what&apos;s next?</h2>
-        <p className="final-cta__subtext">Book a free 30-minute discovery call. No pressure, no obligation — just a conversation.</p>
         <a
           href={CALENDLY_URL}
           className="btn-outline-light btn-primary--large"
