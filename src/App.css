@@ -1393,7 +1393,7 @@
     color: rgba(255,255,255,0.78);
     max-width: 560px;
   }
-  .closing__highlight { color: #a8d9bc; }
+  .closing__highlight { color: rgba(255,255,255,0.88); }
   .closing .why-started__hook { color: #a8d9bc; font-weight: 600; }
   .closing__cta-btn {
     display: inline-block;
@@ -1419,21 +1419,24 @@
   .closing-headline {
     font-size: clamp(2.4rem, 3.2vw, 3.4rem);
     font-weight: 600;
-    color: rgba(255,255,255,0.78);
+    color: rgba(255,255,255,0.3);
     letter-spacing: -0.02em;
     font-family: var(--font-serif);
     line-height: 1.15;
+    transform: scale(0.93);
+    transform-origin: center;
+    text-shadow: none;
+    transition: color 1.1s ease, transform 1.1s ease, text-shadow 1.1s ease;
   }
   .closing-headline::before { display: none; }
   .closing-headline--visible {
-    color: rgba(255,255,255,0.78);
-    text-shadow: none;
-    opacity: 1;
-    transform: translateY(0);
+    color: rgba(255,255,255,0.82);
+    transform: scale(1);
+    text-shadow: 0 0 48px rgba(168, 217, 188, 0.22);
   }
   .closing-headline--glowing {
-    color: rgba(255,255,255,0.92);
-    text-shadow: none;
+    color: rgba(255,255,255,0.95);
+    text-shadow: 0 0 64px rgba(168, 217, 188, 0.45);
   }
 
   /* FINAL CTA — hidden on desktop; Closing IS the final CTA */
