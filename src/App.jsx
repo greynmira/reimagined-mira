@@ -186,22 +186,47 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero__inner">
-        <h1 className="hero__headline">
-          Career growth doesn&apos;t have to cost your authenticity.
-        </h1>
-        <p className="hero__subtext">
-          I help ambitious professionals build careers, networks, and personal brands that create opportunity without burning themselves out.
-        </p>
-        <div className="hero__typewriter">
-          <TypewriterSection onDone={() => setTypewriterDone(true)} onReplay={() => setTypewriterDone(false)} />
-        </div>
-        {!typewriterDone && (
-          <div className="hero__cta">
-            <a href={CALENDLY_URL} className="btn-primary btn-primary--large" target="_blank" rel="noopener noreferrer">
-              Book your Free Discovery Call
-            </a>
+        <div className="hero__content">
+          <h1 className="hero__headline">
+            Career growth doesn&apos;t have to cost your authenticity.
+          </h1>
+          <p className="hero__subtext">
+            I help ambitious professionals build careers, networks, and personal brands that create opportunity without burning themselves out.
+          </p>
+          <div className="hero__typewriter">
+            <TypewriterSection onDone={() => setTypewriterDone(true)} onReplay={() => setTypewriterDone(false)} />
           </div>
-        )}
+          {!typewriterDone && (
+            <div className="hero__cta">
+              <a href={CALENDLY_URL} className="btn-primary btn-primary--large" target="_blank" rel="noopener noreferrer">
+                Book your Free Discovery Call
+              </a>
+            </div>
+          )}
+        </div>
+        <div className="hero__visual" aria-hidden="true">
+          <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="240" cy="240" r="220" fill="#EEF4F0"/>
+            <circle cx="240" cy="240" r="186" stroke="#1B4332" strokeWidth="0.75" strokeDasharray="7 11" opacity="0.22"/>
+            <circle cx="240" cy="240" r="150" stroke="#1B4332" strokeWidth="0.75" strokeDasharray="5 9" opacity="0.17"/>
+            <circle cx="240" cy="240" r="112" stroke="#1B4332" strokeWidth="0.75" strokeDasharray="4 8" opacity="0.12"/>
+            <circle cx="240" cy="240" r="72" stroke="#1B4332" strokeWidth="1" strokeDasharray="2 7" opacity="0.09"/>
+            <path d="M 52 415 C 115 360 175 338 222 300 C 268 260 302 202 352 152 C 382 120 415 98 458 72"
+                  stroke="#1B4332" strokeWidth="2.5" strokeLinecap="round" opacity="0.36"/>
+            <circle cx="52" cy="415" r="5" fill="#1B4332" opacity="0.28"/>
+            <circle cx="222" cy="300" r="7" fill="#1B4332" opacity="0.5"/>
+            <circle cx="352" cy="152" r="9" fill="#1B4332" opacity="0.72"/>
+            <circle cx="458" cy="72" r="10" fill="#1B4332" opacity="0.9"/>
+            <circle cx="305" cy="122" r="3" fill="#2d6a4f" opacity="0.55"/>
+            <circle cx="145" cy="192" r="2.5" fill="#2d6a4f" opacity="0.4"/>
+            <circle cx="395" cy="262" r="2" fill="#2d6a4f" opacity="0.35"/>
+            <circle cx="172" cy="388" r="2.5" fill="#2d6a4f" opacity="0.3"/>
+            <g transform="translate(216,210)" opacity="0.12" stroke="#1B4332" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18.5 8.7 18.5 7a6.5 6.5 0 0 0-13 0c0 1.7.8 3.2 2 4.2.8.8 1.3 1.4 1.5 2.5"/>
+              <path d="M9 18h6"/><path d="M10 22h4"/>
+            </g>
+          </svg>
+        </div>
       </div>
     </section>
   )
@@ -439,6 +464,57 @@ function WhyIStarted() {
   )
 }
 
+const mapQuadrants = [
+  {
+    num: '01', label: 'Advance',
+    title: 'Career Strategy',
+    items: ['Promotions & advancement', 'Career transitions', 'Leadership growth'],
+  },
+  {
+    num: '02', label: 'Connect',
+    title: 'Networking',
+    items: ['Strategic relationship building', 'Internal influence', 'Executive visibility'],
+  },
+  {
+    num: '03', label: 'Stand Out',
+    title: 'Personal Brand',
+    items: ['Confidence & presence', 'Communicating your value', 'Professional storytelling'],
+  },
+  {
+    num: '04', label: 'Navigate',
+    title: 'Resilience & Change',
+    items: ['Difficult managers', 'Organizational politics', 'Career setbacks'],
+  },
+]
+
+function CareerMap() {
+  return (
+    <section className="career-map">
+      <div className="career-map__inner">
+        <div className="career-map__intro">
+          <p className="career-map__eyebrow">The Framework</p>
+          <h2 className="career-map__heading">Four dimensions of career clarity.</h2>
+          <p className="career-map__sub">Most professionals are strong in one or two areas. Real momentum comes from addressing all four.</p>
+        </div>
+        <div className="career-map__grid">
+          {mapQuadrants.map((q, i) => (
+            <div key={i} className="career-map__quad">
+              <span className="career-map__num" aria-hidden="true">{q.num}</span>
+              <p className="career-map__label">{q.label}</p>
+              <h3 className="career-map__quad-title">{q.title}</h3>
+              <ul className="career-map__quad-list">
+                {q.items.map((item, j) => (
+                  <li key={j}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function About() {
   return (
     <section className="about">
@@ -604,6 +680,8 @@ function FinalCTA() {
   return (
     <section className="final-cta" id="contact">
       <div className="final-cta__inner">
+        <h2 className="final-cta__headline">Ready to reimagine what&apos;s next?</h2>
+        <p className="final-cta__subtext">Book a free 30-minute discovery call. No pressure, no obligation — just a conversation.</p>
         <a
           href={CALENDLY_URL}
           className="btn-outline-light btn-primary--large"
@@ -640,6 +718,7 @@ function App() {
       <Nav />
       <main>
         <Hero />
+        <CareerMap />
         <CaseStudies />
         <Services />
         <WhyIStarted />

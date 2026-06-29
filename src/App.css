@@ -989,6 +989,17 @@
 }
 
 /* ============================
+   HERO VISUAL (desktop only)
+   ============================ */
+.hero__visual { display: none; }
+.hero__content { /* inherits hero__inner centering on mobile */ }
+
+/* ============================
+   CAREER MAP (desktop only)
+   ============================ */
+.career-map { display: none; }
+
+/* ============================
    RESPONSIVE
    ============================ */
 
@@ -1109,67 +1120,174 @@
    DESKTOP LAYOUT (≥ 901px)
    ============================ */
 @media (min-width: 901px) {
-  :root {
-    --section-padding: 96px 48px;
-  }
+  :root { --section-padding: 100px 64px; }
 
-  /* ======================================================
-     GLOBAL DESKTOP TYPOGRAPHY UPGRADES
-     Serif headings + green accent line before each one
-     gives an editorial, premium personal-brand feel.
-     ====================================================== */
+  /* Global: serif section headings + green accent rule */
   .section-headline {
     font-family: var(--font-serif);
     font-size: clamp(2rem, 2.6vw, 2.5rem);
     letter-spacing: -0.02em;
-    margin-bottom: 40px;
+    margin-bottom: 44px;
   }
-  /* Small green rule above every section heading */
   .section-headline::before {
     content: '';
     display: block;
     width: 32px;
     height: 2px;
     background: var(--color-green);
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
 
-  /* ======================================================
-     NAV — approved, unchanged
-     ====================================================== */
-  .nav { padding: 0 48px; }
-  .nav__inner { max-width: 1080px; height: 72px; }
+  /* NAV */
+  .nav { padding: 0 64px; }
+  .nav__inner { max-width: 1200px; height: 72px; }
   .nav__logo { font-size: 1.05rem; }
 
-  /* ======================================================
-     HERO — approved, unchanged
-     ====================================================== */
-  .hero { padding: 112px 48px 96px; }
-  .hero__inner { max-width: 860px; }
-  .hero__headline { font-size: clamp(2.8rem, 4.5vw, 4rem); margin-bottom: 32px; }
-  .hero__subtext { max-width: 660px; font-size: 1.18rem; margin-bottom: 28px; }
-  .hero__typewriter { margin: 60px 0; }
+  /* HERO — Stance-inspired split layout
+     Text left, abstract SVG right. Max visual impact on first load. */
+  .hero { padding: 0; overflow: hidden; }
+  .hero__inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 100px 64px 88px;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    text-align: left;
+  }
+  .hero__content { flex: 1; min-width: 0; }
+  .hero__headline { font-size: clamp(2.8rem, 4vw, 4rem); margin-bottom: 28px; text-align: left; }
+  .hero__subtext { max-width: 520px; font-size: 1.18rem; margin: 0 0 28px; text-align: left; }
+  .hero__typewriter { margin: 52px 0; }
   .typewriter-section__fixed,
-  .typewriter-section__phrase { font-size: 3rem; }
-  .typewriter-section__phrase { min-height: 3.6rem; }
-  .typewriter-section__final-line { font-size: 2.6rem; }
+  .typewriter-section__phrase { font-size: 2.8rem; }
+  .typewriter-section__phrase { min-height: 3.4rem; }
+  .typewriter-section__final-line { font-size: 2.4rem; }
+  .hero__visual {
+    display: block;
+    flex: 0 0 420px;
+    width: 420px;
+    height: 420px;
+  }
+  .hero__visual svg { width: 100%; height: 100%; }
 
-  /* ======================================================
-     CASE STUDIES
-     Very subtle warm tint on section, crisp white cards.
-     Two-column: tag + title anchored left, stacked dl right.
-     ====================================================== */
-  .case-studies { padding: 96px 48px; background: #F9FAF8; }
+  /* CAREER MAP — desktop-only framework diagram
+     Inspired by Stance's importance/urgency matrix.
+     Four quadrant panels with border-grid structure.
+     Communicates methodology, not just a service list. */
+  .career-map {
+    display: block;
+    padding: 96px 64px;
+    background: #F3F5F2;
+    border-top: 1px solid #e6ede8;
+  }
+  .career-map__inner { max-width: 1080px; margin: 0 auto; }
+  .career-map__intro { margin-bottom: 56px; }
+  .career-map__eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-green);
+    margin-bottom: 16px;
+  }
+  .career-map__heading {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 2.8vw, 2.6rem);
+    font-weight: 700;
+    color: var(--color-black);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 0 0 14px;
+  }
+  .career-map__sub {
+    font-size: 1.08rem;
+    color: var(--color-text-muted);
+    max-width: 560px;
+    line-height: 1.75;
+    margin: 0;
+  }
+  .career-map__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #c8d8cc;
+  }
+  .career-map__quad {
+    padding: 48px 52px;
+    position: relative;
+    border-right: 1px solid #c8d8cc;
+    border-bottom: 1px solid #c8d8cc;
+    background: #fff;
+    transition: background-color 0.2s ease;
+  }
+  .career-map__quad:hover { background: #f8fbf9; }
+  .career-map__quad:nth-child(even) { border-right: none; }
+  .career-map__quad:nth-child(3),
+  .career-map__quad:nth-child(4) { border-bottom: none; }
+  .career-map__num {
+    position: absolute;
+    top: 28px;
+    right: 44px;
+    font-family: var(--font-serif);
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--color-green);
+    opacity: 0.07;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  .career-map__label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-green);
+    background: #eef4f0;
+    display: inline-block;
+    padding: 3px 10px 2px;
+    margin-bottom: 16px;
+  }
+  .career-map__quad-title {
+    font-family: var(--font-sans);
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: var(--color-black);
+    margin: 0 0 18px;
+    line-height: 1.25;
+  }
+  .career-map__quad-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .career-map__quad-list li {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    padding: 4px 0 4px 18px;
+    position: relative;
+  }
+  .career-map__quad-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--color-green);
+    font-weight: 600;
+  }
+
+  /* CASE STUDIES — white band, tinted cards */
+  .case-studies { padding: 100px 64px; background: #fff; }
   .case-studies__inner { max-width: 1080px; }
   .case-studies__list { gap: 16px; }
-
   .case-study {
     display: grid;
     grid-template-columns: 220px 1fr;
     grid-template-rows: auto 1fr;
     gap: 0 56px;
-    padding: 44px 48px 44px 40px;
-    background: #fff;
+    padding: 48px 56px 48px 44px;
+    background: #F9FAF8;
     border: 1px solid #e6ede8;
     border-left: 4px solid var(--color-green);
     align-items: start;
@@ -1181,7 +1299,7 @@
   }
   .case-study__title {
     grid-column: 1; grid-row: 2;
-    font-size: 1.25rem; font-weight: 700; line-height: 1.3;
+    font-size: 1.22rem; font-weight: 700; line-height: 1.3;
     margin-bottom: 0;
   }
   .case-study__dl { grid-column: 2; grid-row: 1 / span 2; display: block; }
@@ -1194,114 +1312,123 @@
   .case-study__dl dt:first-child { margin-top: 0; }
   .case-study__dl dd {
     display: block;
-    font-size: 1.06rem; line-height: 1.78;
+    font-size: 1.08rem; line-height: 1.78;
     color: var(--color-text-secondary); margin: 0;
   }
 
-  /* ======================================================
-     WHAT I HELP WITH
-     Tinted band. White cards with a 3px green top accent —
-     an editorial card treatment that signals intentional
-     design. Generous internal padding.
-     ====================================================== */
-  .services { padding: 96px 48px; background: #F3F5F2; }
+  /* SERVICES — tinted band, white cards, green top accent, hover lift */
+  .services { padding: 100px 64px; background: #F3F5F2; }
   .services__inner { max-width: 1080px; }
   .services__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-
   .service-item {
     background: #fff;
     border: 1px solid #dde8e0;
     border-top: 3px solid var(--color-green);
-    padding: 44px 48px;
+    padding: 48px 52px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
-  .service-item__title {
-    font-size: 1.22rem; margin-bottom: 20px;
-    color: var(--color-black);
+  .service-item:hover {
+    box-shadow: 0 8px 32px rgba(27, 67, 50, 0.09);
+    transform: translateY(-3px);
   }
+  .service-item__title { font-size: 1.22rem; margin-bottom: 22px; color: var(--color-black); }
   .service-item__icon { width: 22px; height: 22px; margin-right: 10px; }
   .service-item__list li {
-    font-size: 1.06rem; padding: 6px 0; line-height: 1.62;
+    font-size: 1.08rem; padding: 6px 0; line-height: 1.62;
     color: var(--color-text-secondary);
   }
 
-  /* ======================================================
-     WHY REIMAGINED MIRA
-     White band. Two-column editorial layout. Left col has
-     the bulb icon + heading. Right col has copy with a
-     continuous vertical accent line on its left edge.
-     Using margin: 0 + padding-bottom so the border-left
-     runs unbroken across all stacked paragraphs.
-     ====================================================== */
-  .why-started { padding: 96px 48px; }
+  /* WHY REIMAGINED MIRA — full-width dark green editorial band
+     The emotional heart of the page. Stance-inspired: bold colour band
+     with large heading left and copy right on dark green.
+     Radial glow in top-right corner adds depth. */
+  .why-started {
+    padding: 100px 64px;
+    background: #1B4332;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-started::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 68%);
+    pointer-events: none;
+  }
   .why-started__inner {
     max-width: 1080px;
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 320px 1fr;
     column-gap: 0;
     align-items: start;
+    position: relative;
   }
   .why-started__inner > .bulb-wrap {
     grid-column: 1; grid-row: 1;
-    margin: 0 0 20px 0; display: block;
+    margin: 0 0 24px 0; display: block;
   }
   .why-started__inner > .section-headline {
     grid-column: 1; grid-row: 2;
-    align-self: start; margin-bottom: 0;
-    padding-right: 48px;
+    align-self: start;
+    color: #fff;
+    margin-bottom: 0;
+    padding-right: 56px;
+    font-family: var(--font-serif);
+    font-size: clamp(1.9rem, 2.4vw, 2.4rem);
   }
-  /* Suppress accent rule in left col — bulb icon is the marker */
+  /* No accent rule needed — heading on dark green is its own anchor */
   .why-started__inner > .section-headline::before { display: none; }
-
-  /* Right col paragraphs: no margin-bottom so border is continuous */
+  .why-started .section-icon,
+  .why-started .logo-bulb { color: rgba(255,255,255,0.65); }
+  .why-started .bulb-spark {
+    background: rgba(255,255,255,0.6);
+    box-shadow: 0 0 3px rgba(255,255,255,0.35);
+  }
+  /* Right col: continuous vertical accent line via zero-margin + padding-bottom trick */
   .why-started__inner > p {
     grid-column: 2;
-    font-size: 1.1rem; line-height: 1.9;
+    font-size: 1.12rem;
+    line-height: 1.92;
     margin-bottom: 0;
-    padding: 0 0 24px 64px;
-    color: var(--color-text-secondary);
-    border-left: 1px solid #c4d9cb;
+    padding: 0 0 24px 68px;
+    color: rgba(255,255,255,0.82);
+    border-left: 1px solid rgba(255,255,255,0.18);
   }
   .why-started__inner > p:last-child { padding-bottom: 0; }
+  .why-started .why-started__hook { color: #a8d9bc; }
 
-  /* ======================================================
-     TESTIMONIALS
-     Tinted band. Premium quote cards: white bg, generous
-     padding, 4px green left accent. 2-column grid.
-     ====================================================== */
-  .testimonials { padding: 96px 48px; background: #F3F5F2; }
+  /* TESTIMONIALS — pale tint band, 3-column grid of premium white cards */
+  .testimonials { padding: 100px 64px; background: #F9FAF8; }
   .testimonials__inner { max-width: 1080px; }
   .testimonials__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     align-items: start;
   }
-  .testimonial:first-child { grid-column: auto; }
-  .testimonial:nth-child(2) { border-right: none; }
-
   .testimonial {
     background: #fff;
     border: 1px solid #dde8e0;
-    border-left: 4px solid var(--color-green);
-    padding: 44px 48px;
+    border-top: 3px solid var(--color-green);
+    border-left: none;
+    padding: 44px 44px;
   }
+  .testimonial:first-child { grid-column: auto; }
+  .testimonial:nth-child(2) { border-right: none; }
+  .testimonial__icon { display: none; }
   .testimonial__quote {
-    font-size: 1.1rem; line-height: 1.88;
+    font-size: 1.08rem; line-height: 1.88;
     font-style: italic; margin-bottom: 0;
     color: var(--color-text-secondary);
   }
-  .testimonial__name {
-    font-size: 0.82rem; letter-spacing: 0.09em; margin-top: 22px;
-  }
+  .testimonial__name { font-size: 0.82rem; letter-spacing: 0.09em; margin-top: 22px; }
 
-  /* ======================================================
-     ABOUT MIRA
-     Clean white band. Two-column: heading + credentials
-     left / body text right. Left col gets a subtle right
-     border as a visual column separator, adding structure
-     without fussiness.
-     ====================================================== */
-  .about { padding: 96px 48px; background: #fff; }
+  /* ABOUT MIRA — white band, two-column with right-border divider */
+  .about { padding: 100px 64px; background: #fff; }
   .about__inner {
     max-width: 1080px;
     display: grid;
@@ -1318,23 +1445,17 @@
     grid-column: 1; grid-row: 2;
     font-size: 0.85rem; line-height: 1.75;
     text-transform: none; letter-spacing: 0.04em;
-    padding-right: 52px;
+    padding-right: 52px; padding-bottom: 4px;
     border-right: 1px solid #d4e0d7;
-    padding-bottom: 4px;
   }
   .about__inner > .about__body {
     grid-column: 2; grid-row: 1 / span 2;
-    font-size: 1.1rem; line-height: 1.9;
+    font-size: 1.12rem; line-height: 1.9;
     padding-left: 64px; margin-bottom: 0;
   }
 
-  /* ======================================================
-     CLOSING — ENOUGH THINKING
-     Tinted band for visual rhythm before the dark CTA.
-     Two-column: icon + heading left / copy right.
-     Glow is subtle on desktop — confident, not dramatic.
-     ====================================================== */
-  .closing { padding: 96px 48px; background: #F3F5F2; }
+  /* CLOSING — tinted band, two-column, glow at minimum viable intensity */
+  .closing { padding: 100px 64px; background: #F3F5F2; }
   .closing__inner {
     max-width: 1080px;
     display: grid;
@@ -1342,30 +1463,25 @@
     column-gap: 80px;
     align-items: start;
   }
-  .closing__inner > .section-icon {
-    grid-column: 1; grid-row: 1; margin-bottom: 20px;
-  }
-  .closing__inner > .closing-headline {
-    grid-column: 1; grid-row: 2;
-  }
+  .closing__inner > .section-icon { grid-column: 1; grid-row: 1; margin-bottom: 20px; }
+  .closing__inner > .closing-headline { grid-column: 1; grid-row: 2; }
   .closing__inner > p {
     grid-column: 2;
-    font-size: 1.1rem; line-height: 1.88;
+    font-size: 1.12rem; line-height: 1.88;
     color: var(--color-text-secondary);
   }
-
-  .closing-headline { font-size: clamp(2.6rem, 3.8vw, 3.2rem); }
-  /* Glow subtly reduced for desktop — elegant, not overwrought */
+  .closing-headline { font-size: clamp(2.6rem, 3.8vw, 3.4rem); }
   .closing-headline--visible {
-    text-shadow: 0 0 12px rgba(45, 106, 79, 0.14), 0 0 4px rgba(45, 106, 79, 0.08);
+    text-shadow: 0 0 12px rgba(45, 106, 79, 0.12), 0 0 4px rgba(45, 106, 79, 0.07);
   }
   .closing-headline--glowing {
-    text-shadow: 0 0 18px rgba(45, 106, 79, 0.2), 0 0 6px rgba(45, 106, 79, 0.12);
+    text-shadow: 0 0 18px rgba(45, 106, 79, 0.18), 0 0 6px rgba(45, 106, 79, 0.1);
   }
 
-  /* ======================================================
-     FINAL CTA — dark band, confident button
-     ====================================================== */
-  .final-cta { padding: 72px 48px; }
-  .btn-outline-light { font-size: 1.05rem; padding: 18px 52px; }
+  /* FINAL CTA — substantial black band */
+  .final-cta { padding: 88px 64px; }
+  .final-cta__inner { max-width: 680px; }
+  .final-cta__headline { font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 20px; }
+  .final-cta__subtext { font-size: 1.12rem; margin-bottom: 36px; }
+  .btn-outline-light { font-size: 1.1rem; padding: 20px 56px; }
 }
