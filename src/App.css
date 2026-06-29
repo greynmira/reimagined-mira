@@ -1114,34 +1114,6 @@
 }
 
 /* ============================
-   MOBILE RHYTHM (≤ 900px only)
-   ============================ */
-@media (max-width: 900px) {
-  /* Why Reimagined Mira — dark contrast moment on mobile */
-  .why-started {
-    background: #1B4332;
-    border-top: none;
-  }
-  .why-started .section-headline {
-    color: #fff;
-  }
-  .why-started__inner p {
-    color: rgba(255, 255, 255, 0.82);
-  }
-  .why-started .why-started__hook {
-    color: #a8d9bc;
-  }
-  .why-started .logo-bulb,
-  .why-started .section-icon {
-    color: rgba(255, 255, 255, 0.65);
-  }
-  .why-started .bulb-spark {
-    background: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 3px rgba(255, 255, 255, 0.35);
-  }
-}
-
-/* ============================
    DESKTOP LAYOUT (≥ 901px)
    ============================ */
 @media (min-width: 901px) {
@@ -1278,7 +1250,6 @@
   .why-started {
     padding: 100px 64px;
     background: #1B4332;
-    border-top: none;
     position: relative;
     overflow: hidden;
   }
