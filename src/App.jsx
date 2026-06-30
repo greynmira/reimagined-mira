@@ -512,10 +512,10 @@ const caseStudies = [
   },
   {
     tag: 'Experienced Professional',
-    title: 'Beyond the Plateau',
-    challenge: 'A professional with 30+ years of experience felt stuck and uncertain about what comes next.',
-    work: 'Networking, relationship building, and exploring new opportunities.',
-    outcome: 'Identified and pursued meaningful opportunities aligned with their goals.',
+    title: 'From Comfortable to Confident',
+    challenge: 'After spending more than 15 years with the same employer, this client was entering the job market for the first time in over a decade. The hiring landscape had changed significantly, and they felt uncertain about where to begin, how to position their experience, and how to stand out in today\'s competitive market.',
+    work: 'Together, we developed a tailored job search strategy, identified current hiring trends, refined their resume and application approach, strengthened their interview preparation, and built the confidence needed to navigate an unfamiliar hiring process.',
+    outcome: 'Landed a new role by using a focused and personalized job search strategy built for today\'s hiring market.',
   },
 ]
 
