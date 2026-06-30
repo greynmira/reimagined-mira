@@ -189,7 +189,7 @@ function Hero() {
       <div className="hero__inner">
         <div className="hero__content">
           <h1 className="hero__headline">
-            Your next career move deserves more than <em>generic advice.</em>
+            Your next career move deserves more than <span style={{color: 'var(--color-green)'}}>generic advice.</span>
           </h1>
           <p className="hero__subtext">
             Career growth isn&apos;t just about resumes or interviews. It&apos;s about understanding how you&apos;re positioned, where opportunities exist, and how to make thoughtful decisions with confidence.
