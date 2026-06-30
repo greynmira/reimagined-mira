@@ -192,7 +192,7 @@ function Hero() {
             Your next career move deserves more than <span style={{color: 'var(--color-green)'}}>generic advice.</span>
           </h1>
           <p className="hero__subtext">
-            Career growth isn&apos;t just about resumes or interviews. It&apos;s about understanding how you&apos;re positioned, where opportunities exist, and how to make thoughtful decisions with confidence.
+            Sometimes you don&apos;t need more advice. You need someone to help you see your career differently. Together, we&apos;ll build a strategy that fits you.
           </p>
           <div className="hero__typewriter">
             <TypewriterSection onDone={() => setTypewriterDone(true)} onReplay={() => setTypewriterDone(false)} />
