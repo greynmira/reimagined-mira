@@ -994,6 +994,8 @@
   font-weight: 400;
   margin-bottom: 12px;
 }
+.testimonial__quote::before { content: '\201C'; }
+.testimonial__quote::after  { content: '\201D'; }
 
 .testimonial__name {
   font-size: 0.7rem;
