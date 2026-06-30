@@ -189,10 +189,10 @@ function Hero() {
       <div className="hero__inner">
         <div className="hero__content">
           <h1 className="hero__headline">
-            Career growth doesn&apos;t have to cost your authenticity.
+            Your next career move deserves more than generic advice.
           </h1>
           <p className="hero__subtext">
-            I help ambitious professionals build careers, networks, and personal brands that create opportunity without burning themselves out.
+            Career growth isn&apos;t just about resumes or interviews. It&apos;s about understanding how you&apos;re positioned, where opportunities exist, and making thoughtful decisions with confidence.
           </p>
           <div className="hero__typewriter">
             <TypewriterSection onDone={() => setTypewriterDone(true)} onReplay={() => setTypewriterDone(false)} />
@@ -234,25 +234,25 @@ function Hero() {
 }
 
 const serviceIcons = {
-  'Career Strategy': (
+  "I want to grow but don’t know how.": (
     <svg className="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
       <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
       <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
     </svg>
   ),
-  'Networking': (
+  "I’m not being seen or recognised.": (
     <svg className="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/>
       <line x1="12" y1="7" x2="5" y2="17"/><line x1="12" y1="7" x2="19" y2="17"/><line x1="5" y1="19" x2="19" y2="19"/>
     </svg>
   ),
-  'Personal Brand': (
+  "I struggle to tell my story.": (
     <svg className="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
     </svg>
   ),
-  'Resilience & Change': (
+  "I’m dealing with something difficult.": (
     <svg className="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 22V12"/><path d="M12 12C12 12 8 10 8 6a4 4 0 0 1 8 0c0 4-4 6-4 6z"/>
       <path d="M12 12C12 12 16 10 16 6"/><path d="M9 22h6"/>
@@ -262,20 +262,20 @@ const serviceIcons = {
 
 const services = [
   {
-    title: 'Career Strategy',
-    items: ['Promotions & advancement', 'Career transitions', 'Leadership growth'],
+    title: "I want to grow but don’t know how.",
+    items: ['Career direction and next moves', 'Promotions and advancement', 'Career transitions'],
   },
   {
-    title: 'Networking',
-    items: ['Strategic relationship building', 'Internal influence', 'Executive visibility'],
+    title: "I’m not being seen or recognised.",
+    items: ['Strategic networking and relationships', 'Building internal influence', 'Executive visibility'],
   },
   {
-    title: 'Personal Brand',
-    items: ['Confidence & presence', 'Communicating your value', 'Professional storytelling'],
+    title: 'I struggle to tell my story.',
+    items: ['Positioning your experience', 'Personal brand and presence', 'Communicating your value'],
   },
   {
-    title: 'Resilience & Change',
-    items: ['Difficult managers', 'Organizational politics', 'Career setbacks'],
+    title: "I’m dealing with something difficult.",
+    items: ['Navigating workplace dynamics', 'Career setbacks and change', 'Confidence under pressure'],
   },
 ]
 
@@ -459,7 +459,7 @@ function WhyIStarted() {
         <h2 className="section-headline">Why<br />Reimagined Mira</h2>
         <p><strong className="why-started__hook">I&apos;m obsessed with career strategy:</strong> positioning, networking, personal brand, and career growth. <em>I dream about this stuff so you don&apos;t have to.</em></p>
         <p>I&apos;ve reinvented my own career more than once, from business school to clinical nutrition to digital health. Along the way, I&apos;ve learned that career paths are rarely linear and that feeling stuck doesn&apos;t have to be permanent.</p>
-        <p>Most commonly, people aren&apos;t lacking talent. They&apos;re often lacking perspective, accountability, and a trusted sounding board.</p>
+        <p>Most professionals don&apos;t need more effort. They need someone to help them see what they&apos;re too close to recognise.</p>
         <p>That&apos;s why I created Reimagined by Mira.</p>
       </div>
     </section>
@@ -500,21 +500,21 @@ const caseStudies = [
     tag: 'Early Career',
     title: 'Breaking Through Unemployment',
     challenge: 'Recent graduate unemployed for 6+ months, struggling to transition into a new field.',
-    work: 'Resume positioning, transferable skills, interview preparation, and professional storytelling.',
+    work: 'Developed a career positioning strategy, identified transferable strengths, and built the narrative needed to compete in a new field.',
     outcome: 'Secured a role in their target field within 3 months.',
   },
   {
     tag: 'Mid-Career',
     title: 'Navigating Compensation Conversations',
     challenge: 'Felt undercompensated and unsure how to navigate a salary conversation.',
-    work: 'Identifying contributions, framing impact, and preparing for a confident compensation discussion.',
+    work: 'Built a strategic case for increased compensation by articulating contributions, quantifying impact, and preparing for a confident negotiation.',
     outcome: 'Successfully negotiated an increase in salary.',
   },
   {
     tag: 'Experienced Professional',
     title: 'From Comfortable to Confident',
     challenge: 'After 15+ years with the same employer, this client was unsure how to approach an external job search.',
-    work: 'Built a personalized job search strategy, refined their resume, and prepared them for interviews.',
+    work: 'Developed a modern job search strategy, repositioned their experience for today\'s market, and rebuilt confidence after a long tenure.',
     outcome: 'Secured an external role after more than 15 years with the same employer.',
   },
 ]
