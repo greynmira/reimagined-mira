@@ -192,7 +192,7 @@ function Hero() {
             Your next career move deserves more than <span style={{color: 'var(--color-green)'}}>generic advice.</span>
           </h1>
           <p className="hero__subtext">
-            Sometimes advice isn&apos;t enough. You need someone to help you see your career differently. Together, we&apos;ll build a strategy that fits you.
+            Sometimes advice isn&apos;t enough. You need someone to help you see the bigger picture. Together, we&apos;ll build a strategy that fits you.
           </p>
           <div className="hero__typewriter">
             <TypewriterSection onDone={() => setTypewriterDone(true)} onReplay={() => setTypewriterDone(false)} />
