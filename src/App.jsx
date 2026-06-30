@@ -645,7 +645,7 @@ function HowWeWork() {
           <span className="hww-loop__icon">↺</span>
         </div>
         <p className="how-we-work__closing">
-          Every conversation builds on the last – helping you navigate your career with greater clarity and confidence.
+          It&apos;s not the answer that matters. It&apos;s knowing how to move - one step, then the next.
         </p>
       </div>
     </section>
