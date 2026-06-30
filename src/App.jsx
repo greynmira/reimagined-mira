@@ -512,10 +512,10 @@ const caseStudies = [
   },
   {
     tag: 'Experienced Professional',
-    title: 'Navigating a Career Transition',
-    challenge: 'After 15+ years in one organization, they needed to confidently navigate today\'s job market.',
-    work: 'Positioned their experience for today\'s hiring market.',
-    outcome: 'Landed a new role using a focused and personalized job search strategy.',
+    title: 'From Comfortable to Confident',
+    challenge: 'After 15+ years with the same employer, this client was unsure how to approach an external job search.',
+    work: 'Built a personalized job search strategy, refined their resume, and prepared them for interviews.',
+    outcome: 'Secured an external role after more than 15 years with the same employer.',
   },
 ]
 
