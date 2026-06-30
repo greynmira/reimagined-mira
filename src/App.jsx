@@ -799,7 +799,6 @@ function App() {
         <HowWeWork />
         <WhyIStarted />
         <Testimonials />
-        <About />
         <Closing />
         <FinalCTA />
       </main>
