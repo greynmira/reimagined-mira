@@ -512,10 +512,10 @@ const caseStudies = [
   },
   {
     tag: 'Experienced Professional',
-    title: 'From Comfortable to Confident',
-    challenge: 'After 15+ years with the same employer, this client needed to navigate today\'s job market for the first time in over a decade and wasn\'t sure where to start.',
-    work: 'Built a tailored job search strategy, refined their resume, strengthened interview preparation, and positioned their experience for today\'s hiring market.',
-    outcome: 'Landed a new role using a focused and personalized job search strategy.',
+    title: 'From Familiar to New Opportunities',
+    challenge: 'After 15+ years in the same organization, they felt uncertain about today\'s job market and how to position their experience for a new opportunity.',
+    work: 'Repositioning their experience, developing a modern job search strategy, refining their resume, and preparing for interviews with confidence.',
+    outcome: 'Successfully landed a new role with confidence after navigating a major career transition.',
   },
 ]
 
