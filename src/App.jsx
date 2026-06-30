@@ -555,6 +555,102 @@ function CaseStudies() {
   )
 }
 
+const howWeWorkSteps = [
+  {
+    number: 1,
+    title: 'Understand',
+    body: "We start by understanding where you are today, what you're working toward, and what's getting in your way. Every career challenge has a story behind it—and every strategy starts there.",
+  },
+  {
+    number: 2,
+    title: 'Reframe',
+    body: "Together, we'll uncover strengths, patterns, and opportunities you may not be seeing on your own. This is often where the biggest breakthroughs happen.",
+  },
+  {
+    number: 3,
+    title: 'Position',
+    body: "We'll translate those insights into action by refining how you communicate your value—whether that's through your resume, networking, interviews, or conversations at work.",
+  },
+  {
+    number: 4,
+    title: 'Take Action',
+    body: "With a clear strategy in place, you'll move forward with confidence. Whether you're applying for roles, preparing for interviews, navigating workplace challenges, or making your next career move, you'll know what to do next.",
+  },
+  {
+    number: 5,
+    title: 'Reflect & Refine',
+    body: "Every career decision creates new insights. Together, we'll reflect on what's working, refine your strategy, and prepare for what's next.",
+  },
+]
+
+function HowWeWorkStep({ step, index }) {
+  const ref = useRef(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { setVisible(true); obs.disconnect() }
+    }, { threshold: 0.15 })
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  return (
+    <div
+      ref={ref}
+      className={`hww-step${index % 2 === 1 ? ' hww-step--right' : ''}${visible ? ' hww-step--visible' : ''}`}
+    >
+      <div className="hww-step__card">
+        <h3 className="hww-step__title">{step.title}</h3>
+        <p className="hww-step__body">{step.body}</p>
+      </div>
+      <div className="hww-step__node" aria-hidden="true">
+        <span className="hww-step__number">{step.number}</span>
+      </div>
+      <div className="hww-step__spacer" aria-hidden="true" />
+    </div>
+  )
+}
+
+function HowWeWork() {
+  const loopRef = useRef(null)
+  const [loopActive, setLoopActive] = useState(false)
+
+  useEffect(() => {
+    const el = loopRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { setLoopActive(true); obs.disconnect() }
+    }, { threshold: 0.5 })
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  return (
+    <section className="how-we-work">
+      <div className="how-we-work__inner">
+        <h2 className="section-headline">How We Work Together</h2>
+        <p className="how-we-work__intro">
+          Career growth isn&apos;t about finding one answer. It&apos;s about learning how to make better decisions throughout your career.
+        </p>
+        <div className="hww-steps">
+          {howWeWorkSteps.map((step, i) => (
+            <HowWeWorkStep key={i} step={step} index={i} />
+          ))}
+        </div>
+        <div ref={loopRef} className={`hww-loop${loopActive ? ' hww-loop--active' : ''}`} aria-hidden="true">
+          <span className="hww-loop__icon">↺</span>
+        </div>
+        <p className="how-we-work__closing">
+          Your career will continue to evolve—and so will your strategy. Every conversation builds on the last, helping you navigate what&apos;s next with greater clarity, confidence, and intention.
+        </p>
+      </div>
+    </section>
+  )
+}
+
 const testimonials = [
   {
     quote: 'Mira has a unique ability to balance practical career strategy with genuine curiosity about the person behind the career. I left feeling understood, challenged, and more confident in my next steps.',
@@ -701,6 +797,7 @@ function App() {
         <CaseStudies />
         <Services />
         <WhyIStarted />
+        <HowWeWork />
         <Testimonials />
         <About />
         <Closing />
