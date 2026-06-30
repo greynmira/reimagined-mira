@@ -987,9 +987,9 @@
 
 .testimonial__quote {
   font-family: var(--font-sans);
-  font-size: 0.93rem;
+  font-size: 1.05rem;
   color: var(--color-text-secondary);
-  line-height: 1.7;
+  line-height: 1.75;
   font-style: normal;
   font-weight: 400;
   margin-bottom: 12px;
