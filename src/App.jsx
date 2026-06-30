@@ -559,27 +559,27 @@ const howWeWorkSteps = [
   {
     number: 1,
     title: 'Understand',
-    body: "We start by understanding where you are today, what you're working toward, and what's getting in your way. Every career challenge has a story behind it—and every strategy starts there.",
+    body: "We start by understanding where you are, where you want to go, and what's standing in your way.",
   },
   {
     number: 2,
     title: 'Reframe',
-    body: "Together, we'll uncover strengths, patterns, and opportunities you may not be seeing on your own. This is often where the biggest breakthroughs happen.",
+    body: "Together, we'll uncover strengths, patterns, and opportunities you may not yet see.",
   },
   {
     number: 3,
     title: 'Position',
-    body: "We'll translate those insights into action by refining how you communicate your value—whether that's through your resume, networking, interviews, or conversations at work.",
+    body: "We'll refine how you communicate your value.",
   },
   {
     number: 4,
     title: 'Take Action',
-    body: "With a clear strategy in place, you'll move forward with confidence. Whether you're applying for roles, preparing for interviews, navigating workplace challenges, or making your next career move, you'll know what to do next.",
+    body: "You'll move forward with a clear strategy, practical next steps, and greater confidence.",
   },
   {
     number: 5,
     title: 'Reflect & Refine',
-    body: "Every career decision creates new insights. Together, we'll reflect on what's working, refine your strategy, and prepare for what's next.",
+    body: "As your career evolves, we'll adapt your strategy and prepare for what's next.",
   },
 ]
 
@@ -633,7 +633,7 @@ function HowWeWork() {
       <div className="how-we-work__inner">
         <h2 className="section-headline">How We Work Together</h2>
         <p className="how-we-work__intro">
-          Career growth isn&apos;t about finding one answer. It&apos;s about learning how to make better decisions throughout your career.
+          Career growth isn&apos;t about finding one answer. It&apos;s about learning how to make better decisions.
         </p>
         <div className="hww-steps">
           {howWeWorkSteps.map((step, i) => (
@@ -644,7 +644,7 @@ function HowWeWork() {
           <span className="hww-loop__icon">↺</span>
         </div>
         <p className="how-we-work__closing">
-          Your career will continue to evolve—and so will your strategy. Every conversation builds on the last, helping you navigate what&apos;s next with greater clarity, confidence, and intention.
+          Every conversation builds on the last - helping you navigate your career with greater clarity and confidence.
         </p>
       </div>
     </section>
