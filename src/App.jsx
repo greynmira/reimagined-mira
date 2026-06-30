@@ -634,7 +634,7 @@ function HowWeWork() {
       <div className="how-we-work__inner">
         <h2 className="section-headline">The Reimagined Method</h2>
         <p className="how-we-work__intro">
-          Career growth isn&apos;t about finding one answer. It&apos;s about learning how to make better decisions.
+          It&apos;s not the answer that matters. It&apos;s knowing how to move - one step, then the next.
         </p>
         <div className="hww-steps">
           {howWeWorkSteps.map((step, i) => (
@@ -645,7 +645,7 @@ function HowWeWork() {
           <span className="hww-loop__icon">↺</span>
         </div>
         <p className="how-we-work__closing">
-          It&apos;s not the answer that matters. It&apos;s knowing how to move - one step, then the next.
+          Every conversation builds on the last – helping you navigate your career with greater clarity and confidence.
         </p>
       </div>
     </section>
