@@ -632,7 +632,7 @@ function HowWeWork() {
   return (
     <section className="how-we-work">
       <div className="how-we-work__inner">
-        <h2 className="section-headline">How We Work Together</h2>
+        <h2 className="section-headline">The Reimagined Method</h2>
         <p className="how-we-work__intro">
           Career growth isn&apos;t about finding one answer. It&apos;s about learning how to make better decisions.
         </p>
