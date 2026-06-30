@@ -476,7 +476,7 @@ function About() {
           For the past 8+ years, I&apos;ve worked across healthcare strategy, digital health, and product leadership while helping professionals navigate career growth, networking, personal brand, and change.
         </p>
         <p className="about__body">
-          I&apos;ve always been fascinated by why talented people stay stuck — not because they lack ability, but because they&apos;re often too close to see their own strengths.
+          I&apos;ve always been fascinated by why talented people stay stuck - not because they lack ability, but because they&apos;re often too close to see their own strengths.
         </p>
         <div className="about__pillars">
           <div className="about__pillar">
