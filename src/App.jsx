@@ -460,7 +460,7 @@ function WhyIStarted() {
         <p><strong className="why-started__hook">Most career advice focuses on what to do.</strong></p>
         <p><em>I focus on how to think.</em></p>
         <p>I&apos;ve always been fascinated by one question: Why do some talented people keep growing while others don&apos;t?</p>
-        <p>After reinventing my own career more than once - from business school to clinical nutrition, and ultimately healthcare strategy - I learned that meaningful growth rarely comes from working harder. It comes from seeing your career differently.</p>
+        <p>After reinventing my own career more than once – from business school to clinical nutrition, and ultimately healthcare strategy – I learned that meaningful growth rarely comes from working harder. It comes from seeing your career differently.</p>
         <p>That&apos;s why I created Reimagined by Mira: to help people gain perspective, build a strategy, and move forward with clarity and confidence.</p>
       </div>
     </section>
@@ -477,7 +477,7 @@ function About() {
           For the past 8+ years, I&apos;ve worked across healthcare strategy, digital health, and product leadership while helping professionals navigate career growth, networking, personal brand, and change.
         </p>
         <p className="about__body">
-          I&apos;ve always been fascinated by why talented people stay stuck - not because they lack ability, but because they&apos;re often too close to see their own strengths.
+          I&apos;ve always been fascinated by why talented people stay stuck – not because they lack ability, but because they&apos;re often too close to see their own strengths.
         </p>
         <div className="about__pillars">
           <div className="about__pillar">
@@ -645,7 +645,7 @@ function HowWeWork() {
           <span className="hww-loop__icon">↺</span>
         </div>
         <p className="how-we-work__closing">
-          Every conversation builds on the last - helping you navigate your career with greater clarity and confidence.
+          Every conversation builds on the last – helping you navigate your career with greater clarity and confidence.
         </p>
       </div>
     </section>
