@@ -796,8 +796,8 @@ function App() {
         <Hero />
         <CaseStudies />
         <Services />
-        <WhyIStarted />
         <HowWeWork />
+        <WhyIStarted />
         <Testimonials />
         <About />
         <Closing />
