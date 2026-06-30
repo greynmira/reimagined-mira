@@ -999,10 +999,11 @@
 
 .testimonial__quote {
   font-family: var(--font-sans);
-  font-size: 0.95rem;
-  color: var(--color-text-secondary);
-  line-height: 1.75;
-  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.8;
+  font-style: normal;
+  font-weight: 300;
   margin-bottom: 14px;
 }
 
