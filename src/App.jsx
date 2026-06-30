@@ -658,12 +658,12 @@ const testimonials = [
     name: 'Senior Network Engineer',
   },
   {
-    quote: 'As a new graduate, I struggled to see how my experience and strengths applied to the roles I wanted. Mira helped me connect the dots, position my experience more effectively, and approach my job search with confidence. With her support, I landed my first full-time role after graduation. I\'m incredibly grateful for her guidance and encouragement throughout the process.',
-    name: 'Film Graduate',
-  },
-  {
     quote: 'After more than 10 years with the same company, I knew I wanted to keep growing, but not necessarily by moving into a more senior title. I wasn\'t sure what that growth could look like. Mira helped me think beyond the traditional career path by identifying opportunities to build my presence through industry panels, speaking engagements, and expanding my professional network. I left our sessions with a clearer long-term strategy, a stronger sense of my professional brand, and confidence in how I wanted to grow my career.',
     name: 'Director of Business Development',
+  },
+  {
+    quote: 'As a new graduate, I struggled to see how my experience and strengths applied to the roles I wanted. Mira helped me connect the dots, position my experience more effectively, and approach my job search with confidence. With her support, I landed my first full-time role after graduation. I\'m incredibly grateful for her guidance and encouragement throughout the process.',
+    name: 'Film & Media Studies Graduate',
   },
 ]
 
