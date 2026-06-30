@@ -968,18 +968,13 @@
 .testimonials__list {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 28px;
 }
 
 .testimonial {
-  padding-top: 0;
+  border-left: 3px solid var(--color-green);
+  padding: 4px 0 4px 20px;
   position: relative;
-}
-
-.testimonial + .testimonial {
-  border-top: 1px solid var(--color-border);
-  padding-top: 36px;
-  margin-top: 0;
 }
 
 .testimonial::before {
@@ -992,16 +987,16 @@
 
 .testimonial__quote {
   font-family: var(--font-sans);
-  font-size: 1rem;
-  color: var(--color-text);
-  line-height: 1.75;
+  font-size: 0.93rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
   font-style: normal;
   font-weight: 400;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .testimonial__name {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
