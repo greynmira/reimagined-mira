@@ -512,10 +512,10 @@ const caseStudies = [
   },
   {
     tag: 'Experienced Professional',
-    title: 'From Familiar to New Opportunities',
-    challenge: 'After 15+ years in the same organization, they felt uncertain about today\'s job market and how to position their experience for a new opportunity.',
-    work: 'Repositioning their experience, developing a modern job search strategy, refining their resume, and preparing for interviews with confidence.',
-    outcome: 'Successfully landed a new role with confidence after navigating a major career transition.',
+    title: 'Navigating a Career Transition',
+    challenge: 'After 15+ years in one organization, they needed to confidently navigate today\'s job market.',
+    work: 'Positioned their experience for today\'s hiring market.',
+    outcome: 'Landed a new role using a focused and personalized job search strategy.',
   },
 ]
 
