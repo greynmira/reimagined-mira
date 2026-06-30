@@ -457,10 +457,11 @@ function WhyIStarted() {
       <div className="why-started__inner">
         <BulbIcon large />
         <h2 className="section-headline">Why<br />Reimagined Mira</h2>
-        <p><strong className="why-started__hook">I&apos;m obsessed with career strategy:</strong> positioning, networking, personal brand, and career growth. <em>I dream about this stuff so you don&apos;t have to.</em></p>
-        <p>I&apos;ve reinvented my own career more than once, from business school to clinical nutrition to digital health. Along the way, I&apos;ve learned that career paths are rarely linear and that feeling stuck doesn&apos;t have to be permanent.</p>
-        <p>Most professionals don&apos;t need more effort. They need someone to help them see what they&apos;re too close to recognise.</p>
-        <p>That&apos;s why I created Reimagined by Mira.</p>
+        <p><strong className="why-started__hook">Most career advice focuses on what to do.</strong></p>
+        <p><em>I focus on how to think.</em></p>
+        <p>I&apos;ve always been fascinated by one question: Why do some talented people keep growing while others don&apos;t?</p>
+        <p>After reinventing my own career more than once - from business school to clinical nutrition, and ultimately healthcare strategy - I learned that meaningful growth rarely comes from working harder. It comes from seeing your career differently.</p>
+        <p>That&apos;s why I created Reimagined by Mira: to help people gain perspective, build a strategy, and move forward with clarity and confidence.</p>
       </div>
     </section>
   )
