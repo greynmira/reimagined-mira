@@ -192,7 +192,7 @@ function Hero() {
             Your next career move deserves more than <em>generic advice.</em>
           </h1>
           <p className="hero__subtext">
-            Career growth isn&apos;t just about resumes or interviews. It&apos;s about understanding how you&apos;re positioned, where opportunities exist, and making thoughtful decisions with confidence.
+            Career growth isn&apos;t just about resumes or interviews. It&apos;s about understanding how you&apos;re positioned, where opportunities exist, and how to make thoughtful decisions with confidence.
           </p>
           <div className="hero__typewriter">
             <TypewriterSection onDone={() => setTypewriterDone(true)} onReplay={() => setTypewriterDone(false)} />
