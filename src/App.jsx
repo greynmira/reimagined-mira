@@ -654,16 +654,16 @@ function HowWeWork() {
 
 const testimonials = [
   {
-    quote: 'Mira has a unique ability to balance practical career strategy with genuine curiosity about the person behind the career. I left feeling understood, challenged, and more confident in my next steps.',
+    quote: 'I knew I was underpaid, but I wasn\'t sure how to approach asking for more or how to position my experience. Mira helped me think through my value, prepare for those conversations, and build the confidence to advocate for myself. I ended up securing a salary increase in my current role, and I honestly don\'t think I would have gotten the raise without her guidance.',
     name: 'Senior Network Engineer',
   },
   {
-    quote: 'What stood out most was Mira\'s ability to challenge my thinking while still making me feel supported. She helped me see opportunities and perspectives I hadn\'t considered on my own.',
-    name: 'Director of Business Development',
+    quote: 'As a new graduate, I struggled to see how my experience and strengths applied to the roles I wanted. Mira helped me connect the dots, position my experience more effectively, and approach my job search with confidence. With her support, I landed my first full-time role after graduation. I\'m incredibly grateful for her guidance and encouragement throughout the process.',
+    name: 'Film Graduate',
   },
   {
-    quote: 'Mira helped me refine my career story, strengthen how I positioned my experience, and approach networking and interviews with confidence. The advice was practical, actionable, and tailored to me.',
-    name: 'Film & Media Studies Graduate',
+    quote: 'After more than 10 years with the same company, I knew I wanted to keep growing, but not necessarily by moving into a more senior title. I wasn\'t sure what that growth could look like. Mira helped me think beyond the traditional career path by identifying opportunities to build my presence through industry panels, speaking engagements, and expanding my professional network. I left our sessions with a clearer long-term strategy, a stronger sense of my professional brand, and confidence in how I wanted to grow my career.',
+    name: 'Director of Business Development',
   },
 ]
 
