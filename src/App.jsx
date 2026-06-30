@@ -457,6 +457,7 @@ function WhyIStarted() {
       <div className="why-started__inner">
         <BulbIcon large />
         <h2 className="section-headline">Why<br />Reimagined Mira</h2>
+        <p><strong className="why-started__hook">Most career advice focuses on what to do.</strong></p>
         <p><em>I focus on how to think.</em></p>
         <p>I&apos;ve always been fascinated by one question: Why do some talented people keep growing while others don&apos;t?</p>
         <p>After reinventing my own career more than once – from business school to clinical nutrition, and ultimately healthcare strategy – I learned that meaningful growth rarely comes from working harder. The throughline wasn&apos;t the field I landed in. It was learning to poke holes at the assumptions that got me there.</p>
