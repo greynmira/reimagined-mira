@@ -460,7 +460,7 @@ function WhyIStarted() {
         <p><strong className="why-started__hook">Most career advice focuses on what to do.</strong></p>
         <p><em>I focus on how to think.</em></p>
         <p>I&apos;ve always been fascinated by one question: Why do some talented people keep growing while others don&apos;t?</p>
-        <p>After reinventing my own career more than once – from business school to clinical nutrition, and ultimately healthcare strategy – I learned that meaningful growth rarely comes from working harder. It comes from seeing your career differently.</p>
+        <p>After reinventing my own career more than once – from business school to clinical nutrition, and ultimately digital health – I learned that meaningful growth rarely comes from working harder. It comes from seeing your career differently.</p>
         <p>That&apos;s why I created Reimagined by Mira: to help people gain perspective, build a strategy, and move forward with clarity and confidence.</p>
       </div>
     </section>
