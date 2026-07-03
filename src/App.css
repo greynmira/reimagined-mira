@@ -452,15 +452,9 @@
 .hero__scroll-cue {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
   color: var(--color-green);
-  opacity: 0.5;
-  animation: scrollBounce 1.8s ease-in-out infinite;
-}
-
-@keyframes scrollBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
+  opacity: 0.3;
 }
 
 .hero__cta-note {
