@@ -1215,8 +1215,6 @@
     margin-bottom: 28px;
   }
 
-  .hero__scroll-cue { display: none; }
-
   .btn-primary--large {
     padding: 14px 28px;
     font-size: 0.95rem;
@@ -1297,6 +1295,7 @@
    ============================ */
 @media (min-width: 901px) {
   :root { --section-padding: 100px 64px; }
+  .hero__scroll-cue { display: none; }
 
   /* Global: serif section headings — clean, no decorative dash */
   .section-headline {
