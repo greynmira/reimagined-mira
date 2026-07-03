@@ -202,6 +202,9 @@ function Hero() {
               <a href={CALENDLY_URL} className="btn-primary btn-primary--large" target="_blank" rel="noopener noreferrer">
                 Book your Free Discovery Call
               </a>
+              <div className="hero__scroll-cue" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
             </div>
           )}
         </div>

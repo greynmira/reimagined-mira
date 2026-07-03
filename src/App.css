@@ -417,7 +417,7 @@
    ============================ */
 .hero {
   background-color: var(--color-white);
-  padding: 48px 24px 32px;
+  padding: 48px 24px 20px;
 }
 
 .hero__inner {
@@ -447,6 +447,20 @@
 
 .hero__cta {
   margin-bottom: 0;
+}
+
+.hero__scroll-cue {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: var(--color-green);
+  opacity: 0.5;
+  animation: scrollBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 .hero__cta-note {
@@ -1200,6 +1214,8 @@
   .hero__cta {
     margin-bottom: 28px;
   }
+
+  .hero__scroll-cue { display: none; }
 
   .btn-primary--large {
     padding: 14px 28px;
