@@ -459,7 +459,7 @@ function WhyIStarted() {
     <section className="why-started">
       <div className="why-started__inner">
         <BulbIcon large />
-        <h2 className="section-headline">Why<br />Reimagined Mira</h2>
+        <h2 className="section-headline">Why<br />Reimagined by Mira</h2>
         <p><strong className="why-started__hook">Most career advice focuses on what to do.</strong></p>
         <p><em>I focus on how to think.</em></p>
         <p>I&apos;ve always been fascinated by one question: Why do some talented people keep growing while others don&apos;t?</p>
