@@ -3,12 +3,12 @@ import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const src = resolve(__dirname, '../public/og-image.png')
+const src = resolve(__dirname, 'favicon-src.png')
 const dest = resolve(__dirname, '../public/og-image.png')
 
 const W = 1200
 const H = 630
-const LOGO = 380   // logo size inside the canvas
+const LOGO = 520   // logo size inside the canvas
 const BG = '#1B4332'  // --color-green
 
 // Resize the logo to fit
